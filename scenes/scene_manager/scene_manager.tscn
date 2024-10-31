@@ -1,5 +1,14 @@
-[gd_scene format=3 uid="uid://dowynmb157yg8"]
+[gd_scene load_steps=3 format=3 uid="uid://dowynmb157yg8"]
+
+[ext_resource type="Environment" uid="uid://cgka7swyb3v1d" path="res://default_env.tres" id="1_w4v2q"]
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_pdrn5"]
+auto_exposure_enabled = true
 
 [node name="SceneManager" type="Node"]
 
 [node name="CurrentScene" type="Node" parent="."]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource("1_w4v2q")
+camera_attributes = SubResource("CameraAttributesPractical_pdrn5")
