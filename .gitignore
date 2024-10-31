@@ -1,0 +1,4 @@
+.import/
+.godot/
+addons/godot-jolt/windows/~godot-jolt_windows-x64_editor.dll
+addons/terrain_3d/bin/~libterrain.windows.debug.x86_64.dll
