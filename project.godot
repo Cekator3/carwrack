@@ -13,3 +13,12 @@ config_version=5
 config/name="carwrack"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Global="*res://scenes/singletons/global.gd"
+Setting="*res://scenes/singletons/setting.gd"
+
+[rendering]
+
+environment/defaults/default_environment="res://default_env.tres"
