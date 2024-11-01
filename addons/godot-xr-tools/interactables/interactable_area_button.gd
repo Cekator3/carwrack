@@ -26,6 +26,8 @@ signal button_released(button)
 ## Displacement duration
 @export var duration : float = 0.1
 
+@export var time_before_using : float = 1
+var can_be_pressed : bool = true
 
 ## If true, the button is pressed
 var pressed : bool = false
@@ -69,10 +71,10 @@ func _on_button_entered(item: Node3D) -> void:
 	_trigger_items[item] = item
 
 	# Detect transition to pressed
-	if !pressed:
+	if !pressed and can_be_pressed:
 		# Update state to pressed
 		pressed = true
-
+		can_be_pressed = false
 		# Kill the current tween
 		if _tween:
 			_tween.kill()
@@ -85,6 +87,9 @@ func _on_button_entered(item: Node3D) -> void:
 
 		# Emit the pressed signal
 		button_pressed.emit(self)
+		
+		await get_tree().create_timer(time_before_using).timeout
+		can_be_pressed = true
 
 
 # Called when an area or body exits the button area

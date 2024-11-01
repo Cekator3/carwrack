@@ -141,8 +141,8 @@ func _ready():
 	_update_colliders()
 
 	# Monitor Grab Button
-	_controller.connect("button_pressed", _on_button_pressed)
-	_controller.connect("button_released", _on_button_released)
+	get_parent().connect("button_pressed", _on_button_pressed)
+	get_parent().connect("button_released", _on_button_released)
 
 
 # Called on each frame to update the pickup
@@ -316,12 +316,12 @@ func _update_closest_object() -> void:
 
 	# remove highlight on old object
 	if is_instance_valid(closest_object):
-		closest_object.request_highlight(self, false)
+		closest_object.decrease_is_closest()
 
 	# add highlight to new object
 	closest_object = new_closest_obj
 	if is_instance_valid(closest_object):
-		closest_object.request_highlight(self, true)
+		closest_object.increase_is_closest()
 
 
 # Find the pickable object closest to our hand's grab location
@@ -373,7 +373,6 @@ func drop_object() -> void:
 
 	# let go of this object
 	picked_up_object.let_go(
-		self,
 		_velocity_averager.linear_velocity() * impulse_factor,
 		_velocity_averager.angular_velocity())
 	picked_up_object = null
@@ -402,11 +401,10 @@ func _pick_up_object(target: Node3D) -> void:
 	# Pick up our target. Note, target may do instant drop_and_free
 	picked_up_ranged = not _object_in_grab_area.has(target)
 	picked_up_object = target
-	target.pick_up(self)
+	target.pick_up(self, _controller)
 
 	# If object picked up then emit signal
 	if is_instance_valid(picked_up_object):
-		picked_up_object.request_highlight(self, false)
 		emit_signal("has_picked_up", picked_up_object)
 
 
@@ -416,10 +414,8 @@ func _on_button_pressed(p_button) -> void:
 			picked_up_object.action()
 
 
-func _on_button_released(p_button) -> void:
-	if p_button == action_button_action:
-		if is_instance_valid(picked_up_object) and picked_up_object.has_method("action_release"):
-			picked_up_object.action_release()
+func _on_button_released(_p_button) -> void:
+	pass
 
 
 func _on_grip_pressed() -> void:

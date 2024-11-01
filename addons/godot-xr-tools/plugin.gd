@@ -32,15 +32,12 @@ func _define_project_setting(
 	}
 
 	ProjectSettings.add_property_info(property_info)
-	if ProjectSettings.has_method("set_as_basic"):
-		ProjectSettings.call("set_as_basic", p_name, true)
 	ProjectSettings.set_initial_value(p_name, p_default_val)
 
 
 func _enable_openxr() -> void:
-	ProjectSettings.set("xr/openxr/enabled", true)
-	ProjectSettings.set("xr/shaders/enabled", true)
-	ProjectSettings.save()
+	ProjectSettings.set("xr/openxr/enabled", !bool(ProjectSettings.get("xr/openxr/enabled")))
+	ProjectSettings.set("xr/shaders/enabled", !bool(ProjectSettings.get("xr/shaders/enabled")))
 
 
 func _set_physics_layers() -> void:
@@ -55,8 +52,6 @@ func _set_physics_layers() -> void:
 	ProjectSettings.set("layer_names/3d_physics/layer_20", "Player Body")
 	ProjectSettings.set("layer_names/3d_physics/layer_21", "Pointable Objects")
 	ProjectSettings.set("layer_names/3d_physics/layer_22", "Hand Pose Areas")
-	ProjectSettings.set("layer_names/3d_physics/layer_23", "UI Objects")
-	ProjectSettings.save()
 
 
 func _on_xr_tools_menu_pressed(id : int) -> void:
@@ -78,7 +73,7 @@ func _enter_tree():
 	add_tool_submenu_item("XR Tools", _xr_tools_menu)
 
 	# Add tool menu items
-	_xr_tools_menu.add_item("Enable OpenXR", MENU_ID_ENABLE_OPENXR)
+	_xr_tools_menu.add_item("Toggled enabled OpenXR", MENU_ID_ENABLE_OPENXR)
 	_xr_tools_menu.add_item("Set Physics Layers", MENU_ID_SET_PHYSICS_LAYERS)
 
 	# Add input grip threshold to the project settings
@@ -88,30 +83,6 @@ func _enter_tree():
 			PROPERTY_HINT_RANGE,
 			"0.2,0.8,0.05",
 			0.7)
-
-	# Add input haptics_scale to the project settings
-	_define_project_setting(
-			"godot_xr_tools/input/haptics_scale",
-			TYPE_FLOAT,
-			PROPERTY_HINT_RANGE,
-			"0.0,1.0,0.1",
-			1.0)
-
-	# Add input y_axis_dead_zone to the project settings
-	_define_project_setting(
-			"godot_xr_tools/input/y_axis_dead_zone",
-			TYPE_FLOAT,
-			PROPERTY_HINT_RANGE,
-			"0.0,0.5,0.01",
-			0.1)
-
-	# Add input x_axis_dead_zone to the project settings
-	_define_project_setting(
-			"godot_xr_tools/input/x_axis_dead_zone",
-			TYPE_FLOAT,
-			PROPERTY_HINT_RANGE,
-			"0.0,0.5,0.01",
-			0.2)
 
 	# Add input snap turning dead-zone to the project settings
 	_define_project_setting(
@@ -141,9 +112,6 @@ func _enter_tree():
 	add_autoload_singleton(
 			"XRToolsUserSettings",
 			"res://addons/godot-xr-tools/user_settings/user_settings.gd")
-	add_autoload_singleton(
-			"XRToolsRumbleManager",
-			"res://addons/godot-xr-tools/rumble/rumble_manager.gd")
 
 
 func _exit_tree():

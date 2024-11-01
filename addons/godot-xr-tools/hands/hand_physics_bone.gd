@@ -55,10 +55,6 @@ func is_xr_class(name : String) -> bool:
 # Called when the node enters the scene tree. This constructs the physics-bone
 # nodes and performs initial positioning.
 func _ready():
-	# Skip if in the editor
-	if Engine.is_editor_hint():
-		return
-
 	# Connect the 'hand_scale_changed' signal
 	var physics_hand := XRToolsHand.find_instance(self) as XRToolsPhysicsHand
 	if physics_hand:
@@ -106,10 +102,6 @@ func _ready():
 # Called during the physics process and moves the physics-bone to follow the
 # skeletal-bone.
 func _physics_process(delta: float) -> void:
-	# Skip if in the editor
-	if Engine.is_editor_hint():
-		return
-
 	_move_bone(delta)
 
 
@@ -118,8 +110,11 @@ func _physics_process(delta: float) -> void:
 # rotates the physics-bone to match the skeletal-bone.
 func _move_bone(delta: float) -> void:
 	# Get the skeletal-bone transform
+	if _skeletal_bone == null:
+		return
+	
 	var bone_xform := _skeletal_bone.global_transform
-
+	
 	# Get the required velocity to move the physics-bone to the skeletal-bone
 	var bone_vel := (bone_xform.origin - _physics_bone.global_transform.origin) / delta
 

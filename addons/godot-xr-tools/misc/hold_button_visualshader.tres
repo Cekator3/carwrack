@@ -253,7 +253,6 @@ void fragment() {
 
 }
 "
-graph_offset = Vector2(652.664, 119.317)
 flags/unshaded = true
 nodes/fragment/0/position = Vector2(1800, -40)
 nodes/fragment/2/node = SubResource("3")

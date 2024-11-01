@@ -140,33 +140,32 @@ func physics_movement(delta: float, player_body: XRToolsPlayerBody, disabled: bo
 	var pitch_vector: Vector3
 	if pitch == FlightPitch.HEAD:
 		# Use the vertical part of the 'head' forwards vector
-		pitch_vector = -_camera.transform.basis.z.y * player_body.up_player
+		pitch_vector = -_camera.transform.basis.z.y * player_body.up_player_vector
 	else:
 		# Use the vertical part of the 'controller' forwards vector
-		pitch_vector = -_controller.transform.basis.z.y * player_body.up_player
+		pitch_vector = -_controller.transform.basis.z.y * player_body.up_player_vector
 
 	# Select the bearing vector
 	var bearing_vector: Vector3
 	if bearing == FlightBearing.HEAD:
 		# Use the horizontal part of the 'head' forwards vector
-		bearing_vector = -_camera.global_transform.basis.z \
-				.slide(player_body.up_player)
+		bearing_vector = -player_body.up_player_plane.project(
+				_camera.global_transform.basis.z)
 	elif bearing == FlightBearing.CONTROLLER:
 		# Use the horizontal part of the 'controller' forwards vector
-		bearing_vector = -_controller.global_transform.basis.z \
-				.slide(player_body.up_player)
+		bearing_vector = -player_body.up_player_plane.project(
+				_controller.global_transform.basis.z)
 	else:
 		# Use the horizontal part of the 'body' forwards vector
 		var left := _left_controller.global_transform.origin
 		var right := _right_controller.global_transform.origin
 		var left_to_right := right - left
-		bearing_vector = left_to_right \
-				.rotated(player_body.up_player, PI/2) \
-				.slide(player_body.up_player)
+		bearing_vector = player_body.up_player_plane.project(
+				left_to_right.rotated(player_body.up_player_vector, PI/2))
 
 	# Construct the flight bearing
 	var forwards := (bearing_vector.normalized() + pitch_vector).normalized()
-	var side := forwards.cross(player_body.up_player)
+	var side := forwards.cross(player_body.up_player_vector)
 
 	# Construct the target velocity
 	var joy_forwards := _controller.get_vector2("primary").y

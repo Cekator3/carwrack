@@ -25,8 +25,11 @@ Setting="*res://scenes/singletons/setting.gd"
 
 [rendering]
 
+lights_and_shadows/directional_shadow/size=8192
+lights_and_shadows/directional_shadow/soft_shadow_filter_quality=5
+scaling_3d/scale=2.0
+environment/screen_space_reflection/roughness_quality=3
 limits/cluster_builder/max_clustered_elements=64.0
-anti_aliasing/quality/use_taa=true
 anti_aliasing/quality/use_debanding=true
 occlusion_culling/use_occlusion_culling=true
 environment/defaults/default_environment="res://default_env.tres"

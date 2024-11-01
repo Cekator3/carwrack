@@ -1,3 +1,35 @@
-[gd_scene format=3 uid="uid://co7umjbsxhmjr"]
+[gd_scene load_steps=6 format=3 uid="uid://co7umjbsxhmjr"]
+
+[ext_resource type="Texture2D" uid="uid://bkvut1o1dk3fu" path="res://addons/kenney_prototype_textures/light/texture_07.png" id="1_6jp2m"]
+[ext_resource type="PackedScene" uid="uid://cxmmlgjm0vcpd" path="res://assets/models/ferrari_550_barchetta_2000_azzurro_hyperion/ferrari_model.tscn" id="2_2abc4"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_7t3bf"]
+points = PackedVector3Array(25.3919, 0.690476, 25.3919, -25.3919, -0.896825, -25.3919, -25.3919, 0.690476, -25.3919, 25.3919, -0.896825, -25.3919, -25.3919, -0.896825, 25.3919, -25.3919, 0.690476, 25.3919, 25.3919, 0.690476, -25.3919, 25.3919, -0.896825, 25.3919)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y4w45"]
+albedo_texture = ExtResource("1_6jp2m")
+uv1_triplanar = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_km1n7"]
+size = Vector3(50, 1, 50)
 
 [node name="LevelIntro" type="Node3D"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.536972, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_7t3bf")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+material_override = SubResource("StandardMaterial3D_y4w45")
+mesh = SubResource("BoxMesh_km1n7")
+skeleton = NodePath("../..")
+
+[node name="FerrariModel" parent="." instance=ExtResource("2_2abc4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3815, -0.0357561, -0.924381)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.386614, -0.76931, 0.508616, 0, 0.5515, 0.834175, -0.922241, -0.322504, 0.213218, 0, 0, 0)
+light_indirect_energy = 16.0
+shadow_enabled = true

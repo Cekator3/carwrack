@@ -17,7 +17,7 @@ extends XRToolsInteractableHandleDriven
 
 ## Signal for hinge moved
 signal hinge_moved(angle)
-
+signal hinge_position_changed(position: float)
 
 ## Hinge minimum limit
 @export var hinge_limit_min : float = -45.0: set = _set_hinge_limit_min
@@ -36,6 +36,7 @@ signal hinge_moved(angle)
 
 ## If true, the hinge moves to the default position when releases
 @export var default_on_release : bool = false
+@export_range(1, 3) var grabbed_handles_size : int = 1
 
 
 # Hinge values in radians
@@ -67,22 +68,20 @@ func _ready():
 		push_error("Cannot connect hinge released signal")
 
 
-# Called every frame when one or more handles are held by the player
+
 func _process(_delta: float) -> void:
-	# Get the total handle angular offsets
 	var offset_sum := 0.0
-	for item in grabbed_handles:
-		var handle := item as XRToolsInteractableHandle
-		var to_handle: Vector3 = handle.global_transform.origin * global_transform
-		var to_handle_origin: Vector3 = handle.handle_origin.global_transform.origin * global_transform
-		to_handle.x = 0.0
-		to_handle_origin.x = 0.0
-		offset_sum += to_handle_origin.signed_angle_to(to_handle, Vector3.RIGHT)
-
-	# Average the angular offsets
+	if grabbed_handles.size() >= grabbed_handles_size: # проверка на количество рук прикасаемых к объекту для движения
+		for item in grabbed_handles:
+			var handle := item as XRToolsInteractableHandle
+			var to_handle: Vector3 = handle.global_transform.origin * global_transform
+			var to_handle_origin: Vector3 = handle.handle_origin.global_transform.origin * global_transform
+			to_handle.x = 0.0
+			to_handle_origin.x = 0.0
+			offset_sum += to_handle_origin.signed_angle_to(to_handle, Vector3.RIGHT)
+	
 	var offset := offset_sum / grabbed_handles.size()
-
-	# Move the hinge by the requested offset
+	
 	move_hinge(_hinge_position_rad + offset)
 
 
@@ -131,6 +130,7 @@ func _set_hinge_position(value: float) -> void:
 	position = _do_move_hinge(position)
 	hinge_position = rad_to_deg(position)
 	_hinge_position_rad = position
+	hinge_position_changed.emit(hinge_position)
 
 
 # Called when default_position is set externally

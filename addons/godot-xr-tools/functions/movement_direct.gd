@@ -12,11 +12,16 @@ extends XRToolsMovementProvider
 ## different controllers to provide different types of direct movement.
 
 
+@export var dead_zone : float = 0.2
+
+
 ## Movement provider order
 @export var order : int = 10
 
 ## Movement speed
 @export var max_speed : float = 3.0
+@export var muliplier_speed : float = 1.5
+@export var muliplier_сurve : Curve
 
 ## If true, the player can strafe
 @export var strafe : bool = false
@@ -39,13 +44,22 @@ func physics_movement(_delta: float, player_body: XRToolsPlayerBody, _disabled: 
 	# Skip if the controller isn't active
 	if !_controller.get_is_active():
 		return
+	
+	var vec2_controller := _controller.get_vector2(input_action)
+	
+	if abs(vec2_controller.x) < dead_zone:
+		vec2_controller.x = 0
+	if abs(vec2_controller.y) < dead_zone:
+		vec2_controller.y = 0
+	
+#	print("после: ", vec2_controller)
+	
+	# Apply forwards/backwards ground control
+	player_body.ground_control_velocity.y += vec2_controller.y * max_speed * muliplier_сurve.sample(abs(vec2_controller.y))
 
-	## get input action with deadzone correction applied
-	var dz_input_action = XRToolsUserSettings.get_adjusted_vector2(_controller, input_action)
-
-	player_body.ground_control_velocity.y += dz_input_action.y * max_speed
+	# Apply left/right ground control
 	if strafe:
-		player_body.ground_control_velocity.x += dz_input_action.x * max_speed
+		player_body.ground_control_velocity.x += vec2_controller.x * max_speed * muliplier_сurve.sample(abs(vec2_controller.x))
 
 	# Clamp ground control
 	var length := player_body.ground_control_velocity.length()

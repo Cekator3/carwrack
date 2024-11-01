@@ -3,7 +3,7 @@ class_name XRToolsStaging
 extends Node3D
 
 
-## XR Tools Staging Class
+## XR Tools Staging
 ##
 ## When creating a game with multiple levels where you want to
 ## make use of background loading and have some nice structure
@@ -28,36 +28,22 @@ extends Node3D
 ## explained in individual demos found here.
 
 
-## This signal is emitted when the current scene starts to be unloaded. The
-## [param scene] parameter is the path of the current scene, and the
-## [param user_data] parameter is the optional data passed from the
-## current scene to the next.
-signal scene_exiting(scene, user_data)
+## Current scene is being unloaded
+signal scene_exiting(scene)
 
-## This signal is emitted when the old scene has been unloaded and the user
-## is fading into the loading scene. The [param user_data] parameter is the
-## optional data provided by the old scene.
-signal switching_to_loading_scene(user_data)
+## Switched to the loading scene
+signal switching_to_loading_scene
 
-## This signal is emitted when the new scene has been loaded before it becomes
-## visible. The [param scene] parameter is the path of the new scene, and the
-## [param user_data] parameter is the optional data passed from the old scene
-## to the new scene.
-signal scene_loaded(scene, user_data)
+## New scene has been loaded
+signal scene_loaded(scene)
 
-## This signal is emitted when the new scene has become fully visible to the
-## player. The [param scene] parameter is the path of the new scene, and the
-## [param user_data] parameter is the optional data passed from the old scene
-## to the new scene.
-signal scene_visible(scene, user_data)
+## New scene is now visible
+signal scene_visible(scene)
 
-## This signal is invoked when the XR experience starts.
+## XR interaction started
 signal xr_started
 
-## This signal is invoked when the XR experience ends. This usually occurs when
-## the player removes the headset. The game may want to react by pausing until
-## the player puts the headset back on and the [signal xr_started] signal is
-## emitted.
+## XR interaction ended
 signal xr_ended
 
 
@@ -68,19 +54,19 @@ signal xr_ended
 @export var prompt_for_continue : bool = true
 
 
-## The current scene
+# Current scene
 var current_scene : XRToolsSceneBase
 
-## The current scene path
+# Current scene path
 var current_scene_path : String
 
 # Tween for fading
 var _tween : Tween
 
-## The [XROrigin3D] node used while staging
+## XR Origin
 @onready var xr_origin : XROrigin3D = XRHelpers.get_xr_origin(self)
 
-## The [XRCamera3D] node used while staging
+## XR Camera
 @onready var xr_camera : XRCamera3D = XRHelpers.get_xr_camera(self)
 
 
@@ -128,14 +114,8 @@ func is_xr_class(name : String) -> bool:
 	return name == "XRToolsStaging"
 
 
-## This function loads the [param p_scene_path] scene file.
-##
-## The [param user_data] parameter contains optional data passed from the old
-## scene to the new scene.
-##
-## See [method XRToolsSceneBase.scene_loaded] for details on how to implement
-## advanced scene-switching.
-func load_scene(p_scene_path : String, user_data = null) -> void:
+## Load the specified scene
+func load_scene(p_scene_path : String) -> void:
 	# Do not load if in the editor
 	if Engine.is_editor_hint():
 		return
@@ -146,14 +126,13 @@ func load_scene(p_scene_path : String, user_data = null) -> void:
 	if !xr_camera:
 		return
 
-	# Start the threaded loading of the scene. If the scene is already cached
-	# then this will finish immediately with THREAD_LOAD_LOADED
-	ResourceLoader.load_threaded_request(p_scene_path)
-
-	# If a current scene is visible then fade it out and unload it.
 	if current_scene:
-		# Report pre-exiting and remove the scene signals
-		current_scene.scene_pre_exiting(user_data)
+		# Start by unloading our scene
+
+		# Let the scene know we're about to remove it
+		current_scene.scene_pre_exiting()
+
+		# Remove signals
 		_remove_signals(current_scene)
 
 		# Fade to black
@@ -164,16 +143,11 @@ func load_scene(p_scene_path : String, user_data = null) -> void:
 		await _tween.finished
 
 		# Now we remove our scene
-		emit_signal("scene_exiting", current_scene, user_data)
-		current_scene.scene_exiting(user_data)
+		emit_signal("scene_exiting", current_scene)
+		current_scene.scene_exiting()
 		$Scene.remove_child(current_scene)
 		current_scene.queue_free()
 		current_scene = null
-
-	# If a continue-prompt is desired or the new scene has not finished
-	# loading, then switch to the loading screen.
-	if prompt_for_continue or \
-		ResourceLoader.load_threaded_get_status(p_scene_path) != ResourceLoader.THREAD_LOAD_LOADED:
 
 		# Make our loading screen visible again and reset some stuff
 		xr_origin.set_process_internal(true)
@@ -183,7 +157,7 @@ func load_scene(p_scene_path : String, user_data = null) -> void:
 		$LoadingScreen.enable_press_to_continue = false
 		$LoadingScreen.follow_camera = true
 		$LoadingScreen.visible = true
-		switching_to_loading_scene.emit(user_data)
+		emit_signal("switching_to_loading_scene")
 
 		# Fade to visible
 		if _tween:
@@ -192,51 +166,48 @@ func load_scene(p_scene_path : String, user_data = null) -> void:
 		_tween.tween_method(set_fade, 1.0, 0.0, 1.0)
 		await _tween.finished
 
-	# If the loading screen is visible then show the progress and optionally
-	# wait for the continue. Once done fade out the loading screen.
-	if $LoadingScreen.visible:
+	# Load the new scene
+	var new_scene : PackedScene
+	if ResourceLoader.has_cached(p_scene_path):
+		# Load cached scene
+		new_scene = ResourceLoader.load(p_scene_path)
+	else:
+		# Start the loading in a thread
+		ResourceLoader.load_threaded_request(p_scene_path)
+
 		# Loop waiting for the scene to load
-		var res : ResourceLoader.ThreadLoadStatus
 		while true:
 			var progress := []
-			res = ResourceLoader.load_threaded_get_status(p_scene_path, progress)
+			var res := ResourceLoader.load_threaded_get_status(p_scene_path, progress)
 			if res != ResourceLoader.THREAD_LOAD_IN_PROGRESS:
 				break;
 
 			$LoadingScreen.progress = progress[0]
 			await get_tree().create_timer(0.1).timeout
 
-		# Handle load error
-		if res != ResourceLoader.THREAD_LOAD_LOADED:
-			# Report the error to the log and console
-			push_error("Error ", res, " loading resource ", p_scene_path)
+		# Get the loaded scene
+		new_scene = ResourceLoader.load_threaded_get(p_scene_path)
 
-			# Halt if running in the debugger
-			# gdlint:ignore=expression-not-assigned
-			breakpoint
+	# Wait for user to be ready
+	if prompt_for_continue:
+		$LoadingScreen.enable_press_to_continue = true
+		await $LoadingScreen.continue_pressed
 
-			# Terminate with a non-zero error code to indicate failure
-			get_tree().quit(1)
+	# Fade to black
+	if _tween:
+		_tween.kill()
+	_tween = get_tree().create_tween()
+	_tween.tween_method(set_fade, 0.0, 1.0, 1.0)
+	await _tween.finished
 
-		# Wait for user to be ready
-		if prompt_for_continue:
-			$LoadingScreen.enable_press_to_continue = true
-			await $LoadingScreen.continue_pressed
+	# Hide our loading screen
+	$LoadingScreen.follow_camera = false
+	$LoadingScreen.visible = false
 
-		# Fade to black
-		if _tween:
-			_tween.kill()
-		_tween = get_tree().create_tween()
-		_tween.tween_method(set_fade, 0.0, 1.0, 1.0)
-		await _tween.finished
-
-		# Hide our loading screen
-		$LoadingScreen.follow_camera = false
-		$LoadingScreen.visible = false
-		xr_origin.set_process_internal(false)
-
-	# Get the loaded scene
-	var new_scene : PackedScene = ResourceLoader.load_threaded_get(p_scene_path)
+	# Turn off internal process on our FPController, the internal process
+	# of our XROrigin3D will submit its positioning data to the XRServer.
+	# With two XROrigin3D nodes we'll get competing data.
+	xr_origin.set_process_internal(false)
 
 	# Setup our new scene
 	current_scene = new_scene.instantiate()
@@ -246,8 +217,8 @@ func load_scene(p_scene_path : String, user_data = null) -> void:
 
 	# We create a small delay here to give tracking some time to update our nodes...
 	await get_tree().create_timer(0.1).timeout
-	current_scene.scene_loaded(user_data)
-	scene_loaded.emit(current_scene, user_data)
+	current_scene.scene_loaded()
+	emit_signal("scene_loaded", current_scene)
 
 	# Fade to visible
 	if _tween:
@@ -256,19 +227,23 @@ func load_scene(p_scene_path : String, user_data = null) -> void:
 	_tween.tween_method(set_fade, 1.0, 0.0, 1.0)
 	await _tween.finished
 
-	# Report new scene visible
-	current_scene.scene_visible(user_data)
-	scene_visible.emit(current_scene, user_data)
+	current_scene.scene_visible()
+	emit_signal("scene_visible", current_scene)
 
 
-## This method sets the fade-alpha for scene transitions. The [param p_value]
-## parameter must be in the range [0.0 - 1.0].
+## Fade
 ##
 ## Our fade object allows us to black out the screen for transitions.
 ## Note that our AABB is set to HUGE so it should always be rendered
 ## unless hidden.
 func set_fade(p_value : float):
-	XRToolsFade.set_fade("staging", Color(0, 0, 0, p_value))
+	if p_value == 0.0:
+		$Fade.visible = false
+	else:
+		var material : ShaderMaterial = $Fade.get_surface_override_material(0)
+		if material:
+			material.set_shader_parameter("alpha", p_value)
+		$Fade.visible = true
 
 
 func _add_signals(p_scene : XRToolsSceneBase):
@@ -287,12 +262,12 @@ func _on_exit_to_main_menu():
 	load_scene(main_scene)
 
 
-func _on_load_scene(p_scene_path : String, user_data):
-	load_scene(p_scene_path, user_data)
+func _on_load_scene(p_scene_path : String):
+	load_scene(p_scene_path)
 
 
-func _on_reset_scene(user_data):
-	load_scene(current_scene_path, user_data)
+func _on_reset_scene():
+	load_scene(current_scene_path)
 
 
 func _on_StartXR_xr_started():

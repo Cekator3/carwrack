@@ -4,3 +4,4 @@
 
 [node name="MovementDirect" type="Node" groups=["movement_providers"]]
 script = ExtResource("1")
+dead_zone = null

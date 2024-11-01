@@ -23,27 +23,27 @@ func _ready():
 		add_child(Marker3D.new())
 
 
-## Evaluate fitness of the proposed grab, with 0.0 for not allowed.
-func can_grab(grabber : Node3D, current : XRToolsGrabPoint) -> float:
-	# Skip if not enabled or current grab
-	if not enabled or current:
-		return 0.0
+## Test if a grabber can grab by this grab-point
+func can_grab(_grabber : Node) -> bool:
+	# Skip if not enabled
+	if not enabled:
+		return false
 
 	# Ensure the pickup is valid
-	if not is_instance_valid(grabber):
-		return 0.0
+	if not is_instance_valid(_grabber):
+		return false
 
 	# Ensure the grabber is a snap-zone
-	if not grabber is XRToolsSnapZone:
-		return 0.0
+	if not _grabber is XRToolsSnapZone:
+		return false
 
 	# Refuse if the grabber is not in the required group
-	if not require_group.is_empty() and not grabber.is_in_group(require_group):
-		return 0.0
+	if not require_group.is_empty() and not _grabber.is_in_group(require_group):
+		return false
 
 	# Refuse if the grabber is in the excluded group
-	if not exclude_group.is_empty() and grabber.is_in_group(exclude_group):
-		return 0.0
+	if not exclude_group.is_empty() and _grabber.is_in_group(exclude_group):
+		return false
 
-	# Return the distance-weighted fitness
-	return _weight(grabber)
+	# Allow the grab
+	return true
