@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://clc5dre31iskm" path="res://addons/godot-xr-tools/xr/start_xr.tscn" id="4_htx0x"]
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_pdrn5"]
-auto_exposure_enabled = true
 
 [node name="SceneManager" type="Node"]
 script = ExtResource("1_p4itr")

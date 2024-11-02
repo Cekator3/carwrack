@@ -1,0 +1,41 @@
+[gd_scene load_steps=3 format=3 uid="uid://cd6n1jqdvhkvs"]
+
+[ext_resource type="Script" path="res://scenes/realistic_vehicle/raycast_wheel/raycast_wheel.gd" id="1_pvv2t"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_du5rm"]
+top_radius = 0.305
+bottom_radius = 0.305
+height = 0.25
+
+[node name="RaycastWheel" type="RayCast3D"]
+script = ExtResource("1_pvv2t")
+
+[node name="Geometry" type="MeshInstance3D" parent="."]
+
+[node name="Animation" type="Marker3D" parent="."]
+
+[node name="Camber" type="Marker3D" parent="Animation"]
+
+[node name="Wheel" type="Marker3D" parent="Animation/Camber"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Animation/Camber/Wheel"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("CylinderMesh_du5rm")
+
+[node name="Fixed" type="Marker3D" parent="Animation"]
+
+[node name="FixedSteer" type="Marker3D" parent="Animation"]
+
+[node name="FixedSteerCamber" type="Marker3D" parent="Animation"]
+
+[node name="FixedCamber" type="Marker3D" parent="Animation"]
+
+[node name="FixedAxle" type="Marker3D" parent="Animation"]
+
+[node name="Velocity" type="Marker3D" parent="."]
+
+[node name="Step" type="Marker3D" parent="Velocity"]
+
+[node name="Velocity2" type="Marker3D" parent="."]
+
+[node name="Step" type="Marker3D" parent="Velocity2"]

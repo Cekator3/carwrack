@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bhyhuxerwl6lf"]
+
+[ext_resource type="Script" path="res://scenes/realistic_vehicle/realistic_vehicle.gd" id="1_ca1f4"]
+
+[node name="RealisticVehicle" type="RigidBody3D"]
+script = ExtResource("1_ca1f4")
