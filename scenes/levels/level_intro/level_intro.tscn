@@ -1,7 +1,35 @@
-[gd_scene load_steps=6 format=3 uid="uid://co7umjbsxhmjr"]
+[gd_scene load_steps=30 format=3 uid="uid://co7umjbsxhmjr"]
 
 [ext_resource type="Texture2D" uid="uid://bkvut1o1dk3fu" path="res://addons/kenney_prototype_textures/light/texture_07.png" id="1_6jp2m"]
+[ext_resource type="Script" path="res://scenes/realistic_vehicle/other_class/ground_surface_variables.gd" id="1_aq3li"]
 [ext_resource type="PackedScene" uid="uid://ctgv8kggivklc" path="res://scenes/cars/ferrari_550/ferrari_550.tscn" id="2_8hkvf"]
+[ext_resource type="Script" path="res://scenes/realistic_vehicle/other_class/surface_vars.gd" id="2_wj4pn"]
+[ext_resource type="Script" path="res://scenes/realistic_vehicle/other_class/controls/controls.gd" id="3_41g4s"]
+[ext_resource type="Script" path="res://scenes/realistic_vehicle/other_class/assist/gear_assistant.gd" id="4_6vpci"]
+[ext_resource type="Script" path="res://scenes/realistic_vehicle/other_class/transmission/manual.gd" id="5_u84b3"]
+[ext_resource type="Script" path="res://scenes/realistic_vehicle/other_class/transmission/auto.gd" id="6_y2gy1"]
+[ext_resource type="Script" path="res://scenes/realistic_vehicle/other_class/transmission/cvt.gd" id="7_tcugk"]
+[ext_resource type="Script" path="res://scenes/realistic_vehicle/other_class/active_safety/abs.gd" id="8_frod6"]
+[ext_resource type="Script" path="res://scenes/realistic_vehicle/other_class/active_safety/esp.gd" id="9_u63ck"]
+[ext_resource type="Script" path="res://scenes/realistic_vehicle/other_class/active_safety/btcs.gd" id="10_70q2p"]
+[ext_resource type="Script" path="res://scenes/realistic_vehicle/other_class/active_safety/ttcs.gd" id="11_xis5g"]
+[ext_resource type="Script" path="res://scenes/realistic_vehicle/other_class/active_safety/torque.gd" id="12_0htlr"]
+
+[sub_resource type="Resource" id="Resource_g555c"]
+script = ExtResource("2_wj4pn")
+wear_rate = 1.0
+heat_rate = 1.0
+fore_friction = 0.0
+fore_stiffness = 0.0
+particle_looseness = 0.0
+ground_bump_height = 0.0
+ground_bump_frequency = 0.0
+ground_bump_frequency_random = 0.0
+ground_friction = 1.0
+ground_stiffness = 1.0
+ground_builduprate = 0.0
+ground_dirt = false
+drag = 0.0
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_7t3bf"]
 points = PackedVector3Array(25.3919, 0.690476, 25.3919, -25.3919, -0.896825, -25.3919, -25.3919, 0.690476, -25.3919, 25.3919, -0.896825, -25.3919, -25.3919, -0.896825, 25.3919, -25.3919, 0.690476, 25.3919, 25.3919, 0.690476, -25.3919, 25.3919, -0.896825, 25.3919)
@@ -13,10 +41,152 @@ uv1_triplanar = true
 [sub_resource type="BoxMesh" id="BoxMesh_km1n7"]
 size = Vector3(50, 1, 50)
 
+[sub_resource type="Resource" id="Resource_y08d3"]
+script = ExtResource("3_41g4s")
+ControlMapName = "Default"
+ActionNameShiftUp = &"shiftup"
+ActionNameShiftDown = &"shiftdown"
+ShiftingAssistance = 2
+UseAnalogSteering = false
+SteerSensitivity = 1.0
+ActionNameSteerLeft = &"left"
+ActionNameSteerRight = &"right"
+KeyboardSteerSpeed = 0.025
+KeyboardReturnSpeed = 0.05
+KeyboardCompensateSpeed = 0.1
+SteerAmountDecay = 0.015
+EnableSteeringAssistance = true
+SteeringAssistance = 1.0
+SteeringAssistanceAngular = 0.12
+LooseSteering = false
+ActionNameThrottle = &"gas"
+IsThrottleDigital = true
+OnThrottleRate = 0.2
+OffThrottleRate = 0.2
+MaxThrottle = 1.0
+ActionNameBrake = &"brake"
+IsBrakeDigital = true
+OnBrakeRate = 0.05
+OffBrakeRate = 0.1
+MaxBrake = 1.0
+ActionNameHandbrake = &"handbrake"
+IsHandbrakeDigital = true
+OnHandbrakeRate = 0.2
+OffHandbrakeRate = 0.2
+MaxHandbrake = 1.0
+ActionNameClutch = &"clutch"
+IsClutchDigital = true
+OnClutchRate = 0.2
+OffClutchRate = 0.2
+MaxClutch = 1.0
+
+[sub_resource type="Resource" id="Resource_ge8al"]
+script = ExtResource("4_6vpci")
+shift_delay = 20
+speed_influence = 0.944087
+down_RPM = 6000.0
+upshift_RPM = 6200.0
+clutch_out_RPM = 3000.0
+input_delay = 5
+
+[sub_resource type="Resource" id="Resource_gc5fn"]
+script = ExtResource("5_u84b3")
+FinalDriveRatio = 4.25
+GearRatios = Array[float]([3.25, 1.894, 1.259, 0.937, 0.771])
+ReverseRatio = 3.153
+RatioMult = 9.5
+StressFactor = 1.0
+GearGap = 60.0
+ActionNameShiftUp = &""
+ActionNameShiftDown = &""
+ClutchOutRPM = 0.0
+ShiftDelay = 0.0
+InputDelay = 0.0
+AssistUpShiftRPM = 0.0
+AssistDownShiftRPM = 0.0
+
+[sub_resource type="Resource" id="Resource_tuqgo"]
+script = ExtResource("6_y2gy1")
+shift_rpm = 6500.0
+downshift_thresh = 300.0
+throt_eff_thresh = 0.5
+engage_rpm_thresh = 0.0
+engage_rpm = 4000.0
+FinalDriveRatio = 4.25
+GearRatios = Array[float]([3.25, 1.894, 1.259, 0.937, 0.771])
+ReverseRatio = 3.153
+RatioMult = 9.5
+
+[sub_resource type="Resource" id="Resource_78ftn"]
+script = ExtResource("7_tcugk")
+throt_eff_thresh = 0.75
+accel_rate = 0.025
+iteration_1 = 0.9
+iteration_2 = 500.0
+iteration_3 = 2.0
+iteration_4 = 0.2
+engage_rpm_thresh = 0.0
+engage_rpm = 0.0
+a_throt_eff_thresh = 0.0
+
+[sub_resource type="Resource" id="Resource_c6vqt"]
+script = ExtResource("8_frod6")
+threshold = 2500.0
+pump_time = 1
+speed_pre_active = 10.0
+enabled = true
+pump_force = 0.5
+lat_thresh = 500.0
+lat_pump_time = 2.0
+
+[sub_resource type="Resource" id="Resource_it61m"]
+script = ExtResource("9_u63ck")
+stab_thresh = 0.5
+stab_rate = 1.5
+yaw_thresh = 1.0
+yaw_rate = 3.0
+enabled = false
+
+[sub_resource type="Resource" id="Resource_ad1wc"]
+script = ExtResource("10_70q2p")
+threshold = 10.0
+sensitivity = 0.05
+enabled = true
+
+[sub_resource type="Resource" id="Resource_2jw7e"]
+script = ExtResource("11_xis5g")
+threshold = 5.0
+sensitivity = 1.0
+enabled = false
+
+[sub_resource type="Resource" id="Resource_sow6u"]
+script = ExtResource("12_0htlr")
+BuildUpTorque = 0.0035
+TorqueRise = 30.0
+RiseRPM = 1000.0
+OffsetTorque = 110.0
+FloatRate = 0.1
+DeclineRate = 1.5
+DeclineRPM = 3500.0
+DeclineSharpness = 1.0
+
+[sub_resource type="Resource" id="Resource_dvxi6"]
+script = ExtResource("12_0htlr")
+BuildUpTorque = 0.0
+TorqueRise = 60.0
+RiseRPM = 1000.0
+OffsetTorque = 70.0
+FloatRate = 0.1
+DeclineRate = 2.0
+DeclineRPM = 5000.0
+DeclineSharpness = 1.0
+
 [node name="LevelIntro" type="Node3D"]
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.536972, 0)
+script = ExtResource("1_aq3li")
+ground_vars = SubResource("Resource_g555c")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_7t3bf")
@@ -32,10 +202,25 @@ light_indirect_energy = 16.0
 shadow_enabled = true
 
 [node name="Ferrari550" parent="." instance=ExtResource("2_8hkvf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.12119, 0.1275, -1.56104)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.12119, 3.63743, -1.56104)
+car_controls = SubResource("Resource_y08d3")
+GearAssist = SubResource("Resource_ge8al")
+Transmission = SubResource("Resource_gc5fn")
+AutoSettings = SubResource("Resource_tuqgo")
+CVTSettings = SubResource("Resource_78ftn")
+ABS = SubResource("Resource_c6vqt")
+ESP = SubResource("Resource_it61m")
+BTCS = SubResource("Resource_ad1wc")
+TTCS = SubResource("Resource_2jw7e")
+torque_norm = SubResource("Resource_sow6u")
+torque_vvt = SubResource("Resource_dvxi6")
 
 [node name="Camera3D" type="Camera3D" parent="Ferrari550"]
-transform = Transform3D(0.92388, -0.121427, 0.362908, 0, 0.948324, 0.317305, -0.382683, -0.293151, 0.876137, 1.49722, 0.955005, 4.27604)
+transform = Transform3D(-0.930418, 0.0930026, -0.354505, 0, 0.967268, 0.253758, 0.366501, 0.236101, -0.899963, -2.028, 1.02, -5.159)
 current = true
 fov = 80.0
 far = 1000.0
+
+[node name="XROrigin3D" type="XROrigin3D" parent="."]
+
+[node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D"]

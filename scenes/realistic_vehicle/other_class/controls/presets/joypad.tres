@@ -1,0 +1,41 @@
+[gd_resource type="Resource" script_class="ViVeCarControls" load_steps=2 format=3 uid="uid://r5c2gxfbk21k"]
+
+[ext_resource type="Script" path="res://scenes/realistic_vehicle/other_class/controls/controls.gd" id="1_pw0a5"]
+
+[resource]
+script = ExtResource("1_pw0a5")
+Use_Global_Control_Settings = false
+ActionNameShiftUp = &"shiftup"
+ActionNameShiftDown = &"shiftdown"
+UseAnalogSteering = true
+SteerSensitivity = 1.0
+ActionNameSteerLeft = &"left"
+ActionNameSteerRight = &"right"
+KeyboardSteerSpeed = 0.025
+KeyboardReturnSpeed = 0.05
+KeyboardCompensateSpeed = 0.1
+SteerAmountDecay = 0.015
+EnableSteeringAssistance = false
+SteeringAssistance = 1.0
+SteeringAssistanceAngular = 0.12
+LooseSteering = false
+ActionNameThrottle = &"gas"
+IsThrottleDigital = false
+OnThrottleRate = 0.2
+OffThrottleRate = 0.2
+MaxThrottle = 1.0
+ActionNameBrake = &"brake"
+IsBrakeDigital = true
+OnBrakeRate = 0.05
+OffBrakeRate = 0.1
+MaxBrake = 1.0
+ActionNameHandbrake = &"handbrake"
+IsHandbrakeDigital = false
+OnHandbrakeRate = 0.2
+OffHandbrakeRate = 0.2
+MaxHandbrake = 1.0
+ActionNameClutch = &"clutch"
+IsClutchDigital = true
+OnClutchRate = 0.2
+OffClutchRate = 0.2
+MaxClutch = 1.0

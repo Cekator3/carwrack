@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://ctgv8kggivklc"]
+[gd_scene load_steps=39 format=3 uid="uid://ctgv8kggivklc"]
 
 [ext_resource type="Script" path="res://scenes/realistic_vehicle/realistic_vehicle.gd" id="1_sqpvx"]
 [ext_resource type="Script" path="res://scenes/realistic_vehicle/other_class/controls/controls.gd" id="2_i41ny"]
@@ -23,7 +23,7 @@ ActionNameShiftUp = &"shiftup"
 ActionNameShiftDown = &"shiftdown"
 ShiftingAssistance = 2
 UseAnalogSteering = false
-SteerSensitivity = 2.0
+SteerSensitivity = 1.0
 ActionNameSteerLeft = &"left"
 ActionNameSteerRight = &"right"
 KeyboardSteerSpeed = 0.025
@@ -31,8 +31,8 @@ KeyboardReturnSpeed = 0.05
 KeyboardCompensateSpeed = 0.1
 SteerAmountDecay = 0.015
 EnableSteeringAssistance = true
-SteeringAssistance = 0.0
-SteeringAssistanceAngular = 0.05
+SteeringAssistance = 1.0
+SteeringAssistanceAngular = 0.12
 LooseSteering = false
 ActionNameThrottle = &"gas"
 IsThrottleDigital = true
@@ -177,16 +177,16 @@ Geometry4 = 0.0
 
 [sub_resource type="Resource" id="Resource_apj14"]
 script = ExtResource("15_i37e4")
-SpringStiffness = 55.0
-CompressionDampening = 4.0
-ReboundDampening = 4.0
+SpringStiffness = 47.0
+CompressionDampening = 3.5
+ReboundDampening = 3.5
 Deadzone = 0.0
 MaxCompression = 0.5
 AntiRollStiffness = 0.5
 AntiRollElasticity = 0.1
 InclineArea = 0.2
 ImpactForce = 1.5
-RestPosition = -1.5
+RestPosition = -2.7
 
 [sub_resource type="Resource" id="Resource_3to4p"]
 script = ExtResource("14_7l738")
@@ -195,6 +195,19 @@ Camber_Gain = 1.0
 Lateral_Mount_Pos = 0.0
 Geometry4 = 0.0
 
+[sub_resource type="Resource" id="Resource_dy643"]
+script = ExtResource("15_i37e4")
+SpringStiffness = 47.0
+CompressionDampening = 3.5
+ReboundDampening = 3.5
+Deadzone = 0.0
+MaxCompression = 0.5
+AntiRollStiffness = 0.5
+AntiRollElasticity = 0.1
+InclineArea = 0.2
+ImpactForce = 1.5
+RestPosition = -2.7
+
 [sub_resource type="Resource" id="Resource_qux0g"]
 script = ExtResource("14_7l738")
 Vertical_Mount = 1.15
@@ -202,12 +215,38 @@ Camber_Gain = 1.0
 Lateral_Mount_Pos = 0.0
 Geometry4 = 0.0
 
+[sub_resource type="Resource" id="Resource_lwchn"]
+script = ExtResource("15_i37e4")
+SpringStiffness = 47.0
+CompressionDampening = 3.5
+ReboundDampening = 3.5
+Deadzone = 0.0
+MaxCompression = 0.5
+AntiRollStiffness = 0.5
+AntiRollElasticity = 0.1
+InclineArea = 0.2
+ImpactForce = 1.5
+RestPosition = -2.7
+
 [sub_resource type="Resource" id="Resource_fynu1"]
 script = ExtResource("14_7l738")
 Vertical_Mount = 1.15
 Camber_Gain = 1.0
 Lateral_Mount_Pos = 0.0
 Geometry4 = 0.0
+
+[sub_resource type="Resource" id="Resource_jxl70"]
+script = ExtResource("15_i37e4")
+SpringStiffness = 47.0
+CompressionDampening = 3.5
+ReboundDampening = 3.5
+Deadzone = 0.0
+MaxCompression = 0.5
+AntiRollStiffness = 0.5
+AntiRollElasticity = 0.1
+InclineArea = 0.2
+ImpactForce = 1.5
+RestPosition = -2.7
 
 [node name="Ferrari550" type="RigidBody3D"]
 collision_layer = 2
@@ -217,9 +256,7 @@ continuous_cd = true
 script = ExtResource("1_sqpvx")
 car_controls = SubResource("Resource_jlhba")
 GearAssist = SubResource("Resource_wmcly")
-Powered_Wheels = Array[String](["LeftFront", "RightFront"])
 Transmission = SubResource("Resource_iel18")
-TransmissionType = 1
 AutoSettings = SubResource("Resource_fyaxs")
 CVTSettings = SubResource("Resource_jkefq")
 ABS = SubResource("Resource_3e51b")
@@ -233,95 +270,70 @@ torque_vvt = SubResource("Resource_5xh8x")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.178705, 0)
 
 [node name="FerrariModel" parent="." instance=ExtResource("2_s175c")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.344264, 0)
 
 [node name="CollisionCar" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, -0.344264, 0)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_hvkbh")
 
 [node name="Trash" type="Node" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Trash"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.293761, 0.0188637)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.670071, 0.0188637)
 shape = SubResource("BoxShape3D_bxd7d")
 disabled = true
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="Trash"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.5, 0.293761, -0.069)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.5, 0.670071, -0.069)
 shape = SubResource("BoxShape3D_phyqu")
 disabled = true
 
 [node name="CollisionShape3D3" type="CollisionShape3D" parent="Trash"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.5, 0.293761, -0.069)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.5, 0.670071, -0.069)
 shape = SubResource("BoxShape3D_phyqu")
 disabled = true
 
 [node name="CollisionShape3D4" type="CollisionShape3D" parent="Trash"]
-transform = Transform3D(0.862884, -4.41836e-08, 0.505401, 6.56773e-15, -1, -8.74228e-08, 0.505401, 7.54358e-08, -0.862884, 0.549788, 0.293761, 1.76457)
+transform = Transform3D(0.862884, -4.41836e-08, 0.505401, 6.56773e-15, -1, -8.74228e-08, 0.505401, 7.54358e-08, -0.862884, 0.549788, 0.670071, 1.76457)
 shape = SubResource("BoxShape3D_nvhs7")
 disabled = true
 
 [node name="CollisionShape3D5" type="CollisionShape3D" parent="Trash"]
-transform = Transform3D(-0.862514, 7.54033e-08, 0.506034, -8.74228e-08, -1, 0, 0.506034, -4.42389e-08, 0.862514, -0.551922, 0.293761, 1.76457)
+transform = Transform3D(-0.862514, 7.54033e-08, 0.506034, -8.74228e-08, -1, 0, 0.506034, -4.42389e-08, 0.862514, -0.551922, 0.670071, 1.76457)
 shape = SubResource("BoxShape3D_nvhs7")
 disabled = true
 
 [node name="CollisionShape3D6" type="CollisionShape3D" parent="Trash"]
-transform = Transform3D(-0.958233, 2.5002e-08, -0.28599, 1.01588e-14, -1, -8.74228e-08, -0.28599, -8.37714e-08, 0.958233, -0.634606, 0.293761, -1.71269)
+transform = Transform3D(-0.958233, 2.5002e-08, -0.28599, 1.01588e-14, -1, -8.74228e-08, -0.28599, -8.37714e-08, 0.958233, -0.634606, 0.670071, -1.71269)
 shape = SubResource("BoxShape3D_nvhs7")
 disabled = true
 
 [node name="CollisionShape3D7" type="CollisionShape3D" parent="Trash"]
-transform = Transform3D(-0.958323, -8.37792e-08, 0.285688, 8.74228e-08, -1, 0, 0.285688, 2.49757e-08, 0.958323, 0.632, 0.293761, -1.713)
+transform = Transform3D(-0.958323, -8.37792e-08, 0.285688, 8.74228e-08, -1, 0, 0.285688, 2.49757e-08, 0.958323, 0.632, 0.670071, -1.713)
 shape = SubResource("BoxShape3D_nvhs7")
 disabled = true
 
-[node name="RightFront" parent="." node_paths=PackedStringArray("Differed_Wheel_Export", "SwayBarConnection") instance=ExtResource("3_u66m1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.85, 0, 1.2)
-target_position = Vector3(0, -1.5, 0)
-Differed_Wheel_Export = NodePath("../LeftFront")
-SwayBarConnection = NodePath("../LeftFront")
+[node name="RaycastWheel3" parent="." instance=ExtResource("3_u66m1")]
+target_position = Vector3(0, -2.7, 0)
 AxleSettings = SubResource("Resource_kk1qo")
 Suspension = SubResource("Resource_apj14")
-Caster = 1.0
-B_Torque = 30.0
-B_Bias = 0.8
 
-[node name="LeftFront" parent="." node_paths=PackedStringArray("Differed_Wheel_Export", "SwayBarConnection") instance=ExtResource("3_u66m1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.85, 0, 1.2)
-target_position = Vector3(0, -1.5, 0)
-Differed_Wheel_Export = NodePath("../RightFront")
-SwayBarConnection = NodePath("../RightFront")
+[node name="RaycastWheel4" parent="." instance=ExtResource("3_u66m1")]
+target_position = Vector3(0, -2.7, 0)
 AxleSettings = SubResource("Resource_3to4p")
-Suspension = SubResource("Resource_apj14")
-Caster = 1.0
-B_Torque = 30.0
-B_Bias = 0.8
+Suspension = SubResource("Resource_dy643")
 
-[node name="RightRear" parent="." node_paths=PackedStringArray("SwayBarConnection") instance=ExtResource("3_u66m1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.85, 0, -1.35)
-target_position = Vector3(0, -1.5, 0)
-Steer = false
-SwayBarConnection = NodePath("../LeftRear")
+[node name="RaycastWheel" parent="." instance=ExtResource("3_u66m1")]
+target_position = Vector3(0, -2.7, 0)
 AxleSettings = SubResource("Resource_qux0g")
-Suspension = SubResource("Resource_apj14")
-B_Torque = 30.0
-B_Bias = 0.2
-HB_Bias = 1.0
+Suspension = SubResource("Resource_lwchn")
 
-[node name="LeftRear" parent="." node_paths=PackedStringArray("SwayBarConnection") instance=ExtResource("3_u66m1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.85, 0, -1.35)
-target_position = Vector3(0, -1.5, 0)
-Steer = false
-SwayBarConnection = NodePath("../RightRear")
+[node name="RaycastWheel2" parent="." instance=ExtResource("3_u66m1")]
+target_position = Vector3(0, -2.7, 0)
 AxleSettings = SubResource("Resource_fynu1")
-Suspension = SubResource("Resource_apj14")
-B_Torque = 30.0
-B_Bias = 0.2
-HB_Bias = 1.0
+Suspension = SubResource("Resource_jxl70")
 
 [editable path="FerrariModel"]
-[editable path="RightFront"]
-[editable path="LeftFront"]
-[editable path="RightRear"]
-[editable path="LeftRear"]
+[editable path="RaycastWheel3"]
+[editable path="RaycastWheel4"]
+[editable path="RaycastWheel"]
+[editable path="RaycastWheel2"]

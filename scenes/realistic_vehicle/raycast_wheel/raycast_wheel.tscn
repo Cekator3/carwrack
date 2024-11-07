@@ -1,6 +1,50 @@
-[gd_scene load_steps=3 format=3 uid="uid://cd6n1jqdvhkvs"]
+[gd_scene load_steps=11 format=3 uid="uid://cd6n1jqdvhkvs"]
 
 [ext_resource type="Script" path="res://scenes/realistic_vehicle/raycast_wheel/raycast_wheel.gd" id="1_pvv2t"]
+[ext_resource type="Script" path="res://scenes/realistic_vehicle/other_class/tyre_settings.gd" id="2_34eiq"]
+[ext_resource type="Script" path="res://scenes/realistic_vehicle/other_class/wheel_compound.gd" id="3_d52kr"]
+[ext_resource type="Script" path="res://scenes/realistic_vehicle/other_class/axles.gd" id="4_5m6th"]
+[ext_resource type="Script" path="res://scenes/realistic_vehicle/other_class/suspension.gd" id="5_v5d4n"]
+
+[sub_resource type="Resource" id="Resource_kiru1"]
+script = ExtResource("2_34eiq")
+GripInfluence = 1.0
+Width_mm = 185
+Aspect_Ratio = 60.0
+Rim_Size_in = 14
+AirPressure = 30.0
+
+[sub_resource type="Resource" id="Resource_lkdbh"]
+script = ExtResource("3_d52kr")
+OptimumTemp = 50.0
+Stiffness = 1.0
+TractionFactor = 1.0
+DeformFactor = 1.0
+ForeFriction = 0.125
+ForeStiffness = 0.0
+GroundDragAffection = 1.0
+BuildupAffection = 1.0
+CoolRate = 7.5e-05
+
+[sub_resource type="Resource" id="Resource_2qyrp"]
+script = ExtResource("4_5m6th")
+Vertical_Mount = 1.15
+Camber_Gain = 1.0
+Lateral_Mount_Pos = 0.0
+Geometry4 = 0.0
+
+[sub_resource type="Resource" id="Resource_48ieo"]
+script = ExtResource("5_v5d4n")
+SpringStiffness = 47.0
+CompressionDampening = 3.5
+ReboundDampening = 3.5
+Deadzone = 0.0
+MaxCompression = 0.5
+AntiRollStiffness = 0.5
+AntiRollElasticity = 0.1
+InclineArea = 0.2
+ImpactForce = 1.5
+RestPosition = -0.5
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_du5rm"]
 top_radius = 0.305
@@ -8,7 +52,12 @@ bottom_radius = 0.305
 height = 0.25
 
 [node name="RaycastWheel" type="RayCast3D"]
+target_position = Vector3(0, -0.5, 0)
 script = ExtResource("1_pvv2t")
+TyreSettings = SubResource("Resource_kiru1")
+CompoundSettings = SubResource("Resource_lkdbh")
+AxleSettings = SubResource("Resource_2qyrp")
+Suspension = SubResource("Resource_48ieo")
 
 [node name="Geometry" type="MeshInstance3D" parent="."]
 
