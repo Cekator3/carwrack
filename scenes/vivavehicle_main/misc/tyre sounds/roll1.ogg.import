@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://7pqd0tyxcjgj"
+path="res://.godot/imported/roll1.ogg-dcc5e56c51c1b4ef58e0f1c9271827a6.oggvorbisstr"
+
+[deps]
+
+source_file="res://scenes/vivavehicle_main/misc/tyre sounds/roll1.ogg"
+dest_files=["res://.godot/imported/roll1.ogg-dcc5e56c51c1b4ef58e0f1c9271827a6.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cjo62602lou1c"
+path="res://.godot/imported/spool.ogg-5d9bb41294e7bb2c60e9ba3bc3a9d6ff.oggvorbisstr"
+
+[deps]
+
+source_file="res://scenes/vivavehicle_main/misc/mechanical sounds/spool.ogg"
+dest_files=["res://.godot/imported/spool.ogg-5d9bb41294e7bb2c60e9ba3bc3a9d6ff.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

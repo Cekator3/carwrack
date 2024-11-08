@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ViVeABS" load_steps=2 format=3 uid="uid://c7ge6xss2h2h2"]
+
+[ext_resource type="Script" path="res://scenes/vivavehicle_main/car_stats/abs.gd" id="1_p3fi8"]
+
+[resource]
+script = ExtResource("1_p3fi8")
+threshold = 2500.0
+pump_time = 1
+speed_pre_active = 10.0
+enabled = true
+pump_force = 0.5
+lat_thresh = 500.0
+lat_pump_time = 2.0

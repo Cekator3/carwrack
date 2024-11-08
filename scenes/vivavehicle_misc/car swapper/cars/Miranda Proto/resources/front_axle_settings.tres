@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ViVeWheelAxle" load_steps=2 format=3 uid="uid://drj5m6648v8gj"]
+
+[ext_resource type="Script" path="res://scenes/vivavehicle_main/wheel_stats/axles.gd" id="1_82faw"]
+
+[resource]
+script = ExtResource("1_82faw")
+Vertical_Mount = 1.1
+Camber_Gain = 1.0
+Lateral_Mount_Pos = 0.0
+Geometry4 = 0.0

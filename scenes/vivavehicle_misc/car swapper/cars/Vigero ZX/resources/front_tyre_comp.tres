@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="TyreCompoundSettings" load_steps=2 format=3 uid="uid://bifxfrn15mqoh"]
+
+[ext_resource type="Script" path="res://scenes/vivavehicle_main/wheel_stats/wheel_compound.gd" id="1_6npwy"]
+
+[resource]
+script = ExtResource("1_6npwy")
+OptimumTemp = 50.0
+Stiffness = 1.0
+TractionFactor = 0.5
+DeformFactor = 1.0
+ForeFriction = 0.75
+ForeStiffness = 0.0
+GroundDragAffection = 1.0
+BuildupAffection = 1.0
+CoolRate = 7.5e-05

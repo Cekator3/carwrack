@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cdtlpojo2w58a"
+path="res://.godot/imported/5.ogg-4553ec9ee2a173f146e299f0c82d2d04.oggvorbisstr"
+
+[deps]
+
+source_file="res://scenes/vivavehicle_misc/car swapper/cars/Miranda Proto/assets/5.ogg"
+dest_files=["res://.godot/imported/5.ogg-4553ec9ee2a173f146e299f0c82d2d04.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

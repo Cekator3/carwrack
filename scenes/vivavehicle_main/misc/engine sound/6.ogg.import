@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://c01defmpipfi"
+path="res://.godot/imported/6.ogg-ab5f8b0d22a7400ca669e3eeef031978.oggvorbisstr"
+
+[deps]
+
+source_file="res://scenes/vivavehicle_main/misc/engine sound/6.ogg"
+dest_files=["res://.godot/imported/6.ogg-ab5f8b0d22a7400ca669e3eeef031978.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,20 +1,20 @@
 [gd_scene load_steps=36 format=3 uid="uid://ctgv8kggivklc"]
 
-[ext_resource type="Script" path="res://scenes/realistic_vehicle/realistic_vehicle.gd" id="1_sqpvx"]
-[ext_resource type="Script" path="res://scenes/realistic_vehicle/other_class/controls/controls.gd" id="2_i41ny"]
+[ext_resource type="Script" path="res://scenes/vivavehicle_main/car.gd" id="1_sqpvx"]
+[ext_resource type="Script" path="res://scenes/vivavehicle_main/car_stats/controls.gd" id="2_i41ny"]
 [ext_resource type="PackedScene" uid="uid://cxmmlgjm0vcpd" path="res://assets/models/ferrari_550_barchetta_2000_azzurro_hyperion/ferrari_model.tscn" id="2_s175c"]
-[ext_resource type="Script" path="res://scenes/realistic_vehicle/other_class/assist/gear_assistant.gd" id="3_pptqd"]
-[ext_resource type="PackedScene" uid="uid://cd6n1jqdvhkvs" path="res://scenes/realistic_vehicle/raycast_wheel/raycast_wheel.tscn" id="3_u66m1"]
-[ext_resource type="Script" path="res://scenes/realistic_vehicle/other_class/transmission/manual.gd" id="4_4rgs4"]
-[ext_resource type="Script" path="res://scenes/realistic_vehicle/other_class/transmission/auto.gd" id="5_jqvm8"]
-[ext_resource type="Script" path="res://scenes/realistic_vehicle/other_class/transmission/cvt.gd" id="6_04hp3"]
-[ext_resource type="Script" path="res://scenes/realistic_vehicle/other_class/active_safety/abs.gd" id="7_5pan1"]
-[ext_resource type="Script" path="res://scenes/realistic_vehicle/other_class/active_safety/esp.gd" id="8_lpt12"]
-[ext_resource type="Script" path="res://scenes/realistic_vehicle/other_class/active_safety/btcs.gd" id="9_2opvh"]
-[ext_resource type="Script" path="res://scenes/realistic_vehicle/other_class/active_safety/ttcs.gd" id="10_vbkfg"]
-[ext_resource type="Script" path="res://scenes/realistic_vehicle/other_class/active_safety/torque.gd" id="11_pponv"]
-[ext_resource type="Script" path="res://scenes/realistic_vehicle/other_class/axles.gd" id="14_7l738"]
-[ext_resource type="Script" path="res://scenes/realistic_vehicle/other_class/suspension.gd" id="15_i37e4"]
+[ext_resource type="Script" path="res://scenes/vivavehicle_main/car_stats/gear_assistant.gd" id="3_pptqd"]
+[ext_resource type="PackedScene" uid="uid://df2i30irlljkl" path="res://scenes/vivavehicle_main/wheel.tscn" id="3_u66m1"]
+[ext_resource type="Script" path="res://scenes/vivavehicle_main/car_stats/transmissions/manual.gd" id="4_4rgs4"]
+[ext_resource type="Script" path="res://scenes/vivavehicle_main/car_stats/transmissions/auto_settings.gd" id="5_jqvm8"]
+[ext_resource type="Script" path="res://scenes/vivavehicle_main/car_stats/transmissions/cvt.gd" id="6_04hp3"]
+[ext_resource type="Script" path="res://scenes/vivavehicle_main/car_stats/abs.gd" id="7_5pan1"]
+[ext_resource type="Script" path="res://scenes/vivavehicle_main/car_stats/esp.gd" id="8_lpt12"]
+[ext_resource type="Script" path="res://scenes/vivavehicle_main/car_stats/btcs.gd" id="9_2opvh"]
+[ext_resource type="Script" path="res://scenes/vivavehicle_main/car_stats/ttcs.gd" id="10_vbkfg"]
+[ext_resource type="Script" path="res://scenes/vivavehicle_main/car_stats/torque.gd" id="11_pponv"]
+[ext_resource type="Script" path="res://scenes/vivavehicle_main/wheel_stats/axles.gd" id="14_7l738"]
+[ext_resource type="Script" path="res://scenes/vivavehicle_main/wheel_stats/suspension.gd" id="15_i37e4"]
 
 [sub_resource type="Resource" id="Resource_jlhba"]
 script = ExtResource("2_i41ny")
@@ -186,7 +186,7 @@ AntiRollStiffness = 0.5
 AntiRollElasticity = 0.1
 InclineArea = 0.2
 ImpactForce = 1.5
-RestPosition = -1.5
+RestPosition = -2.7
 
 [sub_resource type="Resource" id="Resource_3to4p"]
 script = ExtResource("14_7l738")
@@ -233,7 +233,19 @@ torque_vvt = SubResource("Resource_5xh8x")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.178705, 0)
 
 [node name="FerrariModel" parent="." instance=ExtResource("2_s175c")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.344264, 0)
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, -0.344264, 0)
+
+[node name="Object_58" parent="FerrariModel/Ferrari 550 Barchetta Pininfarina 2000 by Alex_Ka_obj_cleaner_materialmerger_gles" index="56"]
+visible = false
+
+[node name="Object_59" parent="FerrariModel/Ferrari 550 Barchetta Pininfarina 2000 by Alex_Ka_obj_cleaner_materialmerger_gles" index="57"]
+visible = false
+
+[node name="Object_72" parent="FerrariModel/Ferrari 550 Barchetta Pininfarina 2000 by Alex_Ka_obj_cleaner_materialmerger_gles" index="70"]
+visible = false
+
+[node name="Object_73" parent="FerrariModel/Ferrari 550 Barchetta Pininfarina 2000 by Alex_Ka_obj_cleaner_materialmerger_gles" index="71"]
+visible = false
 
 [node name="CollisionCar" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, -0.344264, 0)
@@ -276,44 +288,34 @@ transform = Transform3D(-0.958323, -8.37792e-08, 0.285688, 8.74228e-08, -1, 0, 0
 shape = SubResource("BoxShape3D_nvhs7")
 disabled = true
 
-[node name="RightFront" parent="." node_paths=PackedStringArray("Differed_Wheel_Export", "SwayBarConnection") instance=ExtResource("3_u66m1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.85, 0, 1.2)
-target_position = Vector3(0, -1.5, 0)
-Differed_Wheel_Export = NodePath("../LeftFront")
-SwayBarConnection = NodePath("../LeftFront")
+[node name="RightFront" parent="." instance=ExtResource("3_u66m1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2, 1.68462, 3.6472)
 AxleSettings = SubResource("Resource_kk1qo")
 Suspension = SubResource("Resource_apj14")
 Caster = 1.0
 B_Torque = 30.0
 B_Bias = 0.8
 
-[node name="LeftFront" parent="." node_paths=PackedStringArray("Differed_Wheel_Export", "SwayBarConnection") instance=ExtResource("3_u66m1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.85, 0, 1.2)
-target_position = Vector3(0, -1.5, 0)
-Differed_Wheel_Export = NodePath("../RightFront")
-SwayBarConnection = NodePath("../RightFront")
+[node name="LeftFront" parent="." instance=ExtResource("3_u66m1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2, 1.68462, 3.647)
 AxleSettings = SubResource("Resource_3to4p")
 Suspension = SubResource("Resource_apj14")
 Caster = 1.0
 B_Torque = 30.0
 B_Bias = 0.8
 
-[node name="RightRear" parent="." node_paths=PackedStringArray("SwayBarConnection") instance=ExtResource("3_u66m1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.85, 0, -1.35)
-target_position = Vector3(0, -1.5, 0)
+[node name="RightRear" parent="." instance=ExtResource("3_u66m1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2, 1.68462, -4.15)
 Steer = false
-SwayBarConnection = NodePath("../LeftRear")
 AxleSettings = SubResource("Resource_qux0g")
 Suspension = SubResource("Resource_apj14")
 B_Torque = 30.0
 B_Bias = 0.2
 HB_Bias = 1.0
 
-[node name="LeftRear" parent="." node_paths=PackedStringArray("SwayBarConnection") instance=ExtResource("3_u66m1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.85, 0, -1.35)
-target_position = Vector3(0, -1.5, 0)
+[node name="LeftRear" parent="." instance=ExtResource("3_u66m1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2, 1.68462, -4.15)
 Steer = false
-SwayBarConnection = NodePath("../RightRear")
 AxleSettings = SubResource("Resource_fynu1")
 Suspension = SubResource("Resource_apj14")
 B_Torque = 30.0
@@ -321,7 +323,12 @@ B_Bias = 0.2
 HB_Bias = 1.0
 
 [editable path="FerrariModel"]
+[editable path="FerrariModel/untitled"]
 [editable path="RightFront"]
+[editable path="RightFront/animation/camber/smoke_dirt"]
 [editable path="LeftFront"]
+[editable path="LeftFront/animation/camber/smoke_dirt"]
 [editable path="RightRear"]
+[editable path="RightRear/animation/camber/smoke_dirt"]
 [editable path="LeftRear"]
+[editable path="LeftRear/animation/camber/smoke_dirt"]

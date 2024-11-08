@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ViVeWheelSuspension" load_steps=2 format=3 uid="uid://j4p7yiqnv3hf"]
+
+[ext_resource type="Script" path="res://scenes/vivavehicle_main/wheel_stats/suspension.gd" id="1_12yyb"]
+
+[resource]
+script = ExtResource("1_12yyb")
+SpringStiffness = 110.0
+CompressionDampening = 7.0
+ReboundDampening = 7.0
+Deadzone = 0.0
+MaxCompression = 0.5
+AntiRollStiffness = 0.5
+AntiRollElasticity = 0.1
+InclineArea = 0.2
+ImpactForce = 1.5
+RestPosition = -2.7

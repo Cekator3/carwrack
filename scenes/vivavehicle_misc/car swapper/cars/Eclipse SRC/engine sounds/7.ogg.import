@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://ckhm05fdvk5rf"
+path="res://.godot/imported/7.ogg-692fc906b6411d0a76c20fc6aa7244dc.oggvorbisstr"
+
+[deps]
+
+source_file="res://scenes/vivavehicle_misc/car swapper/cars/Eclipse SRC/engine sounds/7.ogg"
+dest_files=["res://.godot/imported/7.ogg-692fc906b6411d0a76c20fc6aa7244dc.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

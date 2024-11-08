@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bp31enuke271s"
+path="res://.godot/imported/blow.ogg-8cf6c7ad4c539af86d14ea756979820d.oggvorbisstr"
+
+[deps]
+
+source_file="res://scenes/vivavehicle_main/misc/mechanical sounds/blow.ogg"
+dest_files=["res://.godot/imported/blow.ogg-8cf6c7ad4c539af86d14ea756979820d.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

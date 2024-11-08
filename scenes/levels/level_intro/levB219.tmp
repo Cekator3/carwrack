@@ -1,0 +1,45 @@
+[gd_scene load_steps=6 format=3 uid="uid://co7umjbsxhmjr"]
+
+[ext_resource type="Texture2D" uid="uid://bkvut1o1dk3fu" path="res://addons/kenney_prototype_textures/light/texture_07.png" id="1_6jp2m"]
+[ext_resource type="PackedScene" uid="uid://ctgv8kggivklc" path="res://scenes/cars/ferrari_550/ferrari_550.tscn" id="2_8hkvf"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y4w45"]
+albedo_texture = ExtResource("1_6jp2m")
+uv1_triplanar = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_km1n7"]
+size = Vector3(500, 1, 500)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_kxoc0"]
+data = PackedVector3Array(-250, 0.5, 250, 250, 0.5, 250, -250, -0.5, 250, 250, 0.5, 250, 250, -0.5, 250, -250, -0.5, 250, 250, 0.5, -250, -250, 0.5, -250, 250, -0.5, -250, -250, 0.5, -250, -250, -0.5, -250, 250, -0.5, -250, 250, 0.5, 250, 250, 0.5, -250, 250, -0.5, 250, 250, 0.5, -250, 250, -0.5, -250, 250, -0.5, 250, -250, 0.5, -250, -250, 0.5, 250, -250, -0.5, -250, -250, 0.5, 250, -250, -0.5, 250, -250, -0.5, -250, 250, 0.5, 250, -250, 0.5, 250, 250, 0.5, -250, -250, 0.5, 250, -250, 0.5, -250, 250, 0.5, -250, -250, -0.5, 250, 250, -0.5, 250, -250, -0.5, -250, 250, -0.5, 250, 250, -0.5, -250, -250, -0.5, -250)
+
+[node name="LevelIntro" type="Node3D"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.536972, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+material_override = SubResource("StandardMaterial3D_y4w45")
+mesh = SubResource("BoxMesh_km1n7")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_kxoc0")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.386615, -0.76931, 0.508616, -0.507542, 0.282986, 0.81383, -0.77002, -0.572783, -0.281051, 0, 0, 0)
+light_indirect_energy = 16.0
+shadow_enabled = true
+
+[node name="Ferrari550" parent="." instance=ExtResource("2_8hkvf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.12119, 3.63743, -1.56104)
+
+[node name="Camera3D" type="Camera3D" parent="Ferrari550"]
+transform = Transform3D(-0.930418, 0.0930026, -0.354505, 0, 0.967268, 0.253758, 0.366501, 0.236101, -0.899963, -3.673, 2.365, -11.594)
+current = true
+fov = 80.0
+far = 1000.0
+
+[node name="XROrigin3D" type="XROrigin3D" parent="."]
+
+[node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D"]

@@ -4,7 +4,8 @@ extends Node
 
 
 func _ready():
-	Setting.world_environment = $WorldEnvironment.environment
+	#Setting.world_environment = $WorldEnvironment.environment
+	pass
 
 
 func _process(delta):

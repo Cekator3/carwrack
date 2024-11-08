@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ViVeTyreSettings" load_steps=2 format=3 uid="uid://bh3xhml3wl4fp"]
+
+[ext_resource type="Script" path="res://scenes/vivavehicle_main/wheel_stats/tyre_settings.gd" id="1_g1soo"]
+
+[resource]
+script = ExtResource("1_g1soo")
+GripInfluence = 1.0
+Width_mm = 205
+Aspect_Ratio = 45.0
+Rim_Size_in = 17
+AirPressure = 40.0

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cgqg3dwh43dap"
+path="res://.godot/imported/3.ogg-3645707ae16862ee3f96bb6f5563f54c.oggvorbisstr"
+
+[deps]
+
+source_file="res://scenes/vivavehicle_misc/car swapper/cars/Synic EKI [Rally]/assets/3.ogg"
+dest_files=["res://.godot/imported/3.ogg-3645707ae16862ee3f96bb6f5563f54c.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

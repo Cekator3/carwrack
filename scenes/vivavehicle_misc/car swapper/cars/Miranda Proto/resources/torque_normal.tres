@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ViVeCarTorque" load_steps=2 format=3 uid="uid://vwj5saoxpr4g"]
+
+[ext_resource type="Script" path="res://scenes/vivavehicle_main/car_stats/torque.gd" id="1_2ke8o"]
+
+[resource]
+script = ExtResource("1_2ke8o")
+BuildUpTorque = 0.079
+TorqueRise = 0.0
+RiseRPM = 0.0
+OffsetTorque = 110.0
+FloatRate = 0.12
+DeclineRate = 0.325
+DeclineRPM = 7500.0
+DeclineSharpness = 1.0
