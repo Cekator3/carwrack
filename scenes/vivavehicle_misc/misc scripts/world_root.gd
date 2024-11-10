@@ -44,6 +44,9 @@ func _init() -> void:
 	singleton = self
 	print(singleton)
 
+func _ready() -> void:
+	Setting.world_environment = self.environment
+
 ##Safer version of just using the singleton variable, even tho the variable is 
 ##what's currently used in the codebase :P
 static func get_singleton() -> ViVeEnvironment:
