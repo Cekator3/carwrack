@@ -161,14 +161,15 @@ radius = 0.590015
 
 [node name="SteeringWheel" type="Node3D"]
 script = ExtResource("1_ke1f8")
+hinge_min_max_angle = 165.0
 
 [node name="PhysicalSteer" type="Node3D" parent="."]
 transform = Transform3D(3.4, 0, 0, 0, 3.4, 0, 0, 0, 3.4, 0, 0, 0)
 
 [node name="InteractableHinge" type="Node3D" parent="PhysicalSteer"]
 script = ExtResource("1_pphre")
-hinge_limit_min = -360.0
-hinge_limit_max = 360.0
+hinge_limit_min = -165.0
+hinge_limit_max = 165.0
 default_on_release = true
 
 [node name="WheelBody" type="StaticBody3D" parent="PhysicalSteer/InteractableHinge"]

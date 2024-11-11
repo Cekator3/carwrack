@@ -18,6 +18,8 @@ func restart_map():
 var scene_manager: SceneManager 
 var active_ui_layer: Control 
 
+var debug_steer_axis_amount: float = 0
+var debug_analog_axis: float = 0
 
 #Car variables 
 var car_rpm: int = 0
@@ -27,6 +29,8 @@ var player_in_the_car: bool = false
 
 #Car control 
 signal transmission_reversed(is_reversed: bool)
+
+var min_max_steering_angle: float
 
 var gas_trigger: float = 0
 var brake_trigger: float = 0

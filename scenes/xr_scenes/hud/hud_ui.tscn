@@ -20,27 +20,45 @@ script = ExtResource("1_et3fh")
 
 [node name="FPS" type="Label" parent="."]
 layout_mode = 1
-offset_left = 755.0
+offset_left = 706.0
 offset_top = 441.0
-offset_right = 920.0
+offset_right = 898.0
 offset_bottom = 505.0
 theme_override_font_sizes/font_size = 46
 text = "FPS: %s"
 
 [node name="RPM" type="Label" parent="."]
 layout_mode = 1
-offset_left = 755.0
+offset_left = 706.0
 offset_top = 587.0
-offset_right = 962.0
+offset_right = 913.0
 offset_bottom = 651.0
 theme_override_font_sizes/font_size = 46
 text = "RPM: %s"
 
 [node name="Speed" type="Label" parent="."]
 layout_mode = 1
-offset_left = 756.0
+offset_left = 707.0
 offset_top = 644.0
-offset_right = 1021.0
+offset_right = 972.0
 offset_bottom = 708.0
 theme_override_font_sizes/font_size = 46
 text = "Speed: %s"
+
+[node name="AnalogAxis" type="Label" parent="."]
+layout_mode = 1
+offset_left = 708.0
+offset_top = 753.0
+offset_right = 1098.0
+offset_bottom = 817.0
+theme_override_font_sizes/font_size = 46
+text = "AnalogAxis: %s"
+
+[node name="SteerAxisAmount" type="Label" parent="."]
+layout_mode = 1
+offset_left = 709.0
+offset_top = 810.0
+offset_right = 1256.0
+offset_bottom = 874.0
+theme_override_font_sizes/font_size = 46
+text = "SteerAxisAmount: %s"

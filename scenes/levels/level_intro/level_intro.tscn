@@ -739,7 +739,6 @@ far = 1000.0
 process_priority = 2
 process_physics_priority = 2
 transform = Transform3D(-1, 0, 1.50996e-07, 0, 1, 0, -1.50996e-07, 0, -1, 0.971, -2.8, -1.62)
-world_scale = 3.1
 current = true
 script = ExtResource("8_lhe7f")
 

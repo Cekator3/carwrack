@@ -59,6 +59,7 @@ points = PackedVector3Array(-0.623694, 0, 0, -0.621252, 0, -0.553648, -0.621252,
 physics_material_override = SubResource("PhysicsMaterial_wdqi7")
 
 [node name="Object_4" type="MeshInstance3D" parent="."]
+lod_bias = 0.625
 mesh = SubResource("ArrayMesh_3cb41")
 skeleton = NodePath("")
 

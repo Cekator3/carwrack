@@ -1,6 +1,10 @@
-[gd_resource type="Resource" script_class="ViVeCarControls" load_steps=2 format=3 uid="uid://r5c2gxfbk21k"]
+[gd_resource type="Resource" script_class="ViVeCarControls" load_steps=3 format=3 uid="uid://r5c2gxfbk21k"]
 
 [ext_resource type="Script" path="res://scenes/vivavehicle_main/car_stats/controls.gd" id="1_pw0a5"]
+
+[sub_resource type="Curve" id="Curve_grufx"]
+_data = [Vector2(0, 0), 0.0, 26.0, 0, 1, Vector2(0.01, 0.26), 26.0, 0.747475, 1, 1, Vector2(1, 1), 0.747475, 0.0, 1, 0]
+point_count = 3
 
 [resource]
 script = ExtResource("1_pw0a5")
@@ -8,7 +12,8 @@ ControlMapName = "Default"
 ActionNameShiftUp = &"shiftup"
 ActionNameShiftDown = &"shiftdown"
 ShiftingAssistance = 2
-UseAnalogSteering = false
+UseAnalogSteering = true
+CurveMultiplier = SubResource("Curve_grufx")
 SteerSensitivity = 1.0
 ActionNameSteerLeft = &"left"
 ActionNameSteerRight = &"right"

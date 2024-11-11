@@ -6,6 +6,7 @@ class_name ViVeCarControls
 ##The asthetic name of the control preset
 @export var ControlMapName:String = "Default"
 
+
 @export_group("Shifting")
 ##Action name for shifting up.
 @export var ActionNameShiftUp:StringName = &"shiftup"
@@ -18,6 +19,7 @@ class_name ViVeCarControls
 @export_group("Steering")
 ##If true, analog steering will be used
 @export var UseAnalogSteering:bool = false
+@export var CurveMultiplier: Curve
 
 @export_subgroup("Analog")
 ## Steering amplification on analog steering.
@@ -274,17 +276,27 @@ func get_steer_direction() -> float:
 	return Input.get_axis(ActionNameSteerLeft, ActionNameSteerRight)
 
 func get_steer_axis(external_analog:float = 0.0) -> float:
-	var analog_axis:float = get_steer_direction()
+	var physical_steering_angle_normalized: float = Global.physical_steering_angle/Global.min_max_steering_angle
+	
+	var physical_steering_angle_fixed = CurveMultiplier.sample(abs(physical_steering_angle_normalized)) * signf(physical_steering_angle_normalized)
+	
+	#print(physical_steering_angle_normalized, physical_steering_angle_fixed)
+	
+	var analog_axis:float = clamp(get_steer_direction() + physical_steering_angle_fixed, -1, 1)
 	
 	if UseAnalogSteering:
 		if not is_zero_approx(external_analog):
-			analog_axis = external_analog
+			#analog_axis = external_analog
+			#print("external_analog")
+			pass
 		
 		steer_axis_amount = clampf(analog_axis * SteerSensitivity, -1.0, 1.0)
 		steer_axis_amount *= minf(absf(steer_axis_amount) + 0.5, 1.0)
+		Global.debug_steer_axis_amount = steer_axis_amount
+		#print(steer_axis_amount)
 	else:
 		#the direction the player is steering to
-		var steer_direction:float = signf(analog_axis + Global.physical_steering_angle)
+		var steer_direction:float = signf(analog_axis)
 		
 		
 		#if the signs don't match, these two directions are opposite, meaning we compensate
@@ -300,6 +312,8 @@ func get_steer_axis(external_analog:float = 0.0) -> float:
 			steer_axis_amount = move_toward(steer_axis_amount, 0.0, KeyboardReturnSpeed)
 	
 	steer_axis_amount = clampf(steer_axis_amount, -1.0, 1.0)
+	
+	Global.debug_analog_axis = analog_axis
 	
 	return steer_axis_amount
 
