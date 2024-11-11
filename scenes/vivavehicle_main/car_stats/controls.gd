@@ -174,9 +174,32 @@ class ButtonWrapper:
 			if just:
 				pressed = Input.is_action_just_pressed(name)
 			else:
-				pressed = Input.is_action_pressed(name)
+				#print(name)
+				match name:
+					"gas":
+						pressed = clamp(Input.get_action_strength(name) + Global.gas_trigger, 0, 1) 
+						
+					"brake":
+						pressed = clamp(Input.get_action_strength(name) + Global.brake_trigger, 0, 1) 
+					"handbrake":
+						pressed = clamp(Input.get_action_strength(name) + int(Global.handbrake_button), 0, 1)
+					_:
+						pressed = Input.get_action_strength(name)
+				
+			
 		else:
-			pressed = not is_zero_approx(Input.get_action_strength(name))
+			match name:
+				"gas":
+					pressed = clamp(Input.get_action_strength(name) + Global.gas_trigger, 0, 1) 
+					
+				"brake":
+					pressed = clamp(Input.get_action_strength(name) + Global.brake_trigger, 0, 1) 
+				"handbrake":
+					pressed = clamp(Input.get_action_strength(name) + int(Global.handbrake_button), 0, 1)
+				_:
+					pressed = not is_zero_approx(Input.get_action_strength(name))
+			
+		
 		return pressed
 	
 	func poll(cond:bool) -> float:
@@ -184,7 +207,21 @@ class ButtonWrapper:
 			if digital:
 				strength += on_rate / clock_mult
 			else: 
-				strength = Input.get_action_strength(name)
+				if name == "brake":
+					if Global.is_reverse:
+						strength = clamp(Input.get_action_strength("gas") + Global.gas_trigger, 0, 1)
+					else:
+						strength = clamp(Input.get_action_strength(name) + Global.brake_trigger, 0, 1)
+				elif name == "gas":
+					if Global.is_reverse:
+						strength = clamp(Input.get_action_strength("brake") + Global.brake_trigger, 0, 1)
+					else:
+						strength = clamp(Input.get_action_strength(name) + Global.gas_trigger, 0, 1)
+				elif name == "handbrake":
+					strength = clamp(Input.get_action_strength(name) + int(Global.handbrake_button), 0, 1) 
+				else:
+					strength = Input.get_action_strength(name)
+				#prints(name, strength)
 		else:
 			strength -= off_rate / clock_mult
 		strength = clampf(strength, minimum, maximum)
@@ -230,6 +267,8 @@ func _init() -> void:
 	clutch_button.off_rate = OffClutchRate
 	clutch_button.maximum = MaxClutch
 	#clutch_button.minimum = MinClutch
+	
+	#Global.transmission_reversed.connect(transmission_reverse)
 
 func get_steer_direction() -> float:
 	return Input.get_axis(ActionNameSteerLeft, ActionNameSteerRight)
@@ -245,7 +284,9 @@ func get_steer_axis(external_analog:float = 0.0) -> float:
 		steer_axis_amount *= minf(absf(steer_axis_amount) + 0.5, 1.0)
 	else:
 		#the direction the player is steering to
-		var steer_direction:float = signf(analog_axis)
+		var steer_direction:float = signf(analog_axis + Global.physical_steering_angle)
+		
+		
 		#if the signs don't match, these two directions are opposite, meaning we compensate
 		#we do is_equal_approx because they're floats
 		var should_compensate:bool = not is_equal_approx(steer_direction, signf(steer_axis_amount))
@@ -291,3 +332,16 @@ func is_shift_up_pressed() -> bool:
 
 func is_shift_down_pressed() -> bool:
 	return Input.is_action_just_pressed(ActionNameShiftDown)
+
+
+#func transmission_reverse(is_reversed: bool):
+	#if is_reversed and throttle_button.name == "gas":
+		#swap_action_name()
+	#elif !is_reversed and throttle_button.name == "brake":
+		#swap_action_name()
+#
+#
+#func swap_action_name():
+	#var copy_name = throttle_button.name
+	#throttle_button.name = brake_button.name
+	#brake_button.name = copy_name

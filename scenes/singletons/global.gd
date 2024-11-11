@@ -1,15 +1,43 @@
 extends Node
 
+
+#Level func/variables
+signal player_pressed_centered
+
+var map_level_failed: bool = false
+var player_xr_origin: XROrigin3D
+
+func fail_map():
+	map_level_failed = true
+
+func restart_map():
+	map_level_failed = false
+
+
 #Scene manager and ui
 var scene_manager: SceneManager 
 var active_ui_layer: Control 
 
 
 #Car variables 
-var global_rpm: int = 0
-var global_speed: int = 0
+var car_rpm: int = 0
+var car_speed: int = 0
 var player_in_the_car: bool = false
 
+
+#Car control 
+signal transmission_reversed(is_reversed: bool)
+
+var gas_trigger: float = 0
+var brake_trigger: float = 0
+var physical_steering_angle: float = 0
+var handbrake_button: bool = false
+var is_reverse: bool = false :
+	set(value):
+		if is_reverse != value:
+			is_reverse = value
+			transmission_reversed.emit(value)
+			prints("is_reverse", value)
 
 #Logic of change_current_scene and threaded loading
 func change_current_scene(change_to_scene: PackedScene): 

@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://dowynmb157yg8"]
+[gd_scene load_steps=5 format=3 uid="uid://dowynmb157yg8"]
 
 [ext_resource type="Script" path="res://scenes/scene_manager/scene_manager.gd" id="1_p4itr"]
 [ext_resource type="PackedScene" uid="uid://co7umjbsxhmjr" path="res://scenes/levels/level_intro/level_intro.tscn" id="2_5dpig"]
 [ext_resource type="PackedScene" uid="uid://clc5dre31iskm" path="res://addons/godot-xr-tools/xr/start_xr.tscn" id="4_htx0x"]
+[ext_resource type="AudioStream" uid="uid://3rlna6n88thr" path="res://assets/sounds/remorse-carpenter-brut-remix.mp3" id="4_sxwlk"]
 
 [node name="SceneManager" type="Node"]
 script = ExtResource("1_p4itr")
@@ -13,3 +14,8 @@ script = ExtResource("1_p4itr")
 
 [node name="StartXR" parent="." instance=ExtResource("4_htx0x")]
 physics_rate_multiplier = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_sxwlk")
+volume_db = -8.0
+autoplay = true

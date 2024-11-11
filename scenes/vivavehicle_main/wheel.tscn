@@ -137,10 +137,6 @@ color = Color(0.352941, 0.313726, 0.223529, 1)
 
 [node name="tyremark" parent="animation" instance=ExtResource("4_11cem")]
 
-[node name="DirectionalLight" type="DirectionalLight3D" parent="."]
-visible = false
-editor_only = true
-
 [node name="velocity" type="Marker3D" parent="."]
 visible = false
 

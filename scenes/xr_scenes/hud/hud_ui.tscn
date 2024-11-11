@@ -1,0 +1,46 @@
+[gd_scene load_steps=4 format=3 uid="uid://bg513of10kco"]
+
+[ext_resource type="FontFile" uid="uid://c4ul04dg1npn" path="res://assets/fonts/zeroes/Zeroes Two.otf" id="1_4apam"]
+[ext_resource type="Script" path="res://scenes/xr_scenes/hud/hud_ui.gd" id="1_et3fh"]
+
+[sub_resource type="Theme" id="Theme_qdh8x"]
+default_font = ExtResource("1_4apam")
+
+[node name="HudUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = SubResource("Theme_qdh8x")
+script = ExtResource("1_et3fh")
+
+[node name="FPS" type="Label" parent="."]
+layout_mode = 1
+offset_left = 755.0
+offset_top = 441.0
+offset_right = 920.0
+offset_bottom = 505.0
+theme_override_font_sizes/font_size = 46
+text = "FPS: %s"
+
+[node name="RPM" type="Label" parent="."]
+layout_mode = 1
+offset_left = 755.0
+offset_top = 587.0
+offset_right = 962.0
+offset_bottom = 651.0
+theme_override_font_sizes/font_size = 46
+text = "RPM: %s"
+
+[node name="Speed" type="Label" parent="."]
+layout_mode = 1
+offset_left = 756.0
+offset_top = 644.0
+offset_right = 1021.0
+offset_bottom = 708.0
+theme_override_font_sizes/font_size = 46
+text = "Speed: %s"

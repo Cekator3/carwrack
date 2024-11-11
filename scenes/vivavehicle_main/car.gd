@@ -574,9 +574,11 @@ func newer_controls(analog_axis:float = 0.0) -> void:
 			if gear == ViVeTransmission.REVERSE: #going in reverse
 				gas_pedal = car_controls.get_throttle(brake_pressed or rev_match)
 				brake_pedal = car_controls.get_brake(gas_pressed)
+				Global.is_reverse = true
 			else: #Forward moving gear 
 				gas_pedal = car_controls.get_throttle((gas_pressed and not gas_restricted) or rev_match)
 				brake_pedal = car_controls.get_brake(brake_pressed)
+				Global.is_reverse = false
 		1: #go forward if gas_pressed is pressed, go backwards if brake_pressed is pressed.
 			gas_pedal = car_controls.get_throttle(gas_pressed and not gas_restricted or rev_match)
 			brake_pedal = car_controls.get_brake(brake_pressed)
@@ -1176,7 +1178,7 @@ func aerodynamics() -> void:
 		apply_central_impulse(air_drag_force)
 
 func _physics_process(_delta:float) -> void:
-	if rpm < 50:
+	if rpm < 20:
 		fix_engine_stall()
 	
 	if Engine.is_editor_hint():
@@ -1319,6 +1321,9 @@ func _physics_process(_delta:float) -> void:
 func _process(_delta:float) -> void:
 	if Engine.is_editor_hint():
 		return
+	
+	Global.car_rpm = rpm
+	Global.car_speed = linear_velocity.length() * 1.10130592
 	
 	if Debug_Mode:
 		update_wheel_arrays()

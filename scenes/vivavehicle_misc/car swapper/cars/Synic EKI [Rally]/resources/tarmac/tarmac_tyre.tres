@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_g1soo")
-GripInfluence = 1.0
+GripInfluence = 1.02
 Width_mm = 205
 Aspect_Ratio = 45.0
 Rim_Size_in = 17

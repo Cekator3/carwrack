@@ -4,10 +4,11 @@
 
 [resource]
 script = ExtResource("1_pw0a5")
-Use_Global_Control_Settings = false
+ControlMapName = "Default"
 ActionNameShiftUp = &"shiftup"
 ActionNameShiftDown = &"shiftdown"
-UseAnalogSteering = true
+ShiftingAssistance = 2
+UseAnalogSteering = false
 SteerSensitivity = 1.0
 ActionNameSteerLeft = &"left"
 ActionNameSteerRight = &"right"
@@ -25,7 +26,7 @@ OnThrottleRate = 0.2
 OffThrottleRate = 0.2
 MaxThrottle = 1.0
 ActionNameBrake = &"brake"
-IsBrakeDigital = true
+IsBrakeDigital = false
 OnBrakeRate = 0.05
 OffBrakeRate = 0.1
 MaxBrake = 1.0

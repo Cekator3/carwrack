@@ -46,6 +46,7 @@ func _init() -> void:
 
 func _ready() -> void:
 	Setting.world_environment = self.environment
+	$FerrariCar
 
 ##Safer version of just using the singleton variable, even tho the variable is 
 ##what's currently used in the codebase :P

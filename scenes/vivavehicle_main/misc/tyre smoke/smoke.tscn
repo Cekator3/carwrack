@@ -59,7 +59,7 @@ shader_parameter/albedo = Color(1, 1, 1, 1)
 shader_parameter/particles_anim_h_frames = 1
 shader_parameter/particles_anim_v_frames = 1
 shader_parameter/particles_anim_loop = false
-shader_parameter/normal_scale = 1.0
+shader_parameter/normal_scale = 0.750001
 shader_parameter/texture_albedo = ExtResource("2_081ma")
 shader_parameter/texture_normal = ExtResource("3_lelqg")
 
@@ -112,8 +112,10 @@ script = ExtResource("1")
 
 [node name="lvl1" type="CPUParticles3D" parent="static"]
 emitting = false
-amount = 255
-lifetime = 15.0
+amount = 100
+lifetime = 11.0
+fixed_fps = 45
+visibility_aabb = AABB(-4, -4, -4, 8, 8, 8)
 mesh = SubResource("10")
 direction = Vector3(0, 0, -1)
 spread = 0.0
@@ -132,8 +134,10 @@ color_ramp = SubResource("12")
 
 [node name="lvl2" type="CPUParticles3D" parent="static"]
 emitting = false
-amount = 255
-lifetime = 15.0
+amount = 100
+lifetime = 11.0
+fixed_fps = 45
+visibility_aabb = AABB(-4, -4, -4, 8, 8, 8)
 mesh = SubResource("10")
 direction = Vector3(0, 0, -1)
 spread = 0.0
@@ -152,8 +156,10 @@ color_ramp = SubResource("12")
 
 [node name="lvl3" type="CPUParticles3D" parent="static"]
 emitting = false
-amount = 255
-lifetime = 15.0
+amount = 100
+lifetime = 11.0
+fixed_fps = 45
+visibility_aabb = AABB(-4, -4, -4, 8, 8, 8)
 mesh = SubResource("10")
 direction = Vector3(0, 0, -1)
 spread = 0.0
@@ -174,7 +180,7 @@ color_ramp = SubResource("12")
 [node name="lvl1" type="CPUParticles3D" parent="revolvel" groups=["Revolve_1"]]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
 emitting = false
-amount = 16
+amount = 12
 local_coords = true
 mesh = SubResource("10")
 emission_shape = 4
@@ -200,7 +206,7 @@ color_ramp = SubResource("15")
 [node name="lvl2" type="CPUParticles3D" parent="revolvel" groups=["Revolve_2"]]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
 emitting = false
-amount = 32
+amount = 26
 local_coords = true
 mesh = SubResource("10")
 emission_shape = 4
@@ -225,7 +231,7 @@ color_ramp = SubResource("15")
 [node name="lvl3" type="CPUParticles3D" parent="revolvel" groups=["Revolve_3"]]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
 emitting = false
-amount = 64
+amount = 48
 local_coords = true
 mesh = SubResource("10")
 emission_shape = 4
@@ -252,7 +258,7 @@ color_ramp = SubResource("15")
 [node name="lvl1" type="CPUParticles3D" parent="revolver" groups=["Revolve_1"]]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
 emitting = false
-amount = 16
+amount = 12
 local_coords = true
 mesh = SubResource("10")
 emission_shape = 4
@@ -277,7 +283,7 @@ color_ramp = SubResource("15")
 [node name="lvl2" type="CPUParticles3D" parent="revolver" groups=["Revolve_2"]]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
 emitting = false
-amount = 32
+amount = 26
 local_coords = true
 mesh = SubResource("10")
 emission_shape = 4
@@ -301,7 +307,7 @@ color_ramp = SubResource("15")
 [node name="lvl3" type="CPUParticles3D" parent="revolver" groups=["Revolve_3"]]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
 emitting = false
-amount = 64
+amount = 48
 local_coords = true
 emission_shape = 4
 emission_points = PackedVector3Array(0, -1, 0)

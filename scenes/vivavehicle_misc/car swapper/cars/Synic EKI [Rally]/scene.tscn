@@ -1124,6 +1124,10 @@ scale_amount_curve = SubResource("43")
 [node name="FerrariModel" parent="." instance=ExtResource("28_05oum")]
 transform = Transform3D(3.23, 0, 0, 0, 3.23, 0, 0, 0, 3.23, 0, -2.5, 0)
 
+[node name="ReflectionProbe" parent="FerrariModel" index="1"]
+transform = Transform3D(0.309598, 0, 0, 0, 0.309598, 0, 0, 0, 0.309598, 0.00514375, 0.606174, -0.00459336)
+size = Vector3(7.24972, 4.02462, 15.3031)
+
 [connection signal="pressed" from="realtime_setup/setup1" to="realtime_setup" method="_on_setup_1_pressed"]
 [connection signal="pressed" from="realtime_setup/setup2" to="realtime_setup" method="_on_setup_2_pressed"]
 
