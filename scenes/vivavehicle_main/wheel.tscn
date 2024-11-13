@@ -94,6 +94,7 @@ mesh = SubResource("2")
 [node name="wheel" type="Marker3D" parent="animation/camber"]
 
 [node name="smoke_dirt" parent="animation/camber" instance=ExtResource("2")]
+visible = false
 dirt_type = true
 
 [node name="lvl1" parent="animation/camber/smoke_dirt/static" index="0"]
