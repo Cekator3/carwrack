@@ -148,6 +148,42 @@ mesh = SubResource("BoxMesh_xuadu")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Scene/MapRoad/MeshInstance3D/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_xjams")
 
+[node name="MeshInstance3D137" type="MeshInstance3D" parent="Scene/MapRoad"]
+transform = Transform3D(0.990995, 0.1339, 0, -0.1339, 0.990995, 0, 0, 0, 1, -174.154, 1.61961, 477.068)
+mesh = SubResource("BoxMesh_xuadu")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Scene/MapRoad/MeshInstance3D137"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scene/MapRoad/MeshInstance3D137/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_xjams")
+
+[node name="MeshInstance3D138" type="MeshInstance3D" parent="Scene/MapRoad"]
+transform = Transform3D(0.990995, 0.1339, 0, -0.1339, 0.990995, 0, 0, 0, 1, -213.654, 6.91961, 477.068)
+mesh = SubResource("BoxMesh_xuadu")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Scene/MapRoad/MeshInstance3D138"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scene/MapRoad/MeshInstance3D138/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_xjams")
+
+[node name="MeshInstance3D139" type="MeshInstance3D" parent="Scene/MapRoad"]
+transform = Transform3D(0.990995, 0.1339, 0, -0.1339, 0.990995, 0, 0, 0, 1, -253.054, 12.2196, 477.068)
+mesh = SubResource("BoxMesh_xuadu")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Scene/MapRoad/MeshInstance3D139"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scene/MapRoad/MeshInstance3D139/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_xjams")
+
+[node name="MeshInstance3D140" type="MeshInstance3D" parent="Scene/MapRoad"]
+transform = Transform3D(0.990995, 0.1339, 0, -0.1339, 0.990995, 0, 0, 0, 1, -292.554, 17.5196, 477.068)
+mesh = SubResource("BoxMesh_xuadu")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Scene/MapRoad/MeshInstance3D140"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scene/MapRoad/MeshInstance3D140/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_xjams")
+
 [node name="MeshInstance3D7" type="MeshInstance3D" parent="Scene/MapRoad"]
 transform = Transform3D(-0.990995, -0.1339, 8.74228e-08, -0.1339, 0.990995, 0, -8.66355e-08, -1.17059e-08, -1, -155.517, 1.61961, -127.932)
 mesh = SubResource("BoxMesh_xuadu")
@@ -164,6 +200,15 @@ mesh = SubResource("BoxMesh_xuadu")
 [node name="StaticBody3D" type="StaticBody3D" parent="Scene/MapRoad/MeshInstance3D6"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Scene/MapRoad/MeshInstance3D6/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_xjams")
+
+[node name="MeshInstance3D120" type="MeshInstance3D" parent="Scene/MapRoad"]
+transform = Transform3D(2.98023e-08, 3.72529e-09, -1, -0.231646, 0.9728, -8.87833e-09, 0.9728, 0.231646, 1.49012e-08, -128.611, 3.05761, 15.9521)
+mesh = SubResource("BoxMesh_xuadu")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Scene/MapRoad/MeshInstance3D120"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scene/MapRoad/MeshInstance3D120/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_xjams")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="Scene/MapRoad"]
@@ -281,6 +326,312 @@ mesh = SubResource("BoxMesh_xuadu")
 [node name="StaticBody3D" type="StaticBody3D" parent="Scene/MapRoad/MeshInstance3D23"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Scene/MapRoad/MeshInstance3D23/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_qocml")
+
+[node name="MeshInstance3D102" type="MeshInstance3D" parent="Scene/MapRoad"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 514.475, 0.687692, 567.165)
+mesh = SubResource("BoxMesh_xuadu")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Scene/MapRoad/MeshInstance3D102"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scene/MapRoad/MeshInstance3D102/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_qocml")
+
+[node name="MeshInstance3D103" type="MeshInstance3D" parent="Scene/MapRoad"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 575.475, 0.687692, 647.165)
+mesh = SubResource("BoxMesh_xuadu")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Scene/MapRoad/MeshInstance3D103"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scene/MapRoad/MeshInstance3D103/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_qocml")
+
+[node name="MeshInstance3D108" type="MeshInstance3D" parent="Scene/MapRoad"]
+transform = Transform3D(-4.37114e-08, 4.37114e-08, 1, 1, 1.91069e-15, 4.37114e-08, 0, 1, -4.37114e-08, 165.475, 17.6877, 647.165)
+mesh = SubResource("BoxMesh_xuadu")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Scene/MapRoad/MeshInstance3D108"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scene/MapRoad/MeshInstance3D108/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_qocml")
+
+[node name="MeshInstance3D109" type="MeshInstance3D" parent="Scene/MapRoad"]
+transform = Transform3D(1.91069e-15, 1, -8.74228e-08, 1, 1.91069e-15, 4.37114e-08, 4.37114e-08, -8.74228e-08, -1, 172.475, 17.6877, 655.165)
+mesh = SubResource("BoxMesh_xuadu")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Scene/MapRoad/MeshInstance3D109"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scene/MapRoad/MeshInstance3D109/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_qocml")
+
+[node name="MeshInstance3D110" type="MeshInstance3D" parent="Scene/MapRoad"]
+transform = Transform3D(4.37114e-08, 4.37114e-08, -1, 1, 1.91069e-15, 4.37114e-08, 3.82137e-15, -1, -4.37114e-08, 165.475, 17.6877, 662.165)
+mesh = SubResource("BoxMesh_xuadu")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Scene/MapRoad/MeshInstance3D110"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scene/MapRoad/MeshInstance3D110/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_qocml")
+
+[node name="MeshInstance3D111" type="MeshInstance3D" parent="Scene/MapRoad"]
+transform = Transform3D(1.91069e-15, -1, 0, 1, 1.91069e-15, 4.37114e-08, -4.37114e-08, 0, 1, 158.475, 17.6877, 654.165)
+mesh = SubResource("BoxMesh_xuadu")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Scene/MapRoad/MeshInstance3D111"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scene/MapRoad/MeshInstance3D111/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_qocml")
+
+[node name="MeshInstance3D112" type="MeshInstance3D" parent="Scene/MapRoad"]
+transform = Transform3D(-4.37114e-08, 4.37114e-08, 1, 1, 1.91069e-15, 4.37114e-08, 0, 1, -4.37114e-08, 85.4748, 17.6877, 555.165)
+mesh = SubResource("BoxMesh_xuadu")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Scene/MapRoad/MeshInstance3D112"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scene/MapRoad/MeshInstance3D112/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_qocml")
+
+[node name="MeshInstance3D113" type="MeshInstance3D" parent="Scene/MapRoad"]
+transform = Transform3D(1.91069e-15, 1, -8.74228e-08, 1, 1.91069e-15, 4.37114e-08, 4.37114e-08, -8.74228e-08, -1, 92.4748, 17.6877, 563.165)
+mesh = SubResource("BoxMesh_xuadu")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Scene/MapRoad/MeshInstance3D113"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scene/MapRoad/MeshInstance3D113/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_qocml")
+
+[node name="MeshInstance3D114" type="MeshInstance3D" parent="Scene/MapRoad"]
+transform = Transform3D(4.37114e-08, 4.37114e-08, -1, 1, 1.91069e-15, 4.37114e-08, 3.82137e-15, -1, -4.37114e-08, 85.4748, 17.6877, 570.165)
+mesh = SubResource("BoxMesh_xuadu")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Scene/MapRoad/MeshInstance3D114"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scene/MapRoad/MeshInstance3D114/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_qocml")
+
+[node name="MeshInstance3D115" type="MeshInstance3D" parent="Scene/MapRoad"]
+transform = Transform3D(1.91069e-15, -1, 0, 1, 1.91069e-15, 4.37114e-08, -4.37114e-08, 0, 1, 78.4748, 17.6877, 562.165)
+mesh = SubResource("BoxMesh_xuadu")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Scene/MapRoad/MeshInstance3D115"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scene/MapRoad/MeshInstance3D115/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_qocml")
+
+[node name="MeshInstance3D116" type="MeshInstance3D" parent="Scene/MapRoad"]
+transform = Transform3D(-4.37114e-08, 4.37114e-08, 1, 1, 1.91069e-15, 4.37114e-08, 0, 1, -4.37114e-08, 220.475, 17.6877, 476.165)
+mesh = SubResource("BoxMesh_xuadu")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Scene/MapRoad/MeshInstance3D116"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scene/MapRoad/MeshInstance3D116/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_qocml")
+
+[node name="MeshInstance3D117" type="MeshInstance3D" parent="Scene/MapRoad"]
+transform = Transform3D(1.91069e-15, 1, -8.74228e-08, 1, 1.91069e-15, 4.37114e-08, 4.37114e-08, -8.74228e-08, -1, 227.475, 17.6877, 484.165)
+mesh = SubResource("BoxMesh_xuadu")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Scene/MapRoad/MeshInstance3D117"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scene/MapRoad/MeshInstance3D117/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_qocml")
+
+[node name="MeshInstance3D118" type="MeshInstance3D" parent="Scene/MapRoad"]
+transform = Transform3D(4.37114e-08, 4.37114e-08, -1, 1, 1.91069e-15, 4.37114e-08, 3.82137e-15, -1, -4.37114e-08, 220.475, 17.6877, 491.165)
+mesh = SubResource("BoxMesh_xuadu")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Scene/MapRoad/MeshInstance3D118"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scene/MapRoad/MeshInstance3D118/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_qocml")
+
+[node name="MeshInstance3D119" type="MeshInstance3D" parent="Scene/MapRoad"]
+transform = Transform3D(1.91069e-15, -1, 0, 1, 1.91069e-15, 4.37114e-08, -4.37114e-08, 0, 1, 213.475, 17.6877, 483.165)
+mesh = SubResource("BoxMesh_xuadu")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Scene/MapRoad/MeshInstance3D119"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scene/MapRoad/MeshInstance3D119/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_qocml")
+
+[node name="MeshInstance3D104" type="MeshInstance3D" parent="Scene/MapRoad"]
+transform = Transform3D(0.5, -0.866025, 3.78552e-08, 0, -4.37114e-08, -1, 0.866025, 0.5, -2.18557e-08, 464.475, 0.687692, 647.165)
+mesh = SubResource("BoxMesh_xuadu")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Scene/MapRoad/MeshInstance3D104"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scene/MapRoad/MeshInstance3D104/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_qocml")
+
+[node name="MeshInstance3D105" type="MeshInstance3D" parent="Scene/MapRoad"]
+transform = Transform3D(0.965926, 0.258819, -1.13133e-08, 0, -4.37114e-08, -1, -0.258819, 0.965926, -4.2222e-08, 533.475, 0.687692, 710.165)
+mesh = SubResource("BoxMesh_xuadu")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Scene/MapRoad/MeshInstance3D105"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scene/MapRoad/MeshInstance3D105/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_qocml")
+
+[node name="MeshInstance3D106" type="MeshInstance3D" parent="Scene/MapRoad"]
+transform = Transform3D(-0.258819, 0.965926, -4.2222e-08, 0, -4.37114e-08, -1, -0.965926, -0.258819, 1.13133e-08, 630.475, 0.687692, 698.165)
+mesh = SubResource("BoxMesh_xuadu")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Scene/MapRoad/MeshInstance3D106"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scene/MapRoad/MeshInstance3D106/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_qocml")
+
+[node name="MeshInstance3D107" type="MeshInstance3D" parent="Scene/MapRoad"]
+transform = Transform3D(0.5, 0.866025, -3.78552e-08, 8.57914e-16, -4.37114e-08, -1, -0.866025, 0.5, -2.18557e-08, 630.475, 0.687692, 580.165)
+mesh = SubResource("BoxMesh_xuadu")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Scene/MapRoad/MeshInstance3D107"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scene/MapRoad/MeshInstance3D107/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_qocml")
+
+[node name="MeshInstance3D121" type="MeshInstance3D" parent="Scene/MapRoad"]
+transform = Transform3D(-0.642507, -0.76628, 3.34952e-08, 0, -4.37114e-08, -1, 0.76628, -0.642507, 2.80849e-08, 357.061, 0.687692, 656.701)
+mesh = SubResource("BoxMesh_xuadu")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Scene/MapRoad/MeshInstance3D121"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scene/MapRoad/MeshInstance3D121/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_qocml")
+
+[node name="MeshInstance3D122" type="MeshInstance3D" parent="Scene/MapRoad"]
+transform = Transform3D(0.573877, -0.818942, 3.57971e-08, 8.57914e-16, -4.37114e-08, -1, 0.818942, 0.573877, -2.50849e-08, 321.492, 0.687692, 743.1)
+mesh = SubResource("BoxMesh_xuadu")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Scene/MapRoad/MeshInstance3D122"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scene/MapRoad/MeshInstance3D122/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_qocml")
+
+[node name="MeshInstance3D123" type="MeshInstance3D" parent="Scene/MapRoad"]
+transform = Transform3D(0.818942, 0.573877, -2.50849e-08, 8.57914e-16, -4.37114e-08, -1, -0.573877, 0.818942, -3.57971e-08, 365.976, 0.687692, 830.13)
+mesh = SubResource("BoxMesh_xuadu")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Scene/MapRoad/MeshInstance3D123"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scene/MapRoad/MeshInstance3D123/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_qocml")
+
+[node name="MeshInstance3D124" type="MeshInstance3D" parent="Scene/MapRoad"]
+transform = Transform3D(0.984871, -0.173287, 7.57462e-09, -5.29396e-23, -4.37114e-08, -1, 0.173287, 0.984871, -4.30501e-08, 476.845, 0.687692, 789.731)
+mesh = SubResource("BoxMesh_xuadu")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Scene/MapRoad/MeshInstance3D124"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scene/MapRoad/MeshInstance3D124/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_qocml")
+
+[node name="MeshInstance3D125" type="MeshInstance3D" parent="Scene/MapRoad"]
+transform = Transform3D(-0.642507, -0.76628, 3.34952e-08, 0, -4.37114e-08, -1, 0.76628, -0.642507, 2.80849e-08, -208.826, 0.687692, 656.701)
+mesh = SubResource("BoxMesh_xuadu")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Scene/MapRoad/MeshInstance3D125"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scene/MapRoad/MeshInstance3D125/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_qocml")
+
+[node name="MeshInstance3D126" type="MeshInstance3D" parent="Scene/MapRoad"]
+transform = Transform3D(0.573877, -0.818942, 3.57971e-08, 8.57914e-16, -4.37114e-08, -1, 0.818942, 0.573877, -2.50849e-08, -244.396, 0.687692, 743.1)
+mesh = SubResource("BoxMesh_xuadu")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Scene/MapRoad/MeshInstance3D126"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scene/MapRoad/MeshInstance3D126/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_qocml")
+
+[node name="MeshInstance3D127" type="MeshInstance3D" parent="Scene/MapRoad"]
+transform = Transform3D(0.818942, 0.573877, -2.50849e-08, 8.57914e-16, -4.37114e-08, -1, -0.573877, 0.818942, -3.57971e-08, -199.912, 0.687692, 830.13)
+mesh = SubResource("BoxMesh_xuadu")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Scene/MapRoad/MeshInstance3D127"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scene/MapRoad/MeshInstance3D127/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_qocml")
+
+[node name="MeshInstance3D128" type="MeshInstance3D" parent="Scene/MapRoad"]
+transform = Transform3D(0.984871, -0.173287, 7.57462e-09, -5.29396e-23, -4.37114e-08, -1, 0.173287, 0.984871, -4.30501e-08, -89.0428, 0.687692, 789.731)
+mesh = SubResource("BoxMesh_xuadu")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Scene/MapRoad/MeshInstance3D128"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scene/MapRoad/MeshInstance3D128/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_qocml")
+
+[node name="MeshInstance3D129" type="MeshInstance3D" parent="Scene/MapRoad"]
+transform = Transform3D(0.507644, -0.861567, 3.76603e-08, 0, -4.37114e-08, -1, 0.861567, 0.507644, -2.21898e-08, -491.894, 0.687692, 744.053)
+mesh = SubResource("BoxMesh_xuadu")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Scene/MapRoad/MeshInstance3D129"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scene/MapRoad/MeshInstance3D129/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_qocml")
+
+[node name="MeshInstance3D130" type="MeshInstance3D" parent="Scene/MapRoad"]
+transform = Transform3D(0.963598, 0.267356, -1.16865e-08, -1.42473e-15, -4.37114e-08, -1, -0.267356, 0.963598, -4.21202e-08, -422.34, 0.687692, 806.44)
+mesh = SubResource("BoxMesh_xuadu")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Scene/MapRoad/MeshInstance3D130"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scene/MapRoad/MeshInstance3D130/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_qocml")
+
+[node name="MeshInstance3D131" type="MeshInstance3D" parent="Scene/MapRoad"]
+transform = Transform3D(-0.267356, 0.963598, -4.21202e-08, 2.2191e-15, -4.37114e-08, -1, -0.963598, -0.267356, 1.16865e-08, -325.45, 0.687692, 793.582)
+mesh = SubResource("BoxMesh_xuadu")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Scene/MapRoad/MeshInstance3D131"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scene/MapRoad/MeshInstance3D131/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_qocml")
+
+[node name="MeshInstance3D132" type="MeshInstance3D" parent="Scene/MapRoad"]
+transform = Transform3D(0.492317, 0.870416, -3.80471e-08, -1.73255e-16, -4.37114e-08, -1, -0.870416, 0.492317, -2.15199e-08, -326.494, 0.687692, 675.587)
+mesh = SubResource("BoxMesh_xuadu")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Scene/MapRoad/MeshInstance3D132"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scene/MapRoad/MeshInstance3D132/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_qocml")
+
+[node name="MeshInstance3D133" type="MeshInstance3D" parent="Scene/MapRoad"]
+transform = Transform3D(-0.968178, 0.250262, -1.09393e-08, -1.53045e-15, -4.37114e-08, -1, -0.250262, -0.968178, 4.23204e-08, -653.905, 0.687692, 398.638)
+mesh = SubResource("BoxMesh_xuadu")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Scene/MapRoad/MeshInstance3D133"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scene/MapRoad/MeshInstance3D133/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_qocml")
+
+[node name="MeshInstance3D134" type="MeshInstance3D" parent="Scene/MapRoad"]
+transform = Transform3D(-0.492317, -0.870416, 3.80471e-08, 3.80958e-16, -4.37114e-08, -1, 0.870416, -0.492317, 2.15199e-08, -747.202, 0.687692, 403.707)
+mesh = SubResource("BoxMesh_xuadu")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Scene/MapRoad/MeshInstance3D134"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scene/MapRoad/MeshInstance3D134/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_qocml")
+
+[node name="MeshInstance3D135" type="MeshInstance3D" parent="Scene/MapRoad"]
+transform = Transform3D(0.870416, -0.492317, 2.15199e-08, 3.16894e-15, -4.37114e-08, -1, 0.492317, 0.870416, -3.80471e-08, -806.622, 0.687692, 481.31)
+mesh = SubResource("BoxMesh_xuadu")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Scene/MapRoad/MeshInstance3D135"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scene/MapRoad/MeshInstance3D135/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_qocml")
+
+[node name="MeshInstance3D136" type="MeshInstance3D" parent="Scene/MapRoad"]
+transform = Transform3D(0.267356, -0.963598, 4.21202e-08, 1.37291e-15, -4.37114e-08, -1, 0.963598, 0.267356, -1.16865e-08, -722.448, 0.687692, 564.007)
+mesh = SubResource("BoxMesh_xuadu")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Scene/MapRoad/MeshInstance3D136"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scene/MapRoad/MeshInstance3D136/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_qocml")
 
 [node name="MeshInstance3D24" type="MeshInstance3D" parent="Scene/MapRoad"]
@@ -491,7 +842,7 @@ mesh = SubResource("BoxMesh_xuadu")
 shape = SubResource("ConcavePolygonShape3D_qocml")
 
 [node name="MeshInstance3D41" type="MeshInstance3D" parent="Scene/MapRoad"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 501.972, 0.687692, -180.479)
+transform = Transform3D(0.784733, -0.619834, 2.70938e-08, 0, -4.37114e-08, -1, 0.619834, 0.784733, -3.43018e-08, 497.308, 0.687692, -168.766)
 mesh = SubResource("BoxMesh_xuadu")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Scene/MapRoad/MeshInstance3D41"]
@@ -500,7 +851,7 @@ mesh = SubResource("BoxMesh_xuadu")
 shape = SubResource("ConcavePolygonShape3D_qocml")
 
 [node name="MeshInstance3D47" type="MeshInstance3D" parent="Scene/MapRoad"]
-transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, 521.972, 0.687692, -161.479)
+transform = Transform3D(0.0908585, -0.995864, 4.35306e-08, -6.14907e-16, -4.37114e-08, -1, 0.995864, 0.0908585, -3.97155e-09, 514.396, 0.687692, -137.285)
 mesh = SubResource("BoxMesh_xuadu")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Scene/MapRoad/MeshInstance3D47"]
@@ -518,7 +869,7 @@ mesh = SubResource("BoxMesh_xuadu")
 shape = SubResource("ConcavePolygonShape3D_qocml")
 
 [node name="MeshInstance3D55" type="MeshInstance3D" parent="Scene/MapRoad"]
-transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, 521.972, 0.687692, -121.479)
+transform = Transform3D(0.0945079, -0.995524, 4.35157e-08, 0, -4.37114e-08, -1, 0.995524, 0.0945079, -4.13107e-09, 517.852, 0.687692, -97.5851)
 mesh = SubResource("BoxMesh_xuadu")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Scene/MapRoad/MeshInstance3D55"]
@@ -626,7 +977,7 @@ mesh = SubResource("BoxMesh_xuadu")
 shape = SubResource("ConcavePolygonShape3D_qocml")
 
 [node name="MeshInstance3D69" type="MeshInstance3D" parent="Scene/MapRoad"]
-transform = Transform3D(-0.0870736, 0.0143681, -0.996098, 0.982808, -0.162174, -0.0882511, -0.162809, -0.986658, 9.70949e-10, 564.859, 72.1236, 313.188)
+transform = Transform3D(-0.0870736, 0.0143681, -0.996098, 0.982808, -0.162174, -0.0882511, -0.162809, -0.986658, 9.70949e-10, 564.859, 66.6135, 313.188)
 mesh = SubResource("BoxMesh_xuadu")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Scene/MapRoad/MeshInstance3D69"]
@@ -635,7 +986,7 @@ mesh = SubResource("BoxMesh_xuadu")
 shape = SubResource("ConcavePolygonShape3D_qocml")
 
 [node name="MeshInstance3D70" type="MeshInstance3D" parent="Scene/MapRoad"]
-transform = Transform3D(-0.0822384, 0.0320171, -0.996098, 0.928233, -0.36138, -0.0882511, -0.362796, -0.931869, -1.38638e-15, 563.576, 86.6043, 310.812)
+transform = Transform3D(-0.0822384, 0.0320171, -0.996098, 0.928233, -0.36138, -0.0882511, -0.362796, -0.931869, -1.38638e-15, 563.576, 83.2257, 310.812)
 mesh = SubResource("BoxMesh_xuadu")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Scene/MapRoad/MeshInstance3D70"]
@@ -644,7 +995,7 @@ mesh = SubResource("BoxMesh_xuadu")
 shape = SubResource("ConcavePolygonShape3D_qocml")
 
 [node name="MeshInstance3D71" type="MeshInstance3D" parent="Scene/MapRoad"]
-transform = Transform3D(-0.0747258, 0.04695, -0.996098, 0.843438, -0.529929, -0.0882511, -0.532005, -0.846741, -8.3214e-11, 562.293, 101.09, 304.297)
+transform = Transform3D(-0.0747258, 0.04695, -0.996098, 0.843438, -0.529929, -0.0882511, -0.532005, -0.846741, -8.3214e-11, 562.293, 97.8135, 304.297)
 mesh = SubResource("BoxMesh_xuadu")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Scene/MapRoad/MeshInstance3D71"]
@@ -653,7 +1004,7 @@ mesh = SubResource("BoxMesh_xuadu")
 shape = SubResource("ConcavePolygonShape3D_qocml")
 
 [node name="MeshInstance3D72" type="MeshInstance3D" parent="Scene/MapRoad"]
-transform = Transform3D(-0.0618571, 0.062944, -0.996098, 0.698187, -0.710455, -0.088251, -0.713238, -0.700922, -1.9419e-09, 561.376, 111.437, 295.704)
+transform = Transform3D(-0.0618571, 0.062944, -0.996098, 0.698187, -0.710455, -0.088251, -0.713238, -0.700922, -1.9419e-09, 561.376, 110.123, 295.704)
 mesh = SubResource("BoxMesh_xuadu")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Scene/MapRoad/MeshInstance3D72"]
@@ -662,7 +1013,7 @@ mesh = SubResource("BoxMesh_xuadu")
 shape = SubResource("ConcavePolygonShape3D_qocml")
 
 [node name="MeshInstance3D73" type="MeshInstance3D" parent="Scene/MapRoad"]
-transform = Transform3D(-0.0410174, 0.0781398, -0.996098, 0.462967, -0.881971, -0.088251, -0.885426, -0.46478, -3.80059e-09, 560.999, 115.692, 290.12)
+transform = Transform3D(-0.0410174, 0.0781398, -0.996098, 0.462967, -0.881971, -0.088251, -0.885426, -0.46478, -3.80059e-09, 560.999, 113.344, 290.12)
 mesh = SubResource("BoxMesh_xuadu")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Scene/MapRoad/MeshInstance3D73"]
@@ -671,7 +1022,7 @@ mesh = SubResource("BoxMesh_xuadu")
 shape = SubResource("ConcavePolygonShape3D_qocml")
 
 [node name="MeshInstance3D74" type="MeshInstance3D" parent="Scene/MapRoad"]
-transform = Transform3D(-0.0196465, 0.0860364, -0.996098, 0.221752, -0.971101, -0.0882511, -0.974905, -0.222621, 9.2934e-10, 560.583, 120.389, 279.081)
+transform = Transform3D(-0.0196465, 0.0860364, -0.996098, 0.221752, -0.971101, -0.0882511, -0.974905, -0.222621, 9.2934e-10, 560.583, 119.076, 279.081)
 mesh = SubResource("BoxMesh_xuadu")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Scene/MapRoad/MeshInstance3D74"]
@@ -680,7 +1031,7 @@ mesh = SubResource("BoxMesh_xuadu")
 shape = SubResource("ConcavePolygonShape3D_qocml")
 
 [node name="MeshInstance3D75" type="MeshInstance3D" parent="Scene/MapRoad"]
-transform = Transform3D(-0.0654858, 0.0226408, -0.997597, 0.013429, -0.999632, -0.0235685, -0.997763, -0.0149401, 0.0651577, 559.248, 123.496, 254.31)
+transform = Transform3D(-0.0654858, 0.0226408, -0.997597, 0.013429, -0.999632, -0.0235685, -0.997763, -0.0149401, 0.0651577, 559.248, 122.183, 254.31)
 mesh = SubResource("BoxMesh_xuadu")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Scene/MapRoad/MeshInstance3D75"]
@@ -689,7 +1040,7 @@ mesh = SubResource("BoxMesh_xuadu")
 shape = SubResource("ConcavePolygonShape3D_qocml")
 
 [node name="MeshInstance3D76" type="MeshInstance3D" parent="Scene/MapRoad"]
-transform = Transform3D(-0.0606631, 0.0334811, -0.997597, -0.15731, -0.987268, -0.0235686, -0.985684, 0.155502, 0.0651577, 558.692, 123.444, 245.781)
+transform = Transform3D(-0.0606631, 0.0334811, -0.997597, -0.15731, -0.987268, -0.0235686, -0.985684, 0.155502, 0.0651577, 558.692, 122.131, 245.781)
 mesh = SubResource("BoxMesh_xuadu")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Scene/MapRoad/MeshInstance3D76"]
@@ -698,7 +1049,7 @@ mesh = SubResource("BoxMesh_xuadu")
 shape = SubResource("ConcavePolygonShape3D_qocml")
 
 [node name="MeshInstance3D77" type="MeshInstance3D" parent="Scene/MapRoad"]
-transform = Transform3D(-0.0524539, 0.0452724, -0.997597, -0.357541, -0.9336, -0.0235686, -0.932423, 0.355445, 0.0651577, 557.798, 121.148, 231.258)
+transform = Transform3D(-0.0524539, 0.0452724, -0.997597, -0.357541, -0.9336, -0.0235686, -0.932423, 0.355445, 0.0651577, 557.798, 119.835, 231.258)
 mesh = SubResource("BoxMesh_xuadu")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Scene/MapRoad/MeshInstance3D77"]
@@ -707,7 +1058,7 @@ mesh = SubResource("BoxMesh_xuadu")
 shape = SubResource("ConcavePolygonShape3D_qocml")
 
 [node name="MeshInstance3D78" type="MeshInstance3D" parent="Scene/MapRoad"]
-transform = Transform3D(-0.0429762, 0.0543512, -0.997597, -0.52717, -0.849433, -0.0235686, -0.848672, 0.52489, 0.0651577, 556.999, 114.716, 216.701)
+transform = Transform3D(-0.0429762, 0.0543512, -0.997597, -0.52717, -0.849433, -0.0235686, -0.848672, 0.52489, 0.0651577, 556.999, 113.403, 216.701)
 mesh = SubResource("BoxMesh_xuadu")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Scene/MapRoad/MeshInstance3D78"]
@@ -716,7 +1067,7 @@ mesh = SubResource("BoxMesh_xuadu")
 shape = SubResource("ConcavePolygonShape3D_qocml")
 
 [node name="MeshInstance3D79" type="MeshInstance3D" parent="Scene/MapRoad"]
-transform = Transform3D(-0.0292565, 0.0628097, -0.997597, -0.709156, -0.704657, -0.0235685, -0.704443, 0.706762, 0.0651577, 556.519, 106.183, 206.275)
+transform = Transform3D(-0.0292565, 0.0628097, -0.997597, -0.709156, -0.704657, -0.0235685, -0.704443, 0.706762, 0.0651577, 556.519, 104.869, 206.275)
 mesh = SubResource("BoxMesh_xuadu")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Scene/MapRoad/MeshInstance3D79"]
@@ -725,7 +1076,7 @@ mesh = SubResource("BoxMesh_xuadu")
 shape = SubResource("ConcavePolygonShape3D_qocml")
 
 [node name="MeshInstance3D80" type="MeshInstance3D" parent="Scene/MapRoad"]
-transform = Transform3D(-0.00984779, 0.0685859, -0.997597, -0.882599, -0.469536, -0.0235685, -0.470024, 0.880245, 0.0651577, 556.37, 100.624, 201.973)
+transform = Transform3D(-0.00984779, 0.0685859, -0.997597, -0.882599, -0.469536, -0.0235685, -0.470024, 0.880245, 0.0651577, 556.37, 99.3109, 201.973)
 mesh = SubResource("BoxMesh_xuadu")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Scene/MapRoad/MeshInstance3D80"]
@@ -734,7 +1085,7 @@ mesh = SubResource("BoxMesh_xuadu")
 shape = SubResource("ConcavePolygonShape3D_qocml")
 
 [node name="MeshInstance3D81" type="MeshInstance3D" parent="Scene/MapRoad"]
-transform = Transform3D(0.00803854, 0.0688214, -0.997597, -0.973389, -0.227942, -0.0235686, -0.229016, 0.971239, 0.0651577, 556.318, 89.6143, 197.19)
+transform = Transform3D(0.00803854, 0.0688214, -0.997597, -0.973389, -0.227942, -0.0235686, -0.229016, 0.971239, 0.0651577, 556.318, 88.3011, 197.19)
 mesh = SubResource("BoxMesh_xuadu")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Scene/MapRoad/MeshInstance3D81"]
@@ -815,7 +1166,7 @@ mesh = SubResource("BoxMesh_xuadu")
 shape = SubResource("ConcavePolygonShape3D_qocml")
 
 [node name="MeshInstance3D57" type="MeshInstance3D" parent="Scene/MapRoad"]
-transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, 521.972, 0.687692, -81.4795)
+transform = Transform3D(0.0358065, -0.999359, 4.36834e-08, 0, -4.37114e-08, -1, 0.999359, 0.0358065, -1.56515e-09, 521.276, 0.687692, -58.5895)
 mesh = SubResource("BoxMesh_xuadu")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Scene/MapRoad/MeshInstance3D57"]
@@ -1039,6 +1390,249 @@ mesh = SubResource("BoxMesh_xuadu")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Scene/MapRoad/MeshInstance3D4/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_qocml")
 
+[node name="MeshInstance3D141" type="MeshInstance3D" parent="Scene/MapRoad"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -332.264, 20.2798, 477.16)
+mesh = SubResource("BoxMesh_xuadu")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Scene/MapRoad/MeshInstance3D141"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scene/MapRoad/MeshInstance3D141/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_qocml")
+
+[node name="MeshInstance3D143" type="MeshInstance3D" parent="Scene/MapRoad"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -332.264, 20.2798, 462.16)
+mesh = SubResource("BoxMesh_xuadu")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Scene/MapRoad/MeshInstance3D143"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scene/MapRoad/MeshInstance3D143/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_qocml")
+
+[node name="MeshInstance3D142" type="MeshInstance3D" parent="Scene/MapRoad"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -332.264, 20.2798, 492.16)
+mesh = SubResource("BoxMesh_xuadu")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Scene/MapRoad/MeshInstance3D142"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scene/MapRoad/MeshInstance3D142/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_qocml")
+
+[node name="MeshInstance3D144" type="MeshInstance3D" parent="Scene/MapRoad"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -372.264, 20.2798, 477.16)
+mesh = SubResource("BoxMesh_xuadu")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Scene/MapRoad/MeshInstance3D144"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scene/MapRoad/MeshInstance3D144/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_qocml")
+
+[node name="MeshInstance3D145" type="MeshInstance3D" parent="Scene/MapRoad"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -372.264, 20.2798, 462.16)
+mesh = SubResource("BoxMesh_xuadu")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Scene/MapRoad/MeshInstance3D145"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scene/MapRoad/MeshInstance3D145/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_qocml")
+
+[node name="MeshInstance3D146" type="MeshInstance3D" parent="Scene/MapRoad"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -372.264, 20.2798, 492.16)
+mesh = SubResource("BoxMesh_xuadu")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Scene/MapRoad/MeshInstance3D146"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scene/MapRoad/MeshInstance3D146/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_qocml")
+
+[node name="MeshInstance3D147" type="MeshInstance3D" parent="Scene/MapRoad"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -412.264, 20.2798, 477.16)
+mesh = SubResource("BoxMesh_xuadu")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Scene/MapRoad/MeshInstance3D147"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scene/MapRoad/MeshInstance3D147/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_qocml")
+
+[node name="MeshInstance3D148" type="MeshInstance3D" parent="Scene/MapRoad"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -412.264, 20.2798, 462.16)
+mesh = SubResource("BoxMesh_xuadu")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Scene/MapRoad/MeshInstance3D148"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scene/MapRoad/MeshInstance3D148/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_qocml")
+
+[node name="MeshInstance3D149" type="MeshInstance3D" parent="Scene/MapRoad"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -412.264, 20.2798, 492.16)
+mesh = SubResource("BoxMesh_xuadu")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Scene/MapRoad/MeshInstance3D149"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scene/MapRoad/MeshInstance3D149/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_qocml")
+
+[node name="MeshInstance3D150" type="MeshInstance3D" parent="Scene/MapRoad"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -452.264, 20.2798, 477.16)
+mesh = SubResource("BoxMesh_xuadu")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Scene/MapRoad/MeshInstance3D150"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scene/MapRoad/MeshInstance3D150/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_qocml")
+
+[node name="MeshInstance3D151" type="MeshInstance3D" parent="Scene/MapRoad"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -452.264, 20.2798, 462.16)
+mesh = SubResource("BoxMesh_xuadu")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Scene/MapRoad/MeshInstance3D151"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scene/MapRoad/MeshInstance3D151/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_qocml")
+
+[node name="MeshInstance3D152" type="MeshInstance3D" parent="Scene/MapRoad"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -452.264, 20.2798, 492.16)
+mesh = SubResource("BoxMesh_xuadu")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Scene/MapRoad/MeshInstance3D152"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scene/MapRoad/MeshInstance3D152/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_qocml")
+
+[node name="MeshInstance3D153" type="MeshInstance3D" parent="Scene/MapRoad"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -492.264, 20.2798, 477.16)
+mesh = SubResource("BoxMesh_xuadu")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Scene/MapRoad/MeshInstance3D153"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scene/MapRoad/MeshInstance3D153/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_qocml")
+
+[node name="MeshInstance3D154" type="MeshInstance3D" parent="Scene/MapRoad"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -492.264, 20.2798, 462.16)
+mesh = SubResource("BoxMesh_xuadu")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Scene/MapRoad/MeshInstance3D154"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scene/MapRoad/MeshInstance3D154/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_qocml")
+
+[node name="MeshInstance3D155" type="MeshInstance3D" parent="Scene/MapRoad"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -492.264, 20.2798, 492.16)
+mesh = SubResource("BoxMesh_xuadu")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Scene/MapRoad/MeshInstance3D155"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scene/MapRoad/MeshInstance3D155/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_qocml")
+
+[node name="MeshInstance3D156" type="MeshInstance3D" parent="Scene/MapRoad"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -492.264, 20.2798, 432.16)
+mesh = SubResource("BoxMesh_xuadu")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Scene/MapRoad/MeshInstance3D156"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scene/MapRoad/MeshInstance3D156/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_qocml")
+
+[node name="MeshInstance3D157" type="MeshInstance3D" parent="Scene/MapRoad"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -492.264, 20.2798, 417.16)
+mesh = SubResource("BoxMesh_xuadu")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Scene/MapRoad/MeshInstance3D157"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scene/MapRoad/MeshInstance3D157/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_qocml")
+
+[node name="MeshInstance3D158" type="MeshInstance3D" parent="Scene/MapRoad"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -492.264, 20.2798, 447.16)
+mesh = SubResource("BoxMesh_xuadu")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Scene/MapRoad/MeshInstance3D158"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scene/MapRoad/MeshInstance3D158/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_qocml")
+
+[node name="MeshInstance3D159" type="MeshInstance3D" parent="Scene/MapRoad"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -492.264, 20.2798, 387.16)
+mesh = SubResource("BoxMesh_xuadu")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Scene/MapRoad/MeshInstance3D159"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scene/MapRoad/MeshInstance3D159/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_qocml")
+
+[node name="MeshInstance3D160" type="MeshInstance3D" parent="Scene/MapRoad"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -492.264, 20.2798, 372.16)
+mesh = SubResource("BoxMesh_xuadu")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Scene/MapRoad/MeshInstance3D160"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scene/MapRoad/MeshInstance3D160/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_qocml")
+
+[node name="MeshInstance3D161" type="MeshInstance3D" parent="Scene/MapRoad"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -492.264, 20.2798, 402.16)
+mesh = SubResource("BoxMesh_xuadu")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Scene/MapRoad/MeshInstance3D161"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scene/MapRoad/MeshInstance3D161/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_qocml")
+
+[node name="MeshInstance3D162" type="MeshInstance3D" parent="Scene/MapRoad"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -492.264, 20.2798, 343.16)
+mesh = SubResource("BoxMesh_xuadu")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Scene/MapRoad/MeshInstance3D162"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scene/MapRoad/MeshInstance3D162/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_qocml")
+
+[node name="MeshInstance3D163" type="MeshInstance3D" parent="Scene/MapRoad"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -492.264, 20.2798, 328.16)
+mesh = SubResource("BoxMesh_xuadu")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Scene/MapRoad/MeshInstance3D163"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scene/MapRoad/MeshInstance3D163/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_qocml")
+
+[node name="MeshInstance3D164" type="MeshInstance3D" parent="Scene/MapRoad"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -492.264, 20.2798, 358.16)
+mesh = SubResource("BoxMesh_xuadu")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Scene/MapRoad/MeshInstance3D164"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scene/MapRoad/MeshInstance3D164/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_qocml")
+
+[node name="MeshInstance3D165" type="MeshInstance3D" parent="Scene/MapRoad"]
+transform = Transform3D(1, 0, 0, 0, 0.984808, -0.173648, 0, 0.173648, 0.984808, -492.264, 24.1671, 298.589)
+mesh = SubResource("BoxMesh_xuadu")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Scene/MapRoad/MeshInstance3D165"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scene/MapRoad/MeshInstance3D165/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_qocml")
+
+[node name="MeshInstance3D166" type="MeshInstance3D" parent="Scene/MapRoad"]
+transform = Transform3D(1, 0, 0, 0, 0.984808, -0.173648, 0, 0.173648, 0.984808, -492.264, 26.7718, 283.816)
+mesh = SubResource("BoxMesh_xuadu")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Scene/MapRoad/MeshInstance3D166"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scene/MapRoad/MeshInstance3D166/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_qocml")
+
+[node name="MeshInstance3D167" type="MeshInstance3D" parent="Scene/MapRoad"]
+transform = Transform3D(1, 0, 0, 0, 0.984808, -0.173648, 0, 0.173648, 0.984808, -492.264, 21.5623, 313.361)
+mesh = SubResource("BoxMesh_xuadu")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Scene/MapRoad/MeshInstance3D167"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scene/MapRoad/MeshInstance3D167/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_qocml")
+
 [node name="MeshInstance3D5" type="MeshInstance3D" parent="Scene/MapRoad"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -115.839, 4.28863, -97.932)
 mesh = SubResource("BoxMesh_xuadu")
@@ -1224,6 +1818,627 @@ transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 75.835, 
 
 [node name="TrafficCone157" parent="Scene" instance=ExtResource("6_v5a8l")]
 transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 78.835, 0.128214, -328.592)
+
+[node name="TrafficCone445" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-0.889153, 0, 0.45761, 0, 1, 0, -0.45761, 0, -0.889153, 92.9232, 0.128214, 572.555)
+
+[node name="TrafficCone446" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-0.889153, 0, 0.45761, 0, 1, 0, -0.45761, 0, -0.889153, 91.5504, 0.128214, 575.222)
+
+[node name="TrafficCone447" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-0.889153, 0, 0.45761, 0, 1, 0, -0.45761, 0, -0.889153, 90.1776, 0.128214, 577.889)
+
+[node name="TrafficCone448" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-0.889153, 0, 0.45761, 0, 1, 0, -0.45761, 0, -0.889153, 88.8047, 0.128214, 580.557)
+
+[node name="TrafficCone449" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-0.889153, 0, 0.45761, 0, 1, 0, -0.45761, 0, -0.889153, 87.4319, 0.128214, 583.224)
+
+[node name="TrafficCone450" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-0.889153, 0, 0.45761, 0, 1, 0, -0.45761, 0, -0.889153, 86.0591, 0.128214, 585.892)
+
+[node name="TrafficCone451" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-0.889153, 0, 0.45761, 0, 1, 0, -0.45761, 0, -0.889153, 84.6863, 0.128214, 588.559)
+
+[node name="TrafficCone452" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-0.889153, 0, 0.45761, 0, 1, 0, -0.45761, 0, -0.889153, 83.3134, 0.128214, 591.227)
+
+[node name="TrafficCone453" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-0.889153, 0, 0.45761, 0, 1, 0, -0.45761, 0, -0.889153, 81.9406, 0.128214, 593.894)
+
+[node name="TrafficCone454" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-0.889153, 0, 0.45761, 0, 1, 0, -0.45761, 0, -0.889153, 80.5678, 0.128214, 596.562)
+
+[node name="TrafficCone455" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-0.889153, 0, 0.45761, 0, 1, 0, -0.45761, 0, -0.889153, 79.1949, 0.128214, 599.229)
+
+[node name="TrafficCone456" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-0.707625, 0, -0.706588, 0, 1, 0, 0.706588, 0, -0.707625, 131.332, 0.128214, 623.807)
+
+[node name="TrafficCone457" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-0.707625, 0, -0.706588, 0, 1, 0, 0.706588, 0, -0.707625, 133.452, 0.128214, 625.929)
+
+[node name="TrafficCone458" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-0.707625, 0, -0.706588, 0, 1, 0, 0.706588, 0, -0.707625, 135.572, 0.128214, 628.052)
+
+[node name="TrafficCone459" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-0.707625, 0, -0.706588, 0, 1, 0, 0.706588, 0, -0.707625, 137.692, 0.128214, 630.175)
+
+[node name="TrafficCone460" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-0.707625, 0, -0.706588, 0, 1, 0, 0.706588, 0, -0.707625, 139.811, 0.128214, 632.298)
+
+[node name="TrafficCone461" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-0.707625, 0, -0.706588, 0, 1, 0, 0.706588, 0, -0.707625, 141.931, 0.128214, 634.421)
+
+[node name="TrafficCone462" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-0.707625, 0, -0.706588, 0, 1, 0, 0.706588, 0, -0.707625, 144.051, 0.128214, 636.544)
+
+[node name="TrafficCone463" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-0.707625, 0, -0.706588, 0, 1, 0, 0.706588, 0, -0.707625, 146.171, 0.128214, 638.667)
+
+[node name="TrafficCone464" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-0.707625, 0, -0.706588, 0, 1, 0, 0.706588, 0, -0.707625, 148.29, 0.128214, 640.789)
+
+[node name="TrafficCone465" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-0.707625, 0, -0.706588, 0, 1, 0, 0.706588, 0, -0.707625, 150.41, 0.128214, 642.912)
+
+[node name="TrafficCone466" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-0.707625, 0, -0.706588, 0, 1, 0, 0.706588, 0, -0.707625, 152.53, 0.128214, 645.035)
+
+[node name="TrafficCone467" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-0.707625, 0, -0.706588, 0, 1, 0, 0.706588, 0, -0.707625, 154.65, 0.128214, 647.158)
+
+[node name="TrafficCone468" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -26.0093, 0.128214, 115.547)
+
+[node name="TrafficCone469" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -26.0116, 0.128214, 118.547)
+
+[node name="TrafficCone470" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -26.0137, 0.128214, 121.547)
+
+[node name="TrafficCone471" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -26.0159, 0.128214, 124.547)
+
+[node name="TrafficCone472" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -26.0181, 0.128214, 127.547)
+
+[node name="TrafficCone473" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -26.0203, 0.128214, 130.547)
+
+[node name="TrafficCone474" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -26.0225, 0.128214, 133.547)
+
+[node name="TrafficCone475" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -26.0247, 0.128214, 136.547)
+
+[node name="TrafficCone476" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -26.0269, 0.128214, 139.547)
+
+[node name="TrafficCone477" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -26.0291, 0.128214, 142.547)
+
+[node name="TrafficCone478" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -26.0313, 0.128214, 145.547)
+
+[node name="TrafficCone479" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -26.0335, 0.128214, 148.547)
+
+[node name="TrafficCone480" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -26.0357, 0.128214, 151.547)
+
+[node name="TrafficCone481" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -26.0379, 0.128214, 154.547)
+
+[node name="TrafficCone482" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -26.0401, 0.128214, 157.547)
+
+[node name="TrafficCone483" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -26.0423, 0.128214, 160.547)
+
+[node name="TrafficCone484" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -26.0445, 0.128214, 163.547)
+
+[node name="TrafficCone485" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -26.0467, 0.128214, 166.547)
+
+[node name="TrafficCone486" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -26.0489, 0.128214, 169.547)
+
+[node name="TrafficCone487" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -26.0511, 0.128214, 172.547)
+
+[node name="TrafficCone488" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -26.0533, 0.128214, 175.547)
+
+[node name="TrafficCone489" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -26.0555, 0.128214, 178.547)
+
+[node name="TrafficCone490" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -26.0577, 0.128214, 181.547)
+
+[node name="TrafficCone491" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -33.0093, 0.128214, 115.547)
+
+[node name="TrafficCone492" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -33.0116, 0.128214, 118.547)
+
+[node name="TrafficCone493" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -33.0137, 0.128214, 121.547)
+
+[node name="TrafficCone494" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -33.0159, 0.128214, 124.547)
+
+[node name="TrafficCone495" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -33.0181, 0.128214, 127.547)
+
+[node name="TrafficCone496" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -33.0203, 0.128214, 130.547)
+
+[node name="TrafficCone497" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -33.0225, 0.128214, 133.547)
+
+[node name="TrafficCone498" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -33.0247, 0.128214, 136.547)
+
+[node name="TrafficCone499" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -33.0269, 0.128214, 139.547)
+
+[node name="TrafficCone500" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -33.0291, 0.128214, 142.547)
+
+[node name="TrafficCone501" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -33.0313, 0.128214, 145.547)
+
+[node name="TrafficCone502" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -33.0335, 0.128214, 148.547)
+
+[node name="TrafficCone503" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -33.0357, 0.128214, 151.547)
+
+[node name="TrafficCone504" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -33.0379, 0.128214, 154.547)
+
+[node name="TrafficCone505" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -33.0401, 0.128214, 157.547)
+
+[node name="TrafficCone506" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -33.0423, 0.128214, 160.547)
+
+[node name="TrafficCone507" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -33.0445, 0.128214, 163.547)
+
+[node name="TrafficCone508" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -33.0467, 0.128214, 166.547)
+
+[node name="TrafficCone509" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -33.0489, 0.128214, 169.547)
+
+[node name="TrafficCone510" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -33.0511, 0.128214, 172.547)
+
+[node name="TrafficCone511" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -33.0533, 0.128214, 175.547)
+
+[node name="TrafficCone512" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -33.0555, 0.128214, 178.547)
+
+[node name="TrafficCone513" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -33.0577, 0.128214, 181.547)
+
+[node name="TrafficCone514" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -40.0093, 0.128214, 115.547)
+
+[node name="TrafficCone515" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -40.0116, 0.128214, 118.547)
+
+[node name="TrafficCone516" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -40.0137, 0.128214, 121.547)
+
+[node name="TrafficCone517" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -40.0159, 0.128214, 124.547)
+
+[node name="TrafficCone518" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -40.0181, 0.128214, 127.547)
+
+[node name="TrafficCone519" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -40.0203, 0.128214, 130.547)
+
+[node name="TrafficCone520" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -40.0225, 0.128214, 133.547)
+
+[node name="TrafficCone521" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -40.0247, 0.128214, 136.547)
+
+[node name="TrafficCone522" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -40.0269, 0.128214, 139.547)
+
+[node name="TrafficCone523" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -40.0291, 0.128214, 142.547)
+
+[node name="TrafficCone524" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -40.0313, 0.128214, 145.547)
+
+[node name="TrafficCone525" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -40.0335, 0.128214, 148.547)
+
+[node name="TrafficCone526" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -40.0357, 0.128214, 151.547)
+
+[node name="TrafficCone527" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -40.0379, 0.128214, 154.547)
+
+[node name="TrafficCone528" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -40.0401, 0.128214, 157.547)
+
+[node name="TrafficCone529" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -40.0423, 0.128214, 160.547)
+
+[node name="TrafficCone530" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -40.0445, 0.128214, 163.547)
+
+[node name="TrafficCone531" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -40.0467, 0.128214, 166.547)
+
+[node name="TrafficCone532" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -40.0489, 0.128214, 169.547)
+
+[node name="TrafficCone533" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -40.0511, 0.128214, 172.547)
+
+[node name="TrafficCone534" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -40.0533, 0.128214, 175.547)
+
+[node name="TrafficCone535" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -40.0555, 0.128214, 178.547)
+
+[node name="TrafficCone536" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -40.0577, 0.128214, 181.547)
+
+[node name="TrafficCone537" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -47.0093, 0.128214, 115.547)
+
+[node name="TrafficCone538" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -47.0116, 0.128214, 118.547)
+
+[node name="TrafficCone539" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -47.0137, 0.128214, 121.547)
+
+[node name="TrafficCone540" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -47.0159, 0.128214, 124.547)
+
+[node name="TrafficCone541" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -47.0181, 0.128214, 127.547)
+
+[node name="TrafficCone542" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -47.0203, 0.128214, 130.547)
+
+[node name="TrafficCone543" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -47.0225, 0.128214, 133.547)
+
+[node name="TrafficCone544" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -47.0247, 0.128214, 136.547)
+
+[node name="TrafficCone545" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -47.0269, 0.128214, 139.547)
+
+[node name="TrafficCone546" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -47.0291, 0.128214, 142.547)
+
+[node name="TrafficCone547" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -47.0313, 0.128214, 145.547)
+
+[node name="TrafficCone548" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -47.0335, 0.128214, 148.547)
+
+[node name="TrafficCone549" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -47.0357, 0.128214, 151.547)
+
+[node name="TrafficCone550" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -47.0379, 0.128214, 154.547)
+
+[node name="TrafficCone551" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -47.0401, 0.128214, 157.547)
+
+[node name="TrafficCone552" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -47.0423, 0.128214, 160.547)
+
+[node name="TrafficCone553" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -47.0445, 0.128214, 163.547)
+
+[node name="TrafficCone554" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -47.0467, 0.128214, 166.547)
+
+[node name="TrafficCone555" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -47.0489, 0.128214, 169.547)
+
+[node name="TrafficCone556" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -47.0511, 0.128214, 172.547)
+
+[node name="TrafficCone557" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -47.0533, 0.128214, 175.547)
+
+[node name="TrafficCone558" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -47.0555, 0.128214, 178.547)
+
+[node name="TrafficCone559" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -47.0577, 0.128214, 181.547)
+
+[node name="TrafficCone560" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -55.0093, 0.128214, 115.547)
+
+[node name="TrafficCone561" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -55.0116, 0.128214, 118.547)
+
+[node name="TrafficCone562" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -55.0137, 0.128214, 121.547)
+
+[node name="TrafficCone563" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -55.0159, 0.128214, 124.547)
+
+[node name="TrafficCone564" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -55.0181, 0.128214, 127.547)
+
+[node name="TrafficCone565" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -55.0203, 0.128214, 130.547)
+
+[node name="TrafficCone566" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -55.0225, 0.128214, 133.547)
+
+[node name="TrafficCone567" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -55.0247, 0.128214, 136.547)
+
+[node name="TrafficCone568" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -55.0269, 0.128214, 139.547)
+
+[node name="TrafficCone569" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -55.0291, 0.128214, 142.547)
+
+[node name="TrafficCone570" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -55.0313, 0.128214, 145.547)
+
+[node name="TrafficCone571" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -55.0335, 0.128214, 148.547)
+
+[node name="TrafficCone572" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -55.0357, 0.128214, 151.547)
+
+[node name="TrafficCone573" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -55.0379, 0.128214, 154.547)
+
+[node name="TrafficCone574" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -55.0401, 0.128214, 157.547)
+
+[node name="TrafficCone575" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -55.0423, 0.128214, 160.547)
+
+[node name="TrafficCone576" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -55.0445, 0.128214, 163.547)
+
+[node name="TrafficCone577" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -55.0467, 0.128214, 166.547)
+
+[node name="TrafficCone578" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -55.0489, 0.128214, 169.547)
+
+[node name="TrafficCone579" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -55.0511, 0.128214, 172.547)
+
+[node name="TrafficCone580" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -55.0533, 0.128214, 175.547)
+
+[node name="TrafficCone581" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -55.0555, 0.128214, 178.547)
+
+[node name="TrafficCone582" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -55.0577, 0.128214, 181.547)
+
+[node name="TrafficCone583" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -62.0093, 0.128214, 115.547)
+
+[node name="TrafficCone584" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -62.0116, 0.128214, 118.547)
+
+[node name="TrafficCone585" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -62.0137, 0.128214, 121.547)
+
+[node name="TrafficCone586" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -62.0159, 0.128214, 124.547)
+
+[node name="TrafficCone587" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -62.0181, 0.128214, 127.547)
+
+[node name="TrafficCone588" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -62.0203, 0.128214, 130.547)
+
+[node name="TrafficCone589" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -62.0225, 0.128214, 133.547)
+
+[node name="TrafficCone590" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -62.0247, 0.128214, 136.547)
+
+[node name="TrafficCone591" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -62.0269, 0.128214, 139.547)
+
+[node name="TrafficCone592" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -62.0291, 0.128214, 142.547)
+
+[node name="TrafficCone593" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -62.0313, 0.128214, 145.547)
+
+[node name="TrafficCone594" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -62.0335, 0.128214, 148.547)
+
+[node name="TrafficCone595" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -62.0357, 0.128214, 151.547)
+
+[node name="TrafficCone596" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -62.0379, 0.128214, 154.547)
+
+[node name="TrafficCone597" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -62.0401, 0.128214, 157.547)
+
+[node name="TrafficCone598" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -62.0423, 0.128214, 160.547)
+
+[node name="TrafficCone599" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -62.0445, 0.128214, 163.547)
+
+[node name="TrafficCone600" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -62.0467, 0.128214, 166.547)
+
+[node name="TrafficCone601" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -62.0489, 0.128214, 169.547)
+
+[node name="TrafficCone602" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -62.0511, 0.128214, 172.547)
+
+[node name="TrafficCone603" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -62.0533, 0.128214, 175.547)
+
+[node name="TrafficCone604" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -62.0555, 0.128214, 178.547)
+
+[node name="TrafficCone605" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -62.0577, 0.128214, 181.547)
+
+[node name="TrafficCone606" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -70.0093, 0.128214, 115.547)
+
+[node name="TrafficCone607" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -70.0116, 0.128214, 118.547)
+
+[node name="TrafficCone608" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -70.0137, 0.128214, 121.547)
+
+[node name="TrafficCone609" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -70.0159, 0.128214, 124.547)
+
+[node name="TrafficCone610" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -70.0181, 0.128214, 127.547)
+
+[node name="TrafficCone611" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -70.0203, 0.128214, 130.547)
+
+[node name="TrafficCone612" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -70.0225, 0.128214, 133.547)
+
+[node name="TrafficCone613" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -70.0247, 0.128214, 136.547)
+
+[node name="TrafficCone614" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -70.0269, 0.128214, 139.547)
+
+[node name="TrafficCone615" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -70.0291, 0.128214, 142.547)
+
+[node name="TrafficCone616" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -70.0313, 0.128214, 145.547)
+
+[node name="TrafficCone617" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -70.0335, 0.128214, 148.547)
+
+[node name="TrafficCone618" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -70.0357, 0.128214, 151.547)
+
+[node name="TrafficCone619" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -70.0379, 0.128214, 154.547)
+
+[node name="TrafficCone620" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -70.0401, 0.128214, 157.547)
+
+[node name="TrafficCone621" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -70.0423, 0.128214, 160.547)
+
+[node name="TrafficCone622" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -70.0445, 0.128214, 163.547)
+
+[node name="TrafficCone623" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -70.0467, 0.128214, 166.547)
+
+[node name="TrafficCone624" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -70.0489, 0.128214, 169.547)
+
+[node name="TrafficCone625" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -70.0511, 0.128214, 172.547)
+
+[node name="TrafficCone626" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -70.0533, 0.128214, 175.547)
+
+[node name="TrafficCone627" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -70.0555, 0.128214, 178.547)
+
+[node name="TrafficCone628" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -70.0577, 0.128214, 181.547)
+
+[node name="TrafficCone629" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -77.0093, 0.128214, 115.547)
+
+[node name="TrafficCone630" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -77.0116, 0.128214, 118.547)
+
+[node name="TrafficCone631" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -77.0137, 0.128214, 121.547)
+
+[node name="TrafficCone632" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -77.0159, 0.128214, 124.547)
+
+[node name="TrafficCone633" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -77.0181, 0.128214, 127.547)
+
+[node name="TrafficCone634" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -77.0203, 0.128214, 130.547)
+
+[node name="TrafficCone635" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -77.0225, 0.128214, 133.547)
+
+[node name="TrafficCone636" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -77.0247, 0.128214, 136.547)
+
+[node name="TrafficCone637" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -77.0269, 0.128214, 139.547)
+
+[node name="TrafficCone638" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -77.0291, 0.128214, 142.547)
+
+[node name="TrafficCone639" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -77.0313, 0.128214, 145.547)
+
+[node name="TrafficCone640" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -77.0335, 0.128214, 148.547)
+
+[node name="TrafficCone641" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -77.0357, 0.128214, 151.547)
+
+[node name="TrafficCone642" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -77.0379, 0.128214, 154.547)
+
+[node name="TrafficCone643" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -77.0401, 0.128214, 157.547)
+
+[node name="TrafficCone644" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -77.0423, 0.128214, 160.547)
+
+[node name="TrafficCone645" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -77.0445, 0.128214, 163.547)
+
+[node name="TrafficCone646" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -77.0467, 0.128214, 166.547)
+
+[node name="TrafficCone647" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -77.0489, 0.128214, 169.547)
+
+[node name="TrafficCone648" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -77.0511, 0.128214, 172.547)
+
+[node name="TrafficCone649" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -77.0533, 0.128214, 175.547)
+
+[node name="TrafficCone650" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -77.0555, 0.128214, 178.547)
+
+[node name="TrafficCone651" parent="Scene" instance=ExtResource("6_v5a8l")]
+transform = Transform3D(-1, 0, 0.000732929, 0, 1, 0, -0.000732929, 0, -1, -77.0577, 0.128214, 181.547)
 
 [node name="TrafficCone158" parent="Scene" instance=ExtResource("6_v5a8l")]
 transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 81.835, 0.128214, -328.592)
