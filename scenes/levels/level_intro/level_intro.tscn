@@ -887,7 +887,7 @@ mesh = SubResource("BoxMesh_xuadu")
 shape = SubResource("ConcavePolygonShape3D_qocml")
 
 [node name="MeshInstance3D59" type="MeshInstance3D" parent="Scene/MapRoad"]
-transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, 577.374, 0.687692, 214.931)
+transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, 577.374, 0.687692, 336.452)
 mesh = SubResource("BoxMesh_xuadu")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Scene/MapRoad/MeshInstance3D59"]
@@ -896,7 +896,7 @@ mesh = SubResource("BoxMesh_xuadu")
 shape = SubResource("ConcavePolygonShape3D_qocml")
 
 [node name="MeshInstance3D89" type="MeshInstance3D" parent="Scene/MapRoad"]
-transform = Transform3D(-4.37114e-08, 2.98023e-08, 1, 1, -4.37114e-08, 4.37114e-08, 4.37114e-08, 1, -2.98023e-08, 554.07, 0.687692, 202.483)
+transform = Transform3D(-4.37114e-08, 2.98023e-08, 1, 1, -4.37114e-08, 4.37114e-08, 4.37114e-08, 1, -2.98023e-08, 554.07, 0.687692, 324.004)
 mesh = SubResource("BoxMesh_xuadu")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Scene/MapRoad/MeshInstance3D89"]
@@ -905,7 +905,7 @@ mesh = SubResource("BoxMesh_xuadu")
 shape = SubResource("ConcavePolygonShape3D_qocml")
 
 [node name="MeshInstance3D61" type="MeshInstance3D" parent="Scene/MapRoad"]
-transform = Transform3D(-0.00223976, -0.0230499, -0.999732, 0.0966885, 0.995045, -0.0231584, 0.995312, -0.0967144, 1.90173e-15, 567.653, 0.836945, 258.657)
+transform = Transform3D(-0.00223976, -0.0230499, -0.999732, 0.0966885, 0.995045, -0.0231584, 0.995312, -0.0967144, 1.90173e-15, 567.653, 0.836945, 380.178)
 mesh = SubResource("BoxMesh_xuadu")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Scene/MapRoad/MeshInstance3D61"]
@@ -914,7 +914,7 @@ mesh = SubResource("BoxMesh_xuadu")
 shape = SubResource("ConcavePolygonShape3D_qocml")
 
 [node name="MeshInstance3D62" type="MeshInstance3D" parent="Scene/MapRoad"]
-transform = Transform3D(-0.00613935, -0.0223298, -0.999732, 0.265031, 0.963962, -0.0231584, 0.96422, -0.265102, 1.84232e-15, 567.63, 1.82904, 267.146)
+transform = Transform3D(-0.00613935, -0.0223298, -0.999732, 0.265031, 0.963962, -0.0231584, 0.96422, -0.265102, 1.84232e-15, 567.63, 1.82904, 388.667)
 mesh = SubResource("BoxMesh_xuadu")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Scene/MapRoad/MeshInstance3D62"]
@@ -923,7 +923,7 @@ mesh = SubResource("BoxMesh_xuadu")
 shape = SubResource("ConcavePolygonShape3D_qocml")
 
 [node name="MeshInstance3D63" type="MeshInstance3D" parent="Scene/MapRoad"]
-transform = Transform3D(-0.0106126, -0.0205836, -0.999732, 0.458139, 0.888579, -0.0231584, 0.888817, -0.458262, 1.69825e-15, 567.54, 5.71184, 281.355)
+transform = Transform3D(-0.0106126, -0.0205836, -0.999732, 0.458139, 0.888579, -0.0231584, 0.888817, -0.458262, 1.69825e-15, 567.54, 5.71184, 402.876)
 mesh = SubResource("BoxMesh_xuadu")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Scene/MapRoad/MeshInstance3D63"]
@@ -932,7 +932,7 @@ mesh = SubResource("BoxMesh_xuadu")
 shape = SubResource("ConcavePolygonShape3D_qocml")
 
 [node name="MeshInstance3D64" type="MeshInstance3D" parent="Scene/MapRoad"]
-transform = Transform3D(-0.0143036, -0.0182132, -0.999732, 0.617474, 0.78625, -0.0231584, 0.786461, -0.61764, 1.50268e-15, 567.355, 13.7097, 295.137)
+transform = Transform3D(-0.0143036, -0.0182132, -0.999732, 0.617474, 0.78625, -0.0231584, 0.786461, -0.61764, 1.50268e-15, 567.355, 13.7097, 416.658)
 mesh = SubResource("BoxMesh_xuadu")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Scene/MapRoad/MeshInstance3D64"]
@@ -941,7 +941,7 @@ mesh = SubResource("BoxMesh_xuadu")
 shape = SubResource("ConcavePolygonShape3D_qocml")
 
 [node name="MeshInstance3D65" type="MeshInstance3D" parent="Scene/MapRoad"]
-transform = Transform3D(-0.0181245, -0.0144158, -0.999732, 0.78242, 0.62232, -0.0231584, 0.622487, -0.78263, 1.18938e-15, 567.132, 23.3393, 304.568)
+transform = Transform3D(-0.0181245, -0.0144158, -0.999732, 0.78242, 0.62232, -0.0231584, 0.622487, -0.78263, 1.18938e-15, 567.132, 23.3393, 426.089)
 mesh = SubResource("BoxMesh_xuadu")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Scene/MapRoad/MeshInstance3D65"]
@@ -950,7 +950,7 @@ mesh = SubResource("BoxMesh_xuadu")
 shape = SubResource("ConcavePolygonShape3D_qocml")
 
 [node name="MeshInstance3D66" type="MeshInstance3D" parent="Scene/MapRoad"]
-transform = Transform3D(-0.0215183, -0.00856013, -0.999732, 0.928928, 0.369534, -0.0231584, 0.369633, -0.929178, 7.06253e-16, 566.993, 29.3377, 308.233)
+transform = Transform3D(-0.0215183, -0.00856013, -0.999732, 0.928928, 0.369534, -0.0231584, 0.369633, -0.929178, 7.06253e-16, 566.993, 29.3377, 429.754)
 mesh = SubResource("BoxMesh_xuadu")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Scene/MapRoad/MeshInstance3D66"]
@@ -959,7 +959,7 @@ mesh = SubResource("BoxMesh_xuadu")
 shape = SubResource("ConcavePolygonShape3D_qocml")
 
 [node name="MeshInstance3D67" type="MeshInstance3D" parent="Scene/MapRoad"]
-transform = Transform3D(-0.0229927, -0.00276613, -0.999732, 0.992575, 0.119412, -0.0231584, 0.119444, -0.992841, 2.28219e-16, 566.727, 40.8063, 311.768)
+transform = Transform3D(-0.0229927, -0.00276613, -0.999732, 0.992575, 0.119412, -0.0231584, 0.119444, -0.992841, 2.28219e-16, 566.727, 40.8063, 433.289)
 mesh = SubResource("BoxMesh_xuadu")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Scene/MapRoad/MeshInstance3D67"]
@@ -968,7 +968,7 @@ mesh = SubResource("BoxMesh_xuadu")
 shape = SubResource("ConcavePolygonShape3D_qocml")
 
 [node name="MeshInstance3D68" type="MeshInstance3D" parent="Scene/MapRoad"]
-transform = Transform3D(-0.0882483, -0.00069773, -0.996098, 0.996067, 0.00787535, -0.0882511, 0.0079062, -0.999969, -5.80839e-11, 565.613, 63.6105, 313.287)
+transform = Transform3D(-0.0882483, -0.00069773, -0.996098, 0.996067, 0.00787535, -0.0882511, 0.0079062, -0.999969, -5.80839e-11, 565.613, 63.6105, 434.808)
 mesh = SubResource("BoxMesh_xuadu")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Scene/MapRoad/MeshInstance3D68"]
@@ -977,7 +977,7 @@ mesh = SubResource("BoxMesh_xuadu")
 shape = SubResource("ConcavePolygonShape3D_qocml")
 
 [node name="MeshInstance3D69" type="MeshInstance3D" parent="Scene/MapRoad"]
-transform = Transform3D(-0.0870736, 0.0143681, -0.996098, 0.982808, -0.162174, -0.0882511, -0.162809, -0.986658, 9.70949e-10, 564.859, 66.6135, 313.188)
+transform = Transform3D(-0.0870736, 0.0143681, -0.996098, 0.982808, -0.162174, -0.0882511, -0.162809, -0.986658, 9.70949e-10, 564.859, 66.6135, 434.709)
 mesh = SubResource("BoxMesh_xuadu")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Scene/MapRoad/MeshInstance3D69"]
@@ -986,7 +986,7 @@ mesh = SubResource("BoxMesh_xuadu")
 shape = SubResource("ConcavePolygonShape3D_qocml")
 
 [node name="MeshInstance3D70" type="MeshInstance3D" parent="Scene/MapRoad"]
-transform = Transform3D(-0.0822384, 0.0320171, -0.996098, 0.928233, -0.36138, -0.0882511, -0.362796, -0.931869, -1.38638e-15, 563.576, 83.2257, 310.812)
+transform = Transform3D(-0.0822384, 0.0320171, -0.996098, 0.928233, -0.36138, -0.0882511, -0.362796, -0.931869, -1.38638e-15, 563.576, 80.398, 432.333)
 mesh = SubResource("BoxMesh_xuadu")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Scene/MapRoad/MeshInstance3D70"]
@@ -995,7 +995,7 @@ mesh = SubResource("BoxMesh_xuadu")
 shape = SubResource("ConcavePolygonShape3D_qocml")
 
 [node name="MeshInstance3D71" type="MeshInstance3D" parent="Scene/MapRoad"]
-transform = Transform3D(-0.0747258, 0.04695, -0.996098, 0.843438, -0.529929, -0.0882511, -0.532005, -0.846741, -8.3214e-11, 562.293, 97.8135, 304.297)
+transform = Transform3D(-0.0747258, 0.04695, -0.996098, 0.843438, -0.529929, -0.0882511, -0.532005, -0.846741, -8.3214e-11, 562.293, 93.5611, 425.818)
 mesh = SubResource("BoxMesh_xuadu")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Scene/MapRoad/MeshInstance3D71"]
@@ -1004,7 +1004,7 @@ mesh = SubResource("BoxMesh_xuadu")
 shape = SubResource("ConcavePolygonShape3D_qocml")
 
 [node name="MeshInstance3D72" type="MeshInstance3D" parent="Scene/MapRoad"]
-transform = Transform3D(-0.0618571, 0.062944, -0.996098, 0.698187, -0.710455, -0.088251, -0.713238, -0.700922, -1.9419e-09, 561.376, 110.123, 295.704)
+transform = Transform3D(-0.0618571, 0.062944, -0.996098, 0.698187, -0.710455, -0.088251, -0.713238, -0.700922, -1.9419e-09, 561.376, 110.123, 417.225)
 mesh = SubResource("BoxMesh_xuadu")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Scene/MapRoad/MeshInstance3D72"]
@@ -1013,7 +1013,7 @@ mesh = SubResource("BoxMesh_xuadu")
 shape = SubResource("ConcavePolygonShape3D_qocml")
 
 [node name="MeshInstance3D73" type="MeshInstance3D" parent="Scene/MapRoad"]
-transform = Transform3D(-0.0410174, 0.0781398, -0.996098, 0.462967, -0.881971, -0.088251, -0.885426, -0.46478, -3.80059e-09, 560.999, 113.344, 290.12)
+transform = Transform3D(-0.0410174, 0.0781398, -0.996098, 0.462967, -0.881971, -0.088251, -0.885426, -0.46478, -3.80059e-09, 560.999, 109.829, 411.641)
 mesh = SubResource("BoxMesh_xuadu")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Scene/MapRoad/MeshInstance3D73"]
@@ -1022,7 +1022,7 @@ mesh = SubResource("BoxMesh_xuadu")
 shape = SubResource("ConcavePolygonShape3D_qocml")
 
 [node name="MeshInstance3D74" type="MeshInstance3D" parent="Scene/MapRoad"]
-transform = Transform3D(-0.0196465, 0.0860364, -0.996098, 0.221752, -0.971101, -0.0882511, -0.974905, -0.222621, 9.2934e-10, 560.583, 119.076, 279.081)
+transform = Transform3D(-0.0196465, 0.0860364, -0.996098, 0.221752, -0.971101, -0.0882511, -0.974905, -0.222621, 9.2934e-10, 560.583, 115.675, 400.602)
 mesh = SubResource("BoxMesh_xuadu")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Scene/MapRoad/MeshInstance3D74"]
@@ -1031,7 +1031,7 @@ mesh = SubResource("BoxMesh_xuadu")
 shape = SubResource("ConcavePolygonShape3D_qocml")
 
 [node name="MeshInstance3D75" type="MeshInstance3D" parent="Scene/MapRoad"]
-transform = Transform3D(-0.0654858, 0.0226408, -0.997597, 0.013429, -0.999632, -0.0235685, -0.997763, -0.0149401, 0.0651577, 559.248, 122.183, 254.31)
+transform = Transform3D(-0.0654858, 0.0226408, -0.997597, 0.013429, -0.999632, -0.0235685, -0.997763, -0.0149401, 0.0651577, 559.248, 118.868, 375.831)
 mesh = SubResource("BoxMesh_xuadu")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Scene/MapRoad/MeshInstance3D75"]
@@ -1040,7 +1040,7 @@ mesh = SubResource("BoxMesh_xuadu")
 shape = SubResource("ConcavePolygonShape3D_qocml")
 
 [node name="MeshInstance3D76" type="MeshInstance3D" parent="Scene/MapRoad"]
-transform = Transform3D(-0.0606631, 0.0334811, -0.997597, -0.15731, -0.987268, -0.0235686, -0.985684, 0.155502, 0.0651577, 558.692, 122.131, 245.781)
+transform = Transform3D(-0.0606631, 0.0334811, -0.997597, -0.15731, -0.987268, -0.0235686, -0.985684, 0.155502, 0.0651577, 558.692, 118.772, 367.302)
 mesh = SubResource("BoxMesh_xuadu")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Scene/MapRoad/MeshInstance3D76"]
@@ -1049,7 +1049,7 @@ mesh = SubResource("BoxMesh_xuadu")
 shape = SubResource("ConcavePolygonShape3D_qocml")
 
 [node name="MeshInstance3D77" type="MeshInstance3D" parent="Scene/MapRoad"]
-transform = Transform3D(-0.0524539, 0.0452724, -0.997597, -0.357541, -0.9336, -0.0235686, -0.932423, 0.355445, 0.0651577, 557.798, 119.835, 231.258)
+transform = Transform3D(-0.0524539, 0.0452724, -0.997597, -0.357541, -0.9336, -0.0235686, -0.932423, 0.355445, 0.0651577, 557.798, 116.188, 352.779)
 mesh = SubResource("BoxMesh_xuadu")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Scene/MapRoad/MeshInstance3D77"]
@@ -1058,7 +1058,7 @@ mesh = SubResource("BoxMesh_xuadu")
 shape = SubResource("ConcavePolygonShape3D_qocml")
 
 [node name="MeshInstance3D78" type="MeshInstance3D" parent="Scene/MapRoad"]
-transform = Transform3D(-0.0429762, 0.0543512, -0.997597, -0.52717, -0.849433, -0.0235686, -0.848672, 0.52489, 0.0651577, 556.999, 113.403, 216.701)
+transform = Transform3D(-0.0429762, 0.0543512, -0.997597, -0.52717, -0.849433, -0.0235686, -0.848672, 0.52489, 0.0651577, 556.999, 108.584, 338.222)
 mesh = SubResource("BoxMesh_xuadu")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Scene/MapRoad/MeshInstance3D78"]
@@ -1067,7 +1067,7 @@ mesh = SubResource("BoxMesh_xuadu")
 shape = SubResource("ConcavePolygonShape3D_qocml")
 
 [node name="MeshInstance3D79" type="MeshInstance3D" parent="Scene/MapRoad"]
-transform = Transform3D(-0.0292565, 0.0628097, -0.997597, -0.709156, -0.704657, -0.0235685, -0.704443, 0.706762, 0.0651577, 556.519, 104.869, 206.275)
+transform = Transform3D(-0.0292565, 0.0628097, -0.997597, -0.709156, -0.704657, -0.0235685, -0.704443, 0.706762, 0.0651577, 556.519, 100.87, 327.796)
 mesh = SubResource("BoxMesh_xuadu")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Scene/MapRoad/MeshInstance3D79"]
@@ -1076,7 +1076,7 @@ mesh = SubResource("BoxMesh_xuadu")
 shape = SubResource("ConcavePolygonShape3D_qocml")
 
 [node name="MeshInstance3D80" type="MeshInstance3D" parent="Scene/MapRoad"]
-transform = Transform3D(-0.00984779, 0.0685859, -0.997597, -0.882599, -0.469536, -0.0235685, -0.470024, 0.880245, 0.0651577, 556.37, 99.3109, 201.973)
+transform = Transform3D(-0.00984779, 0.0685859, -0.997597, -0.882599, -0.469536, -0.0235685, -0.470024, 0.880245, 0.0651577, 556.37, 94.6196, 323.494)
 mesh = SubResource("BoxMesh_xuadu")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Scene/MapRoad/MeshInstance3D80"]
@@ -1085,7 +1085,7 @@ mesh = SubResource("BoxMesh_xuadu")
 shape = SubResource("ConcavePolygonShape3D_qocml")
 
 [node name="MeshInstance3D81" type="MeshInstance3D" parent="Scene/MapRoad"]
-transform = Transform3D(0.00803854, 0.0688214, -0.997597, -0.973389, -0.227942, -0.0235686, -0.229016, 0.971239, 0.0651577, 556.318, 88.3011, 197.19)
+transform = Transform3D(0.00803854, 0.0688214, -0.997597, -0.973389, -0.227942, -0.0235686, -0.229016, 0.971239, 0.0651577, 556.318, 88.3011, 318.711)
 mesh = SubResource("BoxMesh_xuadu")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Scene/MapRoad/MeshInstance3D81"]
@@ -1094,7 +1094,7 @@ mesh = SubResource("BoxMesh_xuadu")
 shape = SubResource("ConcavePolygonShape3D_qocml")
 
 [node name="MeshInstance3D82" type="MeshInstance3D" parent="Scene/MapRoad"]
-transform = Transform3D(-0.0346736, -0.000935717, -0.999398, -0.999305, 0.0137649, 0.0346574, 0.0137241, 0.999905, -0.00141236, 555.641, 58.2369, 193.815)
+transform = Transform3D(-0.0346736, -0.000935717, -0.999398, -0.999305, 0.0137649, 0.0346574, 0.0137241, 0.999905, -0.00141236, 555.641, 58.2369, 315.336)
 mesh = SubResource("BoxMesh_xuadu")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Scene/MapRoad/MeshInstance3D82"]
@@ -1103,7 +1103,7 @@ mesh = SubResource("BoxMesh_xuadu")
 shape = SubResource("ConcavePolygonShape3D_qocml")
 
 [node name="MeshInstance3D83" type="MeshInstance3D" parent="Scene/MapRoad"]
-transform = Transform3D(-0.0343249, 0.00499349, -0.999398, -0.982306, 0.184049, 0.0346574, 0.184112, 0.982904, -0.00141235, 555.345, 49.6997, 194.099)
+transform = Transform3D(-0.0343249, 0.00499349, -0.999398, -0.982306, 0.184049, 0.0346574, 0.184112, 0.982904, -0.00141235, 555.345, 49.6997, 315.62)
 mesh = SubResource("BoxMesh_xuadu")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Scene/MapRoad/MeshInstance3D83"]
@@ -1112,7 +1112,7 @@ mesh = SubResource("BoxMesh_xuadu")
 shape = SubResource("ConcavePolygonShape3D_qocml")
 
 [node name="MeshInstance3D84" type="MeshInstance3D" parent="Scene/MapRoad"]
-transform = Transform3D(-0.0325571, 0.0119652, -0.999398, -0.92323, 0.382682, 0.0346574, 0.382866, 0.923803, -0.00141234, 554.839, 35.226, 196.789)
+transform = Transform3D(-0.0325571, 0.0119652, -0.999398, -0.92323, 0.382682, 0.0346574, 0.382866, 0.923803, -0.00141234, 554.839, 35.226, 318.31)
 mesh = SubResource("BoxMesh_xuadu")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Scene/MapRoad/MeshInstance3D84"]
@@ -1121,7 +1121,7 @@ mesh = SubResource("BoxMesh_xuadu")
 shape = SubResource("ConcavePolygonShape3D_qocml")
 
 [node name="MeshInstance3D85" type="MeshInstance3D" parent="Scene/MapRoad"]
-transform = Transform3D(-0.0297169, 0.0178897, -0.999398, -0.834508, 0.549905, 0.0346574, 0.550194, 0.835036, -0.00141234, 554.33, 20.8368, 203.617)
+transform = Transform3D(-0.0297169, 0.0178897, -0.999398, -0.834508, 0.549905, 0.0346574, 0.550194, 0.835036, -0.00141234, 554.33, 20.8368, 325.138)
 mesh = SubResource("BoxMesh_xuadu")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Scene/MapRoad/MeshInstance3D85"]
@@ -1130,7 +1130,7 @@ mesh = SubResource("BoxMesh_xuadu")
 shape = SubResource("ConcavePolygonShape3D_qocml")
 
 [node name="MeshInstance3D86" type="MeshInstance3D" parent="Scene/MapRoad"]
-transform = Transform3D(-0.0247798, 0.0242713, -0.999398, -0.684883, 0.727828, 0.0346574, 0.728231, 0.68533, -0.00141235, 553.965, 10.6444, 212.433)
+transform = Transform3D(-0.0247798, 0.0242713, -0.999398, -0.684883, 0.727828, 0.0346574, 0.728231, 0.68533, -0.00141235, 553.965, 10.6444, 333.954)
 mesh = SubResource("BoxMesh_xuadu")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Scene/MapRoad/MeshInstance3D86"]
@@ -1139,7 +1139,7 @@ mesh = SubResource("BoxMesh_xuadu")
 shape = SubResource("ConcavePolygonShape3D_qocml")
 
 [node name="MeshInstance3D87" type="MeshInstance3D" parent="Scene/MapRoad"]
-transform = Transform3D(-0.0167043, 0.030399, -0.999398, -0.445209, 0.894756, 0.0346574, 0.895271, 0.44552, -0.00141235, 553.813, 6.49697, 218.108)
+transform = Transform3D(-0.0167043, 0.030399, -0.999398, -0.445209, 0.894756, 0.0346574, 0.895271, 0.44552, -0.00141235, 553.813, 6.49697, 339.629)
 mesh = SubResource("BoxMesh_xuadu")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Scene/MapRoad/MeshInstance3D87"]
@@ -1148,7 +1148,7 @@ mesh = SubResource("BoxMesh_xuadu")
 shape = SubResource("ConcavePolygonShape3D_qocml")
 
 [node name="MeshInstance3D88" type="MeshInstance3D" parent="Scene/MapRoad"]
-transform = Transform3D(-0.00836541, 0.0336624, -0.999398, -0.201313, 0.978914, 0.0346574, 0.979491, 0.201482, -0.00141234, 553.642, 2.02476, 229.246)
+transform = Transform3D(-0.00836541, 0.0336624, -0.999398, -0.201313, 0.978914, 0.0346574, 0.979491, 0.201482, -0.00141234, 553.642, 2.02476, 350.767)
 mesh = SubResource("BoxMesh_xuadu")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Scene/MapRoad/MeshInstance3D88"]
@@ -1157,7 +1157,7 @@ mesh = SubResource("BoxMesh_xuadu")
 shape = SubResource("ConcavePolygonShape3D_qocml")
 
 [node name="MeshInstance3D60" type="MeshInstance3D" parent="Scene/MapRoad"]
-transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, 543.374, 0.687692, 220.144)
+transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, 543.374, 0.687692, 341.665)
 mesh = SubResource("BoxMesh_xuadu")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Scene/MapRoad/MeshInstance3D60"]
@@ -1193,7 +1193,7 @@ mesh = SubResource("BoxMesh_xuadu")
 shape = SubResource("ConcavePolygonShape3D_qocml")
 
 [node name="MeshInstance3D92" type="MeshInstance3D" parent="Scene/MapRoad"]
-transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, 577.374, 0.687692, 15.058)
+transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, 577.374, 0.687692, 136.579)
 mesh = SubResource("BoxMesh_xuadu")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Scene/MapRoad/MeshInstance3D92"]
@@ -1210,8 +1210,62 @@ mesh = SubResource("BoxMesh_xuadu")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Scene/MapRoad/MeshInstance3D93/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_qocml")
 
-[node name="MeshInstance3D94" type="MeshInstance3D" parent="Scene/MapRoad"]
+[node name="MeshInstance3D168" type="MeshInstance3D" parent="Scene/MapRoad"]
+transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, 577.374, 0.687692, 15.058)
+mesh = SubResource("BoxMesh_xuadu")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Scene/MapRoad/MeshInstance3D168"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scene/MapRoad/MeshInstance3D168/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_qocml")
+
+[node name="MeshInstance3D169" type="MeshInstance3D" parent="Scene/MapRoad"]
+transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, 521.972, 0.687692, 38.5205)
+mesh = SubResource("BoxMesh_xuadu")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Scene/MapRoad/MeshInstance3D169"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scene/MapRoad/MeshInstance3D169/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_qocml")
+
+[node name="MeshInstance3D170" type="MeshInstance3D" parent="Scene/MapRoad"]
 transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, 577.374, 0.687692, 55.058)
+mesh = SubResource("BoxMesh_xuadu")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Scene/MapRoad/MeshInstance3D170"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scene/MapRoad/MeshInstance3D170/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_qocml")
+
+[node name="MeshInstance3D171" type="MeshInstance3D" parent="Scene/MapRoad"]
+transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, 521.972, 0.687692, 78.5205)
+mesh = SubResource("BoxMesh_xuadu")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Scene/MapRoad/MeshInstance3D171"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scene/MapRoad/MeshInstance3D171/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_qocml")
+
+[node name="MeshInstance3D172" type="MeshInstance3D" parent="Scene/MapRoad"]
+transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, 577.374, 0.687692, 96.058)
+mesh = SubResource("BoxMesh_xuadu")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Scene/MapRoad/MeshInstance3D172"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scene/MapRoad/MeshInstance3D172/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_qocml")
+
+[node name="MeshInstance3D173" type="MeshInstance3D" parent="Scene/MapRoad"]
+transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, 521.972, 0.687692, 119.521)
+mesh = SubResource("BoxMesh_xuadu")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Scene/MapRoad/MeshInstance3D173"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scene/MapRoad/MeshInstance3D173/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_qocml")
+
+[node name="MeshInstance3D94" type="MeshInstance3D" parent="Scene/MapRoad"]
+transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, 577.374, 0.687692, 176.579)
 mesh = SubResource("BoxMesh_xuadu")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Scene/MapRoad/MeshInstance3D94"]
@@ -1220,7 +1274,7 @@ mesh = SubResource("BoxMesh_xuadu")
 shape = SubResource("ConcavePolygonShape3D_qocml")
 
 [node name="MeshInstance3D95" type="MeshInstance3D" parent="Scene/MapRoad"]
-transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, 521.972, 0.687692, 38.5205)
+transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, 521.972, 0.687692, 160.041)
 mesh = SubResource("BoxMesh_xuadu")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Scene/MapRoad/MeshInstance3D95"]
@@ -1229,7 +1283,7 @@ mesh = SubResource("BoxMesh_xuadu")
 shape = SubResource("ConcavePolygonShape3D_qocml")
 
 [node name="MeshInstance3D96" type="MeshInstance3D" parent="Scene/MapRoad"]
-transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, 577.374, 0.687692, 95.058)
+transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, 577.374, 0.687692, 216.579)
 mesh = SubResource("BoxMesh_xuadu")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Scene/MapRoad/MeshInstance3D96"]
@@ -1238,7 +1292,7 @@ mesh = SubResource("BoxMesh_xuadu")
 shape = SubResource("ConcavePolygonShape3D_qocml")
 
 [node name="MeshInstance3D97" type="MeshInstance3D" parent="Scene/MapRoad"]
-transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, 521.972, 0.687692, 78.5205)
+transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, 521.972, 0.687692, 200.041)
 mesh = SubResource("BoxMesh_xuadu")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Scene/MapRoad/MeshInstance3D97"]
@@ -1247,7 +1301,7 @@ mesh = SubResource("BoxMesh_xuadu")
 shape = SubResource("ConcavePolygonShape3D_qocml")
 
 [node name="MeshInstance3D98" type="MeshInstance3D" parent="Scene/MapRoad"]
-transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, 577.374, 0.687692, 135.058)
+transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, 577.374, 0.687692, 256.579)
 mesh = SubResource("BoxMesh_xuadu")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Scene/MapRoad/MeshInstance3D98"]
@@ -1256,7 +1310,7 @@ mesh = SubResource("BoxMesh_xuadu")
 shape = SubResource("ConcavePolygonShape3D_qocml")
 
 [node name="MeshInstance3D99" type="MeshInstance3D" parent="Scene/MapRoad"]
-transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, 521.972, 0.687692, 118.521)
+transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, 521.972, 0.687692, 240.042)
 mesh = SubResource("BoxMesh_xuadu")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Scene/MapRoad/MeshInstance3D99"]
@@ -1265,7 +1319,7 @@ mesh = SubResource("BoxMesh_xuadu")
 shape = SubResource("ConcavePolygonShape3D_qocml")
 
 [node name="MeshInstance3D100" type="MeshInstance3D" parent="Scene/MapRoad"]
-transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, 577.374, 0.687692, 175.058)
+transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, 577.374, 0.687692, 296.579)
 mesh = SubResource("BoxMesh_xuadu")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Scene/MapRoad/MeshInstance3D100"]
@@ -1274,7 +1328,7 @@ mesh = SubResource("BoxMesh_xuadu")
 shape = SubResource("ConcavePolygonShape3D_qocml")
 
 [node name="MeshInstance3D101" type="MeshInstance3D" parent="Scene/MapRoad"]
-transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, 521.972, 0.687692, 158.521)
+transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, 521.972, 0.687692, 280.042)
 mesh = SubResource("BoxMesh_xuadu")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Scene/MapRoad/MeshInstance3D101"]
@@ -1283,7 +1337,7 @@ mesh = SubResource("BoxMesh_xuadu")
 shape = SubResource("ConcavePolygonShape3D_qocml")
 
 [node name="MeshInstance3D58" type="MeshInstance3D" parent="Scene/MapRoad"]
-transform = Transform3D(-0.188993, -0.981978, 4.29236e-08, 0, -4.37114e-08, -1, 0.981978, -0.188993, 8.26113e-09, 518.299, 0.687692, 198.018)
+transform = Transform3D(-0.188993, -0.981978, 4.29236e-08, 0, -4.37114e-08, -1, 0.981978, -0.188993, 8.26113e-09, 518.299, 0.687692, 319.539)
 mesh = SubResource("BoxMesh_xuadu")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Scene/MapRoad/MeshInstance3D58"]
