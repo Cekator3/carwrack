@@ -18,12 +18,14 @@ func restart_map():
 var scene_manager: SceneManager 
 var active_ui_layer: Control 
 
-var debug_steer_axis_amount: float = 0
 var debug_analog_axis: float = 0
+var debug_gas_strength: float = 0
+var debug_brake_strength: float = 0
 
 #Car variables 
 var car_rpm: int = 0
 var car_speed: int = 0
+var car_gear: int = 0
 var player_in_the_car: bool = false
 
 

@@ -15,4 +15,3 @@ func _ready():
 
 func _process(delta):
 	Global.physical_steering_angle = interactable_hinge.hinge_position
-	#print(Global.physical_steering_angle)

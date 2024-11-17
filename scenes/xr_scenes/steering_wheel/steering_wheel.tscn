@@ -170,7 +170,7 @@ transform = Transform3D(3.4, 0, 0, 0, 3.4, 0, 0, 0, 3.4, 0, 0, 0)
 script = ExtResource("1_pphre")
 hinge_limit_min = -165.0
 hinge_limit_max = 165.0
-default_on_release = true
+speed_to_default_position_rad = 4.0
 
 [node name="WheelBody" type="StaticBody3D" parent="PhysicalSteer/InteractableHinge"]
 collision_layer = 0
@@ -178,6 +178,7 @@ collision_mask = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PhysicalSteer/InteractableHinge/WheelBody"]
 transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
+visible = false
 shape = SubResource("CylinderShape3D_q275c")
 
 [node name="SteeringObj" type="Node3D" parent="PhysicalSteer/InteractableHinge/WheelBody"]
@@ -201,7 +202,7 @@ collision_layer = 262144
 collision_mask = 0
 freeze = true
 script = ExtResource("2_til3j")
-snap_distance = 0.5
+snap_distance = 1.0
 picked_up_layer = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PhysicalSteer/InteractableHinge/Handle1/InteractableHandle"]
@@ -215,7 +216,7 @@ collision_layer = 262144
 collision_mask = 0
 freeze = true
 script = ExtResource("2_til3j")
-snap_distance = 0.5
+snap_distance = 1.0
 picked_up_layer = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PhysicalSteer/InteractableHinge/Handle2/InteractableHandle"]
@@ -229,7 +230,7 @@ collision_layer = 262144
 collision_mask = 0
 freeze = true
 script = ExtResource("2_til3j")
-snap_distance = 0.5
+snap_distance = 1.0
 picked_up_layer = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PhysicalSteer/InteractableHinge/Handle3/InteractableHandle"]
@@ -243,7 +244,7 @@ collision_layer = 262144
 collision_mask = 0
 freeze = true
 script = ExtResource("2_til3j")
-snap_distance = 0.5
+snap_distance = 1.0
 picked_up_layer = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PhysicalSteer/InteractableHinge/Handle4/InteractableHandle"]
@@ -257,7 +258,7 @@ collision_layer = 262144
 collision_mask = 0
 freeze = true
 script = ExtResource("2_til3j")
-snap_distance = 0.5
+snap_distance = 1.0
 picked_up_layer = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PhysicalSteer/InteractableHinge/Handle5/InteractableHandle"]
@@ -271,7 +272,7 @@ collision_layer = 262144
 collision_mask = 0
 freeze = true
 script = ExtResource("2_til3j")
-snap_distance = 0.5
+snap_distance = 1.0
 picked_up_layer = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PhysicalSteer/InteractableHinge/Handle6/InteractableHandle"]
@@ -285,7 +286,7 @@ collision_layer = 262144
 collision_mask = 0
 freeze = true
 script = ExtResource("2_til3j")
-snap_distance = 0.5
+snap_distance = 1.0
 picked_up_layer = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PhysicalSteer/InteractableHinge/Handle7/InteractableHandle"]
@@ -299,7 +300,7 @@ collision_layer = 262144
 collision_mask = 0
 freeze = true
 script = ExtResource("2_til3j")
-snap_distance = 0.5
+snap_distance = 1.0
 picked_up_layer = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PhysicalSteer/InteractableHinge/Handle8/InteractableHandle"]

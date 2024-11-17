@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="ViVeCarControls" load_steps=3 format=3 uid="uid://r5c2gxfbk21k"]
+[gd_resource type="Resource" script_class="ViVeCarControls" load_steps=4 format=3 uid="uid://r5c2gxfbk21k"]
 
+[ext_resource type="Curve" uid="uid://ldy287gxpkq1" path="res://scenes/vivavehicle_misc/controls config/curves/curve_trigger.tres" id="1_0g8kr"]
 [ext_resource type="Script" path="res://scenes/vivavehicle_main/car_stats/controls.gd" id="1_pw0a5"]
 
 [sub_resource type="Curve" id="Curve_grufx"]
@@ -25,6 +26,7 @@ EnableSteeringAssistance = false
 SteeringAssistance = 1.0
 SteeringAssistanceAngular = 0.12
 LooseSteering = false
+CurveTrigger = ExtResource("1_0g8kr")
 ActionNameThrottle = &"gas"
 IsThrottleDigital = false
 OnThrottleRate = 0.2

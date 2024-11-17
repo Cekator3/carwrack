@@ -1004,7 +1004,7 @@ mesh = SubResource("BoxMesh_xuadu")
 shape = SubResource("ConcavePolygonShape3D_qocml")
 
 [node name="MeshInstance3D72" type="MeshInstance3D" parent="Scene/MapRoad"]
-transform = Transform3D(-0.0618571, 0.062944, -0.996098, 0.698187, -0.710455, -0.088251, -0.713238, -0.700922, -1.9419e-09, 561.376, 110.123, 417.225)
+transform = Transform3D(-0.0618571, 0.062944, -0.996098, 0.480984, -0.872598, -0.0850088, -0.874544, -0.484366, 0.0237013, 561.376, 110.575, 406.867)
 mesh = SubResource("BoxMesh_xuadu")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Scene/MapRoad/MeshInstance3D72"]
@@ -1013,7 +1013,7 @@ mesh = SubResource("BoxMesh_xuadu")
 shape = SubResource("ConcavePolygonShape3D_qocml")
 
 [node name="MeshInstance3D73" type="MeshInstance3D" parent="Scene/MapRoad"]
-transform = Transform3D(-0.0410174, 0.0781398, -0.996098, 0.462967, -0.881971, -0.088251, -0.885426, -0.46478, -3.80059e-09, 560.999, 109.829, 411.641)
+transform = Transform3D(-0.0410174, 0.0781398, -0.996098, 0.639423, -0.764001, -0.0862628, -0.767761, -0.640466, -0.0186271, 560.999, 104.839, 414.61)
 mesh = SubResource("BoxMesh_xuadu")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Scene/MapRoad/MeshInstance3D73"]
@@ -1022,7 +1022,7 @@ mesh = SubResource("BoxMesh_xuadu")
 shape = SubResource("ConcavePolygonShape3D_qocml")
 
 [node name="MeshInstance3D74" type="MeshInstance3D" parent="Scene/MapRoad"]
-transform = Transform3D(-0.0196465, 0.0860364, -0.996098, 0.221752, -0.971101, -0.0882511, -0.974905, -0.222621, 9.2934e-10, 560.583, 115.675, 400.602)
+transform = Transform3D(-0.0196465, 0.0860364, -0.996098, 0.209859, -0.973741, -0.0882446, -0.977534, -0.210774, 0.00107508, 560.583, 116.024, 393.858)
 mesh = SubResource("BoxMesh_xuadu")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Scene/MapRoad/MeshInstance3D74"]
@@ -1373,7 +1373,7 @@ mesh = SubResource("BoxMesh_xuadu")
 shape = SubResource("ConcavePolygonShape3D_qocml")
 
 [node name="MeshInstance3D14" type="MeshInstance3D" parent="Scene/MapRoad"]
-transform = Transform3D(-4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, -95.839, -2.31137, -109.332)
+transform = Transform3D(-4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, -95.2186, -2.31137, -109.332)
 mesh = SubResource("BoxMesh_xuadu")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Scene/MapRoad/MeshInstance3D14"]
@@ -3736,7 +3736,7 @@ mesh = SubResource("SphereMesh_r7wgu")
 [node name="XRCameraPosition" type="Marker3D" parent="FerrariCar" node_paths=PackedStringArray("xr_origin_3d")]
 process_priority = 3
 process_physics_priority = 3
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.41301, -1.36008, -1.00965)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.41302, -1.36008, -0.93261)
 script = ExtResource("9_u125f")
 xr_origin_3d = NodePath("../XROrigin3D")
 max_position_range = 1.0
@@ -3747,6 +3747,7 @@ mesh = SubResource("SphereMesh_hfhn6")
 [node name="HUD" parent="." instance=ExtResource("8_i8qtt")]
 process_priority = 4
 process_physics_priority = 4
+physics_interpolation_mode = 1
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -370)
 speed_interpolate_angle = 25.0
 speed_interpolate_position = 95.0

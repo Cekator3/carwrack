@@ -5,6 +5,9 @@ func _process(delta):
 	$FPS.text = "FPS: %s" % str(Engine.get_frames_per_second())
 	$RPM.text = "RPM: %s" % str(Global.car_rpm)
 	$Speed.text = "Speed: %s km/h" % str(Global.car_speed)
+	$Gear.text = "Gear: %s" % str(Global.car_gear)
 	
-	$AnalogAxis.text = "AnalogAxis: %s" % str(Global.debug_analog_axis)
-	$SteerAxisAmount.text = "SteerAxisAmount: %s" % str(Global.debug_steer_axis_amount)
+	$SteeringAngle.text = "SteeringWheel: %s" % str(Global.debug_analog_axis)
+	$Throttle.text = "Throttle: %s" % str(Global.debug_gas_strength)
+	$Brake.text = "Brake: %s" % str(Global.debug_brake_strength)
+	

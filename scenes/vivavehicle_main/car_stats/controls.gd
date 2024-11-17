@@ -51,6 +51,7 @@ class_name ViVeCarControls
 
 #In C++, none of these will be indepenent variables: The setgets will map directly to their structs.
 @export_group("Throttle")
+var CurveTrigger: Curve
 ##Action name for throttle.
 @export var ActionNameThrottle:StringName = &"gas":
 	set(new_name):
@@ -171,6 +172,8 @@ class ButtonWrapper:
 	var minimum:float = 0.0 #unused
 	var maximum:float = 1.0
 	
+	var curve_trigger: Curve
+	
 	func update_press(just:bool) -> bool:
 		if digital:
 			if just:
@@ -211,14 +214,30 @@ class ButtonWrapper:
 			else: 
 				if name == "brake":
 					if Global.is_reverse:
-						strength = clamp(Input.get_action_strength("gas") + Global.gas_trigger, 0, 1)
+						var action_strength : float = Input.get_action_strength("gas") + Global.gas_trigger
+						
+						Global.debug_gas_strength = action_strength
+						
+						strength = clamp(curve_trigger.sample(action_strength), 0, 1)
 					else:
-						strength = clamp(Input.get_action_strength(name) + Global.brake_trigger, 0, 1)
+						var action_strength : float = Input.get_action_strength(name) + Global.brake_trigger
+						
+						Global.debug_brake_strength = action_strength
+						
+						strength = clamp(curve_trigger.sample(action_strength), 0, 1)
 				elif name == "gas":
 					if Global.is_reverse:
-						strength = clamp(Input.get_action_strength("brake") + Global.brake_trigger, 0, 1)
+						var action_strength : float = Input.get_action_strength("brake") + Global.brake_trigger
+						
+						Global.debug_brake_strength = action_strength
+						
+						strength = clamp(curve_trigger.sample(action_strength), 0, 1)
 					else:
-						strength = clamp(Input.get_action_strength(name) + Global.gas_trigger, 0, 1)
+						var action_strength : float = Input.get_action_strength(name) + Global.gas_trigger
+						
+						Global.debug_gas_strength = action_strength
+						
+						strength = clamp(curve_trigger.sample(action_strength), 0, 1)
 				elif name == "handbrake":
 					strength = clamp(Input.get_action_strength(name) + int(Global.handbrake_button), 0, 1) 
 				else:
@@ -241,12 +260,18 @@ var steer_axis_amount:float
 func _init() -> void:
 	clock_mult = 1.0
 	#ButtonWrapper.clock_mult = ViVeEnvironment.get_singleton().clock_mult #causes load error
+	CurveTrigger = preload("res://scenes/vivavehicle_misc/controls config/curves/curve_trigger.tres")
+	
 	
 	throttle_button.name = ActionNameThrottle
 	throttle_button.digital = IsThrottleDigital
 	throttle_button.on_rate = OnThrottleRate
 	throttle_button.off_rate = OffThrottleRate
 	throttle_button.maximum = MaxThrottle
+	
+	print(CurveTrigger)
+	
+	throttle_button.curve_trigger = CurveTrigger
 	#throttle_button.minimum = MinThrottle
 	
 	brake_button.name = ActionNameBrake
@@ -254,6 +279,8 @@ func _init() -> void:
 	brake_button.on_rate = OnBrakeRate
 	brake_button.off_rate = OffBrakeRate
 	brake_button.maximum = MaxBrake
+	
+	brake_button.curve_trigger = CurveTrigger
 	#throttle_button.minimum = MinBrake
 	
 	handbrake_button.name = ActionNameHandbrake
@@ -292,7 +319,7 @@ func get_steer_axis(external_analog:float = 0.0) -> float:
 		
 		steer_axis_amount = clampf(analog_axis * SteerSensitivity, -1.0, 1.0)
 		steer_axis_amount *= minf(absf(steer_axis_amount) + 0.5, 1.0)
-		Global.debug_steer_axis_amount = steer_axis_amount
+		#Global.debug_steer_axis_amount = steer_axis_amount
 		#print(steer_axis_amount)
 	else:
 		#the direction the player is steering to

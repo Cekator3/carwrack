@@ -1181,8 +1181,11 @@ func _physics_process(_delta:float) -> void:
 	if rpm < 20:
 		fix_engine_stall()
 	
+	
 	if Engine.is_editor_hint():
 		return
+	else: 
+		Global.car_gear = actual_gear
 	
 	if steering_angles.size() > 0:
 		max_steering_angle = 0.0

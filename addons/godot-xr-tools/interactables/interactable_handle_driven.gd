@@ -35,7 +35,7 @@ func _ready():
 	_hook_child_handles(self)
 
 	# Turn off processing until a handle is grabbed
-	set_process(false)
+	set_process(true)
 
 
 # Called when a handle is picked up
@@ -44,7 +44,7 @@ func _on_handle_picked_up(handle: XRToolsInteractableHandle) -> void:
 	grabbed_handles.append(handle)
 
 	# Enable processing
-	if grabbed_handles.size() == 1:
+	if grabbed_handles.size() >= 1:
 		# Report grabbed
 		emit_signal("grabbed", self)
 
@@ -60,7 +60,7 @@ func _on_handle_dropped(handle: XRToolsInteractableHandle) -> void:
 	# Disable processing when we drop the last handle
 	if grabbed_handles.is_empty():
 		# Disable physics processing
-		set_process(false)
+		set_process(true)
 
 		# Report released
 		emit_signal("released", self)

@@ -45,20 +45,38 @@ offset_bottom = 708.0
 theme_override_font_sizes/font_size = 46
 text = "Speed: %s"
 
-[node name="AnalogAxis" type="Label" parent="."]
+[node name="Gear" type="Label" parent="."]
+layout_mode = 1
+offset_left = 1307.0
+offset_top = 644.0
+offset_right = 1572.0
+offset_bottom = 708.0
+theme_override_font_sizes/font_size = 46
+text = "Gear: %s"
+
+[node name="SteeringAngle" type="Label" parent="."]
 layout_mode = 1
 offset_left = 708.0
 offset_top = 753.0
 offset_right = 1098.0
 offset_bottom = 817.0
 theme_override_font_sizes/font_size = 46
-text = "AnalogAxis: %s"
+text = "SteeringWheel: %s"
 
-[node name="SteerAxisAmount" type="Label" parent="."]
+[node name="Throttle" type="Label" parent="."]
 layout_mode = 1
 offset_left = 709.0
 offset_top = 810.0
 offset_right = 1256.0
 offset_bottom = 874.0
 theme_override_font_sizes/font_size = 46
-text = "SteerAxisAmount: %s"
+text = "Throttle: %s"
+
+[node name="Brake" type="Label" parent="."]
+layout_mode = 1
+offset_left = 709.0
+offset_top = 866.0
+offset_right = 1256.0
+offset_bottom = 930.0
+theme_override_font_sizes/font_size = 46
+text = "Brake: %s"

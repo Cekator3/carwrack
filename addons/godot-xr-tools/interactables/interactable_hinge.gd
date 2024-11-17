@@ -30,6 +30,7 @@ signal hinge_position_changed(position: float)
 
 ## Hinge position
 @export var hinge_position : float = 0.0: set = _set_hinge_position
+var hinge_position_real_position_lerp : float = 0.0
 
 ## Default position
 @export var default_position : float = 0.0: set = _set_default_position
@@ -38,6 +39,8 @@ signal hinge_position_changed(position: float)
 @export var default_on_release : bool = false
 @export_range(1, 3) var grabbed_handles_size : int = 1
 
+@export var speed_to_default_position_rad: float = 1.5
+
 
 # Hinge values in radians
 @onready var _hinge_limit_min_rad : float = deg_to_rad(hinge_limit_min)
@@ -45,6 +48,7 @@ signal hinge_position_changed(position: float)
 @onready var _hinge_steps_rad : float = deg_to_rad(hinge_steps)
 @onready var _hinge_position_rad : float = deg_to_rad(hinge_position)
 @onready var _default_position_rad : float = deg_to_rad(default_position)
+
 
 
 # Add support for is_xr_class on XRTools classes
@@ -68,8 +72,21 @@ func _ready():
 		push_error("Cannot connect hinge released signal")
 
 
+func _physics_process(delta):
+	if grabbed_handles.size() == 0:
+		if hinge_position != default_position:
+			hinge_position_real_position_lerp = lerpf(_hinge_position_rad, default_position, speed_to_default_position_rad * delta)
+			
+			move_hinge(hinge_position_real_position_lerp)
+			
+			var length_hinge_from_zero := floorf(abs(hinge_position))
+			
+			if is_zero_approx(length_hinge_from_zero): 
+				move_hinge(_default_position_rad)
 
-func _process(_delta: float) -> void:
+
+
+func _process(delta: float) -> void:
 	var offset_sum := 0.0
 	if grabbed_handles.size() >= grabbed_handles_size: # проверка на количество рук прикасаемых к объекту для движения
 		for item in grabbed_handles:
@@ -79,10 +96,9 @@ func _process(_delta: float) -> void:
 			to_handle.x = 0.0
 			to_handle_origin.x = 0.0
 			offset_sum += to_handle_origin.signed_angle_to(to_handle, Vector3.RIGHT)
-	
-	var offset := offset_sum / grabbed_handles.size()
-	
-	move_hinge(_hinge_position_rad + offset)
+			
+			var offset := offset_sum / grabbed_handles.size()
+			move_hinge(_hinge_position_rad + offset)
 
 
 # Move the hinge to the specified position
@@ -104,6 +120,7 @@ func move_hinge(position: float) -> void:
 func _on_hinge_released(_interactable: XRToolsInteractableHinge):
 	if default_on_release:
 		move_hinge(_default_position_rad)
+		
 
 
 # Called when hinge_limit_min is set externally

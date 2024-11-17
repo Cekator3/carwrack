@@ -90,6 +90,7 @@ common/physics_ticks_per_second=120
 3d/default_gravity=32.035
 3d/default_linear_damp=0.0
 3d/default_angular_damp=0.0
+common/physics_interpolation=true
 common/enable_object_picking=false
 jolt_3d/collisions/areas_detect_static_bodies=true
 

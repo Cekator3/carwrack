@@ -41,7 +41,7 @@ func _ready() -> void:
 	transform = Transform3D.IDENTITY
 
 	# Turn off processing - it will be turned on only when held
-	set_process(false)
+	set_process(true)
 
 
 # Called on every frame when the handle is held to check for snapping
@@ -55,6 +55,8 @@ func _process(_delta: float) -> void:
 	var handle_pos = global_transform.origin
 	if handle_pos.distance_to(origin_pos) > snap_distance:
 		picked_up_by.drop_object()
+
+
 
 
 # Called when the handle is picked up
@@ -72,7 +74,7 @@ func let_go(_p_linear_velocity: Vector3, _p_angular_velocity: Vector3) -> void:
 	super(Vector3.ZERO, Vector3.ZERO)
 
 	# Disable the process function as no-longer held
-	set_process(false)
+	set_process(true)
 
 	# Snap the handle back to the origin
 	transform = Transform3D.IDENTITY

@@ -29,7 +29,7 @@ var clock_mult:float = 1.0
 		scene = new
 		emit_signal("scene_changed")
 
-@onready var sun:DirectionalLight3D = $"morning_sun"
+#@onready var sun:DirectionalLight3D = $"morning_sun"
 
 ##Emitted when the car, or something about it, is changed.
 ##NOTE: Could be changed in the future to accomodate multiple player cars, but right now acts singularly.
@@ -46,7 +46,6 @@ func _init() -> void:
 
 func _ready() -> void:
 	Setting.world_environment = self.environment
-	$FerrariCar
 
 ##Safer version of just using the singleton variable, even tho the variable is 
 ##what's currently used in the codebase :P

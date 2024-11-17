@@ -72,4 +72,3 @@ func _process(delta):
 		if restart_process < 0:
 			restart_process = 0
 			restart_button_cooldown = false
-	print(restart_process)
