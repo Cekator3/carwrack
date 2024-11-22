@@ -8,6 +8,6 @@ func _process(delta):
 	$Gear.text = "Gear: %s" % str(Global.car_gear)
 	
 	$SteeringAngle.text = "SteeringWheel: %s" % str(Global.debug_analog_axis)
-	$Throttle.text = "Throttle: %s" % str(Global.debug_gas_strength)
-	$Brake.text = "Brake: %s" % str(Global.debug_brake_strength)
+	$Throttle.text = "Throttle: %s" % str(Global.gas_trigger)
+	$Brake.text = "Brake: %s" % str(Global.brake_trigger)
 	

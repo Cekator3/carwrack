@@ -29,12 +29,12 @@
 
 [sub_resource type="Resource" id="Resource_fdv5n"]
 script = ExtResource("3_hevj2")
-shift_delay = 1
+shift_delay = 0
 speed_influence = 0.944087
 down_RPM = 7000.0
 upshift_RPM = 7500.0
 clutch_out_RPM = 4000.0
-input_delay = 2
+input_delay = 0
 
 [sub_resource type="Resource" id="Resource_53x7l"]
 script = ExtResource("4_v4ytp")
