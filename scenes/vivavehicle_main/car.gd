@@ -434,6 +434,13 @@ func _ready() -> void:
 	
 	for wheel:ViVeWheel in all_wheels:
 		wheel.register_debug()
+	
+	self.body_entered.connect(body_entered_handler)
+
+func body_entered_handler(body: Node):
+	if body is TrafficCone:
+		if Global.current_map_can_be_completed:
+			Global.fail_map()
 
 func _enter_tree() -> void:
 	if Engine.is_editor_hint():

@@ -8,9 +8,9 @@ class_name ViVeTyreSmoke
 @onready var wheel_self:ViVeWheel = get_node("../../..")
 
 @onready var static_particles:Node3D = $"static"
-@onready var static_1:CPUParticles3D = $"static/lvl1"
-@onready var static_2:CPUParticles3D = $"static/lvl2"
-@onready var static_3:CPUParticles3D = $"static/lvl3"
+@onready var static_1:GPUParticles3D = $"static/lvl1"
+@onready var static_2:GPUParticles3D = $"static/lvl2"
+@onready var static_3:GPUParticles3D = $"static/lvl3"
 
 @onready var revolve_l:Node3D = $revolvel
 @onready var revolve_l_1:CPUParticles3D = $"revolvel/lvl1"
@@ -50,10 +50,12 @@ func run_smoke() -> void:
 	
 	direction.z += spin
 	
-	for i:CPUParticles3D in static_particles.get_children():
-		i.direction = direction
-		i.initial_velocity_min = direction.length()
-		i.initial_velocity_max = direction.length()
+	for i:GPUParticles3D in static_particles.get_children():
+		var process_material: ParticleProcessMaterial = i.process_material
+		
+		process_material.direction = direction
+		process_material.initial_velocity_min = direction.length()
+		process_material.initial_velocity_max = direction.length()
 		i.position.y = -wheel_self.w_size
 		i.emitting = false
 	

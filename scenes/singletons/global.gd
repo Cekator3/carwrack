@@ -5,6 +5,8 @@ extends Node
 signal player_pressed_centered
 
 var map_level_failed: bool = false
+var current_map_can_be_completed: bool = false
+
 var player_xr_origin: XROrigin3D
 
 func fail_map():
@@ -45,6 +47,7 @@ var is_reverse: bool = false :
 			transmission_reversed.emit(value)
 			prints("is_reverse", value)
 
+
 #Logic of change_current_scene and threaded loading
 func change_current_scene(change_to_scene: PackedScene): 
 	scene_manager.change_current_scene_with_ui(change_to_scene, active_ui_layer)
@@ -55,7 +58,7 @@ func load_scene(path_scene: String, progress_bar: ProgressBar = null) -> void:
 	if ResourceLoader.has_cached(path_scene):
 		loading_scene = ResourceLoader.load(path_scene)
 	else:
-		ResourceLoader.load_threaded_request(path_scene)
+		ResourceLoader.load_threaded_request(path_scene, "", true)
 		
 		while true:
 			var progress := []
@@ -75,4 +78,4 @@ func load_scene(path_scene: String, progress_bar: ProgressBar = null) -> void:
 		
 		loading_scene = ResourceLoader.load_threaded_get(path_scene)
 		
-		Global.change_current_scene(loading_scene)
+		change_current_scene(loading_scene)

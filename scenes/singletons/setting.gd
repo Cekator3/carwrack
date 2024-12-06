@@ -25,7 +25,7 @@ var LANGUAGE_TYPE = {
 func _ready():
 	world_environment = load("res://default_env.tres") if world_environment == null else world_environment
 
-# Конфигурация SSAO 
+# SSAO configuration 
 var SSAO_QUALITY_TYPE = {
 	"Off" = -1,
 	"Low" = RenderingServer.ENV_SSAO_QUALITY_VERY_LOW,
@@ -44,7 +44,7 @@ var ssao_quality: int = SSAO_QUALITY_TYPE["Off"] :
 	get:
 		return ssao_quality
 
-# Конфигурация SSIL
+# SSIL configuration
 var SSIL_QUALITY_TYPE = {
 	"Off" = -1,
 	"Low" = RenderingServer.ENV_SSIL_QUALITY_VERY_LOW,
@@ -63,7 +63,7 @@ var ssil_quality: int = SSIL_QUALITY_TYPE["Off"] :
 	get:
 		return ssil_quality
 
-# Конфигурация свечения
+# Glow configuration
 var GLOW_QUALITY_TYPE = {
 	"Off" = -1,
 	"Medium" = 0,
@@ -81,7 +81,7 @@ var glow_quality: int = GLOW_QUALITY_TYPE["Off"] :
 	get:
 		return glow_quality
 
-# Конфигурация объемного освещение
+# Volume fog configuration
 var VOLUME_FOG_QUALITY_TYPE = {
 	"Off" = false,
 	"Medium" = true
@@ -99,8 +99,7 @@ var volume_fog_quality: bool = VOLUME_FOG_QUALITY_TYPE["Off"] :
 	get:
 		return volume_fog_quality
 
-# Конфигурация разрешения теней направленного (DirectionalLight3D) 
-# и позиционного света (OmniLight3D и SpotLight3D) 
+# Shadow resolution quality configuration (DirectionalLight3D, OmniLight3D и SpotLight3D) 
 var SHADOW_RESOLUTION_QUALITY_TYPE = {
 	"Off" = -1,
 	"Very Low" = 512,
@@ -113,11 +112,9 @@ var SHADOW_RESOLUTION_QUALITY_TYPE = {
 var shadow_resolution_quality: int = SHADOW_RESOLUTION_QUALITY_TYPE["Medium"] :
 	set(value):
 		shadow_resolution_quality = value
-		
-		# Поскольку каждый Light3D имеется в группе 
-		# либо "shadow_directional_light" как направленный свет (DirectionalLight3D), 
-		# либо "shadow_light" как позиционный свет (OmniLight3D и SpotLight3D)
-		# берём списки напрвленного и позиционного света для дальнейшей работы с ними
+		 
+		# Get DirectionalLight3D from "shadow_directional_light" group or
+		# OmniLight3D/SpotLight3D from "shadow_light" group
 		var directional_light_list = get_tree().get_nodes_in_group("shadow_directional_light") 
 		var position_light_list = get_tree().get_nodes_in_group("shadow_light")
 		
@@ -127,15 +124,15 @@ var shadow_resolution_quality: int = SHADOW_RESOLUTION_QUALITY_TYPE["Medium"] :
 			set_enable_light_shadows(position_light_list, false)
 			return 
 		
-		# DirectionalLight3D --start
+		# DirectionalLight3D --configuration start
 		set_enable_light_shadows(directional_light_list, true)
 		RenderingServer.directional_shadow_atlas_set_size(shadow_resolution_quality, true)
-		# DirectionalLight3D --end
+		# DirectionalLight3D --configuration end
 		
-		# OmniLight3D and SpotLight3D --start
+		# OmniLight3D and SpotLight3D --configuration start
 		set_enable_light_shadows(position_light_list, true)
 		main_viewport.set_positional_shadow_atlas_size(shadow_resolution_quality)
-		# OmniLight3D and SpotLight3D --end
+		# OmniLight3D and SpotLight3D --configuration end
 	get:
 		return shadow_resolution_quality
 
@@ -143,8 +140,7 @@ func set_enable_light_shadows(array_light, is_enabled) -> void:
 	for light in array_light:
 		light.shadow_enabled = is_enabled
 
-# Конфигурация качества блюра теней направленного света (DirectionalLight3D) 
-# и позиционного света (OmniLight3D и SpotLight3D) 
+# Shadow filter quality configuration (DirectionalLight3D. OmniLight3D и SpotLight3D) 
 var SHADOW_BLUR_QUALITY_TYPE = {
 	"Off" = RenderingServer.SHADOW_QUALITY_HARD,
 	"Very Low" = RenderingServer.SHADOW_QUALITY_SOFT_VERY_LOW,
@@ -161,7 +157,7 @@ var shadow_blur_quality: RenderingServer.ShadowQuality = SHADOW_BLUR_QUALITY_TYP
 	get:
 		return shadow_blur_quality
 
-# Конфигурация FXAA
+# FXAA Configuration 
 var use_fxaa: bool = false : 
 	set(value):
 		use_fxaa = value
@@ -169,7 +165,7 @@ var use_fxaa: bool = false :
 	get:
 		return use_fxaa
 
-# Конфигурация MSAA
+# MSAA Configuration 
 var MSAA_QUALITY_TYPE = {
 	"Off" = Viewport.MSAA_DISABLED,
 	"2x" = Viewport.MSAA_2X,
@@ -184,7 +180,7 @@ var msaa_quality: Viewport.MSAA = MSAA_QUALITY_TYPE["Off"] :
 	get:
 		return msaa_quality
 
-# Конфигурация FSR 1.0
+# FSR 1.0 Configuration
 var FSR_QUALITY_TYPE = {
 	"50%" = 0.5,
 	"59%" = 0.59,
@@ -196,17 +192,8 @@ var FSR_QUALITY_TYPE = {
 
 var fsr_quality = FSR_QUALITY_TYPE["Native"] : 
 	set(value):
-		# Строго задаю билинейный скейлинг см. 204
 		main_viewport.scaling_3d_mode = Viewport.SCALING_3D_MODE_BILINEAR 
 		fsr_quality = value
 		main_viewport.scaling_3d_scale = fsr_quality
-		
-		# Отключение из-за ошибки рендера / FSR не работает в режиме XR 
-#		if fsr_quality == FSR_QUALITY_TYPE["Off"]:
-#			# Вероятно лишнее так как Godot сам выключает FSR при масштабировании свыше 1.0 или равное ему.
-#			# Масштабирование >> rendering/scaling_3d/scale 
-#			main_viewport.scaling_3d_mode = Viewport.SCALING_3D_MODE_BILINEAR 
-#			return
-#		main_viewport.scaling_3d_mode = Viewport.SCALING_3D_MODE_FSR 
 	get:
 		return fsr_quality

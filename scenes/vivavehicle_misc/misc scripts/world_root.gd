@@ -57,10 +57,6 @@ static func get_singleton() -> ViVeEnvironment:
 
 func switch_sky() -> void:
 	return
-	#if misc_graphics_settings.use_procedural_sky:
-		#environment = current_sky
-	#else:
-		#environment = default_sky
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("toggle_debug_mode"):

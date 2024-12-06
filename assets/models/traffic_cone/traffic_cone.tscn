@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=4 uid="uid://b252m8jtiu2or"]
+[gd_scene load_steps=10 format=4 uid="uid://b252m8jtiu2or"]
 
 [ext_resource type="Texture2D" uid="uid://cu5i77rlx1uey" path="res://assets/models/traffic_cone/textures/Material.001_baseColor.jpeg" id="1_cllsu"]
+[ext_resource type="Script" path="res://assets/models/traffic_cone/traffic_cone.gd" id="1_mkas1"]
 [ext_resource type="Texture2D" uid="uid://dlxcnht73mri5" path="res://assets/models/traffic_cone/textures/Material.001_metallicRoughness.png" id="2_b2be1"]
 [ext_resource type="Texture2D" uid="uid://b20hgj6ypu3um" path="res://assets/models/traffic_cone/textures/Material.001_normal.jpeg" id="3_lktb5"]
 
@@ -57,7 +58,9 @@ points = PackedVector3Array(-0.623694, 0, 0, -0.621252, 0, -0.553648, -0.621252,
 
 [node name="TrafficCone" type="RigidBody3D"]
 collision_layer = 4
+collision_mask = 5
 physics_material_override = SubResource("PhysicsMaterial_wdqi7")
+script = ExtResource("1_mkas1")
 
 [node name="Object_4" type="MeshInstance3D" parent="."]
 lod_bias = 0.625

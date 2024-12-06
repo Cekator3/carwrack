@@ -1,0 +1,37 @@
+[gd_resource type="Resource" script_class="ListOfLevels" load_steps=8 format=3 uid="uid://chhttp03r8q15"]
+
+[ext_resource type="Script" path="res://scenes/levels/level_info.gd" id="1_6csw8"]
+[ext_resource type="Script" path="res://scenes/levels/list_of_levels.gd" id="2_6mlnd"]
+[ext_resource type="Texture2D" uid="uid://dnlivqmitf0mh" path="res://addons/kenney_prototype_textures/dark/texture_12.png" id="2_wn5k3"]
+
+[sub_resource type="Resource" id="Resource_6jjmt"]
+script = ExtResource("1_6csw8")
+level_name = "HUB"
+level_description = "Hub"
+path_scene = "res://scenes/levels/hub/hub.tscn"
+icon_scene = ExtResource("2_wn5k3")
+
+[sub_resource type="Resource" id="Resource_171uv"]
+script = ExtResource("1_6csw8")
+level_name = "Gridmap"
+level_description = "Gridmap - Free ride map 650m^2"
+path_scene = "res://scenes/levels/level_intro/level_intro.tscn"
+icon_scene = ExtResource("2_wn5k3")
+
+[sub_resource type="Resource" id="Resource_4sm40"]
+script = ExtResource("1_6csw8")
+level_name = "First level"
+level_description = "First level description"
+path_scene = "res://scenes/levels/level_one/level_one.tscn"
+icon_scene = ExtResource("2_wn5k3")
+
+[sub_resource type="Resource" id="Resource_susku"]
+script = ExtResource("1_6csw8")
+level_name = "Second level"
+level_description = "Second level description"
+path_scene = "res://scenes/levels/level_two/level_two.tscn"
+icon_scene = ExtResource("2_wn5k3")
+
+[resource]
+script = ExtResource("2_6mlnd")
+list_of_levels = Array[ExtResource("1_6csw8")]([SubResource("Resource_6jjmt"), SubResource("Resource_171uv"), SubResource("Resource_4sm40"), SubResource("Resource_susku")])

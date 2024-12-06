@@ -1,0 +1,71 @@
+[gd_scene load_steps=5 format=3 uid="uid://d2xt7hledycw5"]
+
+[ext_resource type="Script" path="res://scenes/ui_scenes/custom_controls/custom_button/custom_button.gd" id="1_gi7jj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hhhio"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p6yed"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5pdeb"]
+
+[node name="CustomButton" type="Button"]
+custom_minimum_size = Vector2(0, 32)
+anchors_preset = -1
+anchor_top = 0.025
+anchor_right = 0.396
+anchor_bottom = 0.025
+offset_top = -16.2
+offset_right = -0.192017
+offset_bottom = 14.8
+alignment = 0
+script = ExtResource("1_gi7jj")
+
+[node name="Left" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.474
+anchor_right = 0.474
+anchor_bottom = 1.0
+offset_left = -0.144012
+offset_right = 31.856
+mouse_filter = 1
+theme_override_colors/font_pressed_color = Color(0.890196, 0.890196, 0.890196, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_styles/hover = SubResource("StyleBoxEmpty_hhhio")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_p6yed")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_5pdeb")
+text = "<"
+
+[node name="Right" type="Button" parent="."]
+layout_mode = 2
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -32.0
+mouse_filter = 1
+theme_override_colors/font_pressed_color = Color(0.890196, 0.890196, 0.890196, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_styles/hover = SubResource("StyleBoxEmpty_hhhio")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_p6yed")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_5pdeb")
+text = ">"
+
+[node name="Value" type="Label" parent="."]
+layout_mode = 2
+anchor_left = 0.737
+anchor_top = 0.5
+anchor_right = 0.737
+anchor_bottom = 0.5
+offset_left = -88.072
+offset_top = -16.0
+offset_right = 87.928
+offset_bottom = 16.0
+mouse_filter = 1
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="focus_entered" from="." to="." method="_on_focus_entered"]
+[connection signal="focus_exited" from="." to="." method="_on_focus_exited"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]

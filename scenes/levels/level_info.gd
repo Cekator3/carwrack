@@ -1,0 +1,22 @@
+extends Resource
+class_name LevelInfo
+
+## Level name
+@export var level_name: String = ""
+
+## Level description
+@export_multiline var level_description: String = ""
+
+## Level PackedScene
+@export var path_scene: String
+
+## Level PackedScene
+@export var icon_scene: Texture = preload("res://addons/kenney_prototype_textures/dark/texture_12.png")
+
+
+# Checking level information for validity
+func check_info_validation() -> bool:
+	if path_scene != "":
+		if FileAccess.file_exists(path_scene):
+			return true
+	return false
