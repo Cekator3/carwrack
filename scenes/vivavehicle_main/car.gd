@@ -1184,10 +1184,35 @@ func aerodynamics() -> void:
 	else:
 		apply_central_impulse(air_drag_force)
 
+var current_time_before_overturned: float = 0
+var previous_rotation: Vector3 = Vector3.ZERO
+const time_before_overturned: float = 3
+
 func _physics_process(_delta:float) -> void:
-	if rpm < 20:
-		fix_engine_stall()
+	var deg_rotation = rad_to_deg(self.rotation.z)
 	
+	if abs(deg_rotation) > 40:
+		if previous_rotation.z == roundf(deg_rotation):
+			current_time_before_overturned += _delta * 1.75
+		else: 
+			current_time_before_overturned -= _delta * 1.75
+		
+		previous_rotation.z = roundf(deg_rotation)
+	elif abs(deg_rotation) <= 40: 
+		current_time_before_overturned -= _delta * 1.75
+	
+	if current_time_before_overturned >= time_before_overturned:
+		current_time_before_overturned = time_before_overturned
+		Global.car_is_overturned = true
+	elif current_time_before_overturned < 0: 
+		current_time_before_overturned = 0
+	elif current_time_before_overturned < time_before_overturned:
+		Global.car_is_overturned = false
+	
+	#prints(deg_rotation, current_time_before_overturned)
+	
+	if rpm < 30:
+		fix_engine_stall()
 	
 	if Engine.is_editor_hint():
 		return

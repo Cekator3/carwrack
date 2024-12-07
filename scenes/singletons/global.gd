@@ -9,6 +9,9 @@ var current_map_can_be_completed: bool = false
 
 var player_xr_origin: XROrigin3D
 
+var respawn_process_value: float = 0
+var car_is_overturned: bool = false
+
 func fail_map():
 	map_level_failed = true
 

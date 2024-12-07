@@ -18,10 +18,10 @@ var clock_mult:float = 1.0
 
 ##The currently active player car.
 ##NOTE: Could be changed in the future to accomodate multiple player cars, but right now acts singularly.
-@onready var car:ViVeCar = $"car":
-	set(new):
-		car = new
-		emit_signal("car_changed")
+#@onready var car:ViVeCar = $"car":
+	#set(new):
+		#car = new
+		#emit_signal("car_changed")
 
 ##The currently loaded play scene.
 @onready var scene:Node3D = $"Scene":
@@ -62,7 +62,7 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("toggle_debug_mode"):
 		if Debug_Mode:
 			Debug_Mode = false
-			car.Debug_Mode = false
+			#car.Debug_Mode = false
 		else:
 			Debug_Mode = true
-			car.Debug_Mode = true
+			#car.Debug_Mode = true

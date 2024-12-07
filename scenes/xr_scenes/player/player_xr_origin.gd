@@ -62,13 +62,15 @@ func restart_car():
 
 func _process(delta):
 	if restart_button and !restart_button_cooldown: 
-		restart_process += 2 * delta
+		restart_process += 1.75 * delta
 		if restart_process > 3:
 			restart_process = 3
 			restart_car()
 			restart_button_cooldown = true
 	else:
-		restart_process -= 1 * delta
+		restart_process -= 1.75 * delta
 		if restart_process < 0:
 			restart_process = 0
 			restart_button_cooldown = false
+	
+	Global.respawn_process_value = restart_process

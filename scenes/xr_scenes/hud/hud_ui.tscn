@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://bg513of10kco"]
+[gd_scene load_steps=11 format=3 uid="uid://bg513of10kco"]
 
 [ext_resource type="FontFile" uid="uid://c4ul04dg1npn" path="res://assets/fonts/zeroes/Zeroes Two.otf" id="1_4apam"]
 [ext_resource type="Script" path="res://scenes/xr_scenes/hud/hud_ui.gd" id="1_et3fh"]
@@ -6,77 +6,247 @@
 [sub_resource type="Theme" id="Theme_qdh8x"]
 default_font = ExtResource("1_4apam")
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n2wot"]
+bg_color = Color(0.0924495, 0.273438, 0.0939572, 0.573)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3lk81"]
+bg_color = Color(0.390051, 0.54, 0.363719, 0.784314)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5pxb5"]
+bg_color = Color(0.910156, 0.910156, 0.910156, 1)
+expand_margin_top = 12.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eu85s"]
+bg_color = Color(0.27, 0.0918, 0.09477, 0.572549)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8wj6p"]
+bg_color = Color(0.54, 0.3294, 0.33291, 0.784314)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lmnob"]
+bg_color = Color(0.27, 0.23598, 0.2133, 0.74902)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bh6rl"]
+bg_color = Color(0.691406, 0.604289, 0.546211, 0.74902)
+
 [node name="HudUI" type="Control"]
 layout_mode = 3
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = SubResource("Theme_qdh8x")
+script = ExtResource("1_et3fh")
+
+[node name="Panel" type="Panel" parent="."]
+visible = false
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme = SubResource("Theme_qdh8x")
-script = ExtResource("1_et3fh")
 
-[node name="FPS" type="Label" parent="."]
+[node name="Debug" type="Control" parent="."]
+visible = false
 layout_mode = 1
-offset_left = 706.0
-offset_top = 441.0
-offset_right = 898.0
-offset_bottom = 505.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Debug"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_bottom = -254.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="FPS" type="Label" parent="Debug/MarginContainer"]
+layout_mode = 2
 theme_override_font_sizes/font_size = 46
 text = "FPS: %s"
+horizontal_alignment = 1
 
-[node name="RPM" type="Label" parent="."]
+[node name="PlaylistHud" type="Control" parent="."]
 layout_mode = 1
-offset_left = 706.0
-offset_top = 587.0
-offset_right = 913.0
-offset_bottom = 651.0
-theme_override_font_sizes/font_size = 46
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="InGameHud" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="InGameHud"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.299
+anchor_top = 0.886
+anchor_right = 0.73
+anchor_bottom = 0.886
+offset_left = 0.551971
+offset_top = -247.128
+offset_right = 0.039978
+offset_bottom = -126.128
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Control" type="HBoxContainer" parent="InGameHud/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="HBoxContainer" type="VBoxContainer" parent="InGameHud/MarginContainer/Control"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="RPM" type="Label" parent="InGameHud/MarginContainer/Control/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 31
 text = "RPM: %s"
+horizontal_alignment = 2
+vertical_alignment = 2
 
-[node name="Speed" type="Label" parent="."]
-layout_mode = 1
-offset_left = 707.0
-offset_top = 644.0
-offset_right = 972.0
-offset_bottom = 708.0
-theme_override_font_sizes/font_size = 46
-text = "Speed: %s"
+[node name="Speed" type="Label" parent="InGameHud/MarginContainer/Control/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 56
+text = "%s"
+horizontal_alignment = 2
 
-[node name="Gear" type="Label" parent="."]
-layout_mode = 1
-offset_left = 1307.0
-offset_top = 644.0
-offset_right = 1572.0
-offset_bottom = 708.0
-theme_override_font_sizes/font_size = 46
-text = "Gear: %s"
+[node name="ThrottleMarginContainer" type="MarginContainer" parent="InGameHud/MarginContainer/Control"]
+custom_minimum_size = Vector2(42, 0)
+layout_mode = 2
 
-[node name="SteeringAngle" type="Label" parent="."]
+[node name="ThrottleProgressBar" type="ProgressBar" parent="InGameHud/MarginContainer/Control/ThrottleMarginContainer"]
+custom_minimum_size = Vector2(16, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 1
+theme_override_styles/background = SubResource("StyleBoxFlat_n2wot")
+theme_override_styles/fill = SubResource("StyleBoxFlat_3lk81")
+max_value = 1.0
+value = 0.53
+fill_mode = 3
+show_percentage = false
+
+[node name="Panel" type="Panel" parent="InGameHud/MarginContainer/Control"]
+custom_minimum_size = Vector2(4, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_5pxb5")
+
+[node name="BrakeMarginContainer" type="MarginContainer" parent="InGameHud/MarginContainer/Control"]
+custom_minimum_size = Vector2(42, 0)
+layout_mode = 2
+
+[node name="BrakeProgressBar" type="ProgressBar" parent="InGameHud/MarginContainer/Control/BrakeMarginContainer"]
+custom_minimum_size = Vector2(16, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 1
+theme_override_styles/background = SubResource("StyleBoxFlat_eu85s")
+theme_override_styles/fill = SubResource("StyleBoxFlat_8wj6p")
+max_value = 1.0
+value = 0.48
+fill_mode = 3
+show_percentage = false
+
+[node name="Gear" type="Label" parent="InGameHud/MarginContainer/Control"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 100
+text = "%s"
+vertical_alignment = 1
+
+[node name="TriggerPress" type="MarginContainer" parent="InGameHud"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="SteeringAngle" type="Label" parent="InGameHud"]
+visible = false
 layout_mode = 1
-offset_left = 708.0
-offset_top = 753.0
-offset_right = 1098.0
-offset_bottom = 817.0
+offset_left = 155.0
+offset_top = 340.0
+offset_right = 632.0
+offset_bottom = 396.0
 theme_override_font_sizes/font_size = 46
 text = "SteeringWheel: %s"
 
-[node name="Throttle" type="Label" parent="."]
+[node name="Throttle" type="Label" parent="InGameHud"]
+visible = false
 layout_mode = 1
-offset_left = 709.0
-offset_top = 810.0
-offset_right = 1256.0
-offset_bottom = 874.0
+offset_left = 604.0
+offset_top = 87.0
+offset_right = 907.0
+offset_bottom = 143.0
 theme_override_font_sizes/font_size = 46
 text = "Throttle: %s"
 
-[node name="Brake" type="Label" parent="."]
+[node name="Brake" type="Label" parent="InGameHud"]
+visible = false
 layout_mode = 1
-offset_left = 709.0
-offset_top = 866.0
-offset_right = 1256.0
-offset_bottom = 930.0
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 442.0
+offset_top = 299.0
+offset_right = -451.0
+offset_bottom = -293.0
 theme_override_font_sizes/font_size = 46
 text = "Brake: %s"
+
+[node name="AttentionHud" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="AttentionHud"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.485
+anchor_top = 0.796
+anchor_right = 0.485
+anchor_bottom = 0.796
+offset_left = -558.72
+offset_top = -272.808
+offset_right = 593.28
+offset_bottom = -208.808
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="AttentionHud/MarginContainer"]
+layout_mode = 2
+
+[node name="AttentionMessage" type="Label" parent="AttentionHud/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 28
+text = "To respawn the machine, press Y"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AttentionProgressBar" type="ProgressBar" parent="AttentionHud/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.35
+theme_override_styles/background = SubResource("StyleBoxFlat_lmnob")
+theme_override_styles/fill = SubResource("StyleBoxFlat_bh6rl")
+max_value = 3.0
+show_percentage = false

@@ -21,7 +21,7 @@ speed_interpolate_angle = 30.0
 speed_interpolate_position = 100.0
 
 [node name="MeshCube" type="MeshInstance3D" parent="."]
-transform = Transform3D(-8.74228e-08, 0, 2, 0, 1.12, 0, -2, 0, -8.74228e-08, 0, 0, 0)
+transform = Transform3D(-8.74228e-08, 0, 2, 0, 1.12, 0, -2, 0, -8.74228e-08, 0, 0.074802, 0.354908)
 material_override = SubResource("StandardMaterial3D_hd2js")
 mesh = ExtResource("1_lpcgq")
 
@@ -30,5 +30,9 @@ disable_3d = true
 transparent_bg = true
 canvas_item_default_texture_filter = 2
 size = Vector2i(2560, 1440)
+render_target_update_mode = 4
 
 [node name="HudUI" parent="HudUIViewport" instance=ExtResource("3_fjqho")]
+anchors_preset = 15
+grow_horizontal = 2
+grow_vertical = 2

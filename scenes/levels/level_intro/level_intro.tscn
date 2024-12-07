@@ -4153,7 +4153,8 @@ tracker = &"right_hand"
 
 [node name="FunctionPickup" parent="FerrariCar/XROrigin3D/Right" instance=ExtResource("11_l8pva")]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="FerrariCar/XROrigin3D"]
+[node name="Debug" type="MeshInstance3D" parent="FerrariCar/XROrigin3D"]
+visible = false
 material_override = SubResource("StandardMaterial3D_qc825")
 mesh = SubResource("SphereMesh_r7wgu")
 
@@ -4165,7 +4166,8 @@ script = ExtResource("9_u125f")
 xr_origin_3d = NodePath("../XROrigin3D")
 max_position_range = 1.0
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="FerrariCar/XRCameraPosition"]
+[node name="Debug" type="MeshInstance3D" parent="FerrariCar/XRCameraPosition"]
+visible = false
 mesh = SubResource("SphereMesh_hfhn6")
 
 [node name="HUD" parent="." instance=ExtResource("8_i8qtt")]
