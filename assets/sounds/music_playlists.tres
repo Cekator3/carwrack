@@ -1,0 +1,160 @@
+[gd_resource type="Resource" script_class="MusicPlaylist" load_steps=41 format=3 uid="uid://l47ysasydoto"]
+
+[ext_resource type="Script" path="res://scenes/music_playlist/music_playlist_item.gd" id="1_s12vh"]
+[ext_resource type="Script" path="res://scenes/music_playlist/music_item.gd" id="2_0jevy"]
+[ext_resource type="Script" path="res://scenes/music_playlist/resource_music_playlist.gd" id="2_3y0b0"]
+[ext_resource type="AudioStream" uid="uid://ce680pc78ulce" path="res://assets/sounds/music/pathfinder.mp3" id="4_nvwof"]
+[ext_resource type="AudioStream" uid="uid://bucj1vs4h5tj4" path="res://assets/sounds/music/lost-in-space.mp3" id="5_wae1w"]
+[ext_resource type="AudioStream" uid="uid://bfwkweeik43oq" path="res://assets/sounds/music/starbomb.mp3" id="6_sk3kb"]
+[ext_resource type="AudioStream" uid="uid://bv5l7extb3sep" path="res://assets/sounds/music/xtra-h3xagon3st.mp3" id="7_2d361"]
+[ext_resource type="AudioStream" uid="uid://dkow5nvrtp4tb" path="res://assets/sounds/music/aeviternal-sky.mp3" id="7_b53i5"]
+[ext_resource type="AudioStream" uid="uid://dbsbybk4wfebb" path="res://assets/sounds/music/explosion-h3xagon3st.mp3" id="8_1wh2c"]
+[ext_resource type="AudioStream" uid="uid://ccthoiwbq1b3l" path="res://assets/sounds/music/jezzel-lonely_mind.mp3" id="8_84kf4"]
+[ext_resource type="AudioStream" uid="uid://c542007apyemy" path="res://assets/sounds/music/jezzel-not_special.mp3" id="9_3ty8w"]
+[ext_resource type="AudioStream" uid="uid://c6uy82url1v1o" path="res://assets/sounds/music/amplification-h3xagon3st.mp3" id="9_ob57s"]
+[ext_resource type="AudioStream" uid="uid://esxql6oacovr" path="res://assets/sounds/music/chase-instrumental-h3xagon3st.mp3" id="10_lspbg"]
+[ext_resource type="AudioStream" uid="uid://ci0u3i7o28l2t" path="res://assets/sounds/music/ryancatt-echoes.mp3" id="10_ruea2"]
+[ext_resource type="AudioStream" uid="uid://6bv164lo6a10" path="res://assets/sounds/music/quantum-reverie.mp3" id="11_d7ew7"]
+[ext_resource type="AudioStream" uid="uid://8yufnhygdf5m" path="res://assets/sounds/music/rumbling-instrumental-h3xagon3st.mp3" id="11_q16ts"]
+[ext_resource type="AudioStream" uid="uid://d35xoe36alw5l" path="res://assets/sounds/music/this-is-my-theme.mp3" id="15_srmjo"]
+[ext_resource type="AudioStream" uid="uid://dtt2rpnsbbmm8" path="res://assets/sounds/music/unbreakable-willpower.mp3" id="16_3wwta"]
+[ext_resource type="AudioStream" uid="uid://dpnwt1uqqf7jc" path="res://assets/sounds/music/mididuck-glitters.mp3" id="19_ywgmc"]
+[ext_resource type="AudioStream" uid="uid://h808vrytbab3" path="res://assets/sounds/music/fade_away.mp3" id="20_fd881"]
+
+[sub_resource type="Resource" id="Resource_d4bil"]
+script = ExtResource("2_0jevy")
+music_audio_stream = ExtResource("5_wae1w")
+music_name = "Lost in space"
+music_author = "Babasmas"
+music_volume_boost = 0.0
+
+[sub_resource type="Resource" id="Resource_qt11l"]
+script = ExtResource("2_0jevy")
+music_audio_stream = ExtResource("6_sk3kb")
+music_name = "StarBomb"
+music_author = "GaviteHawk"
+music_volume_boost = 0.0
+
+[sub_resource type="Resource" id="Resource_1n7sh"]
+script = ExtResource("2_0jevy")
+music_audio_stream = ExtResource("7_b53i5")
+music_name = "Aeviternal Sky"
+music_author = "punkerrr"
+music_volume_boost = 0.0
+
+[sub_resource type="Resource" id="Resource_mjyq4"]
+script = ExtResource("2_0jevy")
+music_audio_stream = ExtResource("8_84kf4")
+music_name = "Lonely Mind"
+music_author = "Jezzel"
+music_volume_boost = 0.0
+
+[sub_resource type="Resource" id="Resource_luq5p"]
+script = ExtResource("2_0jevy")
+music_audio_stream = ExtResource("9_3ty8w")
+music_name = "Not Special"
+music_author = "Jezzel"
+music_volume_boost = -0.2
+
+[sub_resource type="Resource" id="Resource_x0btf"]
+script = ExtResource("2_0jevy")
+music_audio_stream = ExtResource("10_ruea2")
+music_name = "ECHOES"
+music_author = "ryancatt"
+music_volume_boost = -0.25
+
+[sub_resource type="Resource" id="Resource_afkm1"]
+script = ExtResource("2_0jevy")
+music_audio_stream = ExtResource("4_nvwof")
+music_name = "Pathfinder"
+music_author = "punkerrr"
+music_volume_boost = 0.0
+
+[sub_resource type="Resource" id="Resource_227cu"]
+script = ExtResource("2_0jevy")
+music_audio_stream = ExtResource("11_d7ew7")
+music_name = "Quantum Reverie"
+music_author = "Preds"
+music_volume_boost = 0.0
+
+[sub_resource type="Resource" id="Resource_t3625"]
+script = ExtResource("1_s12vh")
+playlist_name = "Synthwave"
+music_items_in_playlist = Array[ExtResource("2_0jevy")]([SubResource("Resource_d4bil"), SubResource("Resource_qt11l"), SubResource("Resource_1n7sh"), SubResource("Resource_mjyq4"), SubResource("Resource_luq5p"), SubResource("Resource_x0btf"), SubResource("Resource_afkm1"), SubResource("Resource_227cu")])
+
+[sub_resource type="Resource" id="Resource_p3dep"]
+script = ExtResource("2_0jevy")
+music_audio_stream = ExtResource("16_3wwta")
+music_name = "Unbreakable willpower"
+music_author = "Dieswyx"
+music_volume_boost = 0.0
+
+[sub_resource type="Resource" id="Resource_082hn"]
+script = ExtResource("2_0jevy")
+music_audio_stream = ExtResource("9_ob57s")
+music_name = "Amplification"
+music_author = "H3XAGON3ST"
+music_volume_boost = 4.0
+
+[sub_resource type="Resource" id="Resource_ufptp"]
+script = ExtResource("2_0jevy")
+music_audio_stream = ExtResource("8_1wh2c")
+music_name = "Explosion"
+music_author = "H3XAGON3ST"
+music_volume_boost = 2.0
+
+[sub_resource type="Resource" id="Resource_ghlud"]
+script = ExtResource("2_0jevy")
+music_audio_stream = ExtResource("15_srmjo")
+music_name = "This is my theme"
+music_author = "Dieswyx"
+music_volume_boost = 0.0
+
+[sub_resource type="Resource" id="Resource_rmy4c"]
+script = ExtResource("2_0jevy")
+music_audio_stream = ExtResource("7_2d361")
+music_name = "XTRA"
+music_author = "H3XAGON3ST"
+music_volume_boost = 1.0
+
+[sub_resource type="Resource" id="Resource_crvxl"]
+script = ExtResource("1_s12vh")
+playlist_name = "Electro"
+music_items_in_playlist = Array[ExtResource("2_0jevy")]([SubResource("Resource_p3dep"), SubResource("Resource_082hn"), SubResource("Resource_ufptp"), SubResource("Resource_ghlud"), SubResource("Resource_rmy4c")])
+
+[sub_resource type="Resource" id="Resource_myrva"]
+script = ExtResource("2_0jevy")
+music_audio_stream = ExtResource("20_fd881")
+music_name = "FADE AWAY"
+music_author = "xxs4gexx"
+music_volume_boost = -1.0
+
+[sub_resource type="Resource" id="Resource_0br6q"]
+script = ExtResource("2_0jevy")
+music_audio_stream = ExtResource("10_lspbg")
+music_name = "Chase - Batta"
+music_author = "H3XAGON3ST"
+music_volume_boost = 1.4
+
+[sub_resource type="Resource" id="Resource_7cqfr"]
+script = ExtResource("2_0jevy")
+music_audio_stream = ExtResource("19_ywgmc")
+music_name = "glitters"
+music_author = "mididuck"
+music_volume_boost = 0.75
+
+[sub_resource type="Resource" id="Resource_y3rtd"]
+script = ExtResource("2_0jevy")
+music_audio_stream = ExtResource("11_q16ts")
+music_name = "Rumbling - SIM"
+music_author = "H3XAGON3ST"
+music_volume_boost = 3.5
+
+[sub_resource type="Resource" id="Resource_5jq46"]
+script = ExtResource("1_s12vh")
+playlist_name = "Rock"
+music_items_in_playlist = Array[ExtResource("2_0jevy")]([SubResource("Resource_myrva"), SubResource("Resource_0br6q"), SubResource("Resource_7cqfr"), SubResource("Resource_y3rtd")])
+
+[resource]
+script = ExtResource("2_3y0b0")
+music_playlist_items = Array[ExtResource("1_s12vh")]([SubResource("Resource_t3625"), SubResource("Resource_crvxl"), SubResource("Resource_5jq46")])

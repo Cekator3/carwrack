@@ -42,7 +42,7 @@ func check_and_fix_camera_position() -> void:
 
 func check_max_range_vector3(diff: Vector3, max_range: float) -> bool:
 	var diff_x: float = diff.x
-	var diff_y: float = diff.y
+	#var diff_y: float = diff.y
 	var diff_z: float = diff.z
 	
 	if check_max_range_float(diff_x, max_range) and check_max_range_float(diff_z, max_range):

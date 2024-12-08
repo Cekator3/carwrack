@@ -984,7 +984,6 @@ skeleton = NodePath("")
 
 [node name="rl" parent="." instance=ExtResource("14_5k3ks")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.65, 0.413418, -4.41857)
-target_position = Vector3(0, -2.9, 0)
 Steer = false
 SwayBarConnection = NodePath("rr")
 TyreSettings = ExtResource("24_6ud03")

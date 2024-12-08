@@ -1209,8 +1209,6 @@ func _physics_process(_delta:float) -> void:
 	elif current_time_before_overturned < time_before_overturned:
 		Global.car_is_overturned = false
 	
-	#prints(deg_rotation, current_time_before_overturned)
-	
 	if rpm < 30:
 		fix_engine_stall()
 	

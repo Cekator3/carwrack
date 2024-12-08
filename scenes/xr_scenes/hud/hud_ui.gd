@@ -46,8 +46,6 @@ func _process(delta):
 		attention_message.text = "Respawning..."
 	else: 
 		attention_message.text = default_attention_message
-	
-	#$SteeringAngle.text = "SteeringWheel: %s" % str(Global.debug_analog_axis)
 
 
 func correct_gear(gear: int):
@@ -58,7 +56,7 @@ func correct_gear(gear: int):
 			result = "R"
 		0: 
 			result = "N"
-		1, 2, 3, 4, 5, 6, 7, 8:
+		_:
 			result = str(gear)
 	
 	return result

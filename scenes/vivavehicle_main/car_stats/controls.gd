@@ -269,8 +269,6 @@ func _init() -> void:
 	throttle_button.off_rate = OffThrottleRate
 	throttle_button.maximum = MaxThrottle
 	
-	print(CurveTrigger)
-	
 	throttle_button.curve_trigger = CurveTrigger
 	#throttle_button.minimum = MinThrottle
 	

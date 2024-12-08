@@ -4,6 +4,20 @@ extends Node
 #Level func/variables
 signal player_pressed_centered
 
+signal music_changed
+signal gamepad_music_prev
+signal gamepad_music_next
+signal gamepad_playlist_prev
+signal gamepad_playlist_next
+
+var current_music_in_playlist: MusicItem : 
+	set(value):
+		if current_music_in_playlist != value:
+			current_music_in_playlist = value
+			music_changed.emit()
+
+var current_playlist_name: String = ""
+
 var map_level_failed: bool = false
 var current_map_can_be_completed: bool = false
 
@@ -49,6 +63,34 @@ var is_reverse: bool = false :
 			is_reverse = value
 			transmission_reversed.emit(value)
 			prints("is_reverse", value)
+
+
+#Create custom tween and property logic
+func create_tween_custom(tween, ease: Tween.EaseType, trans: Tween.TransitionType):
+	if tween != null:
+		while tween.get_reference_count() > 0:
+			tween.unreference()
+		tween.kill()
+	
+	var return_tween: Tween 
+	if is_instance_valid(active_ui_layer):
+		return_tween = create_tween().bind_node(active_ui_layer)
+	else: 
+		return_tween = create_tween().bind_node(self)
+	
+	return_tween.set_ease(ease)
+	return_tween.set_trans(trans)
+	return return_tween
+
+func tween_p_property_custom(tween: Tween, object: Object, node_path: String, from: Variant = null, to: Variant = null, duration: float = 0.1):
+	await tween.parallel().tween_property(object,\
+		node_path, to, duration).from(from).finished
+	tween.stop()
+
+func tween_property_custom(tween: Tween, object: Object, node_path: String, from: Variant = null, to: Variant = null, duration: float = 0.1):
+	await tween.tween_property(object,\
+		node_path, to, duration).from(from).finished
+	tween.kill()
 
 
 #Logic of change_current_scene and threaded loading

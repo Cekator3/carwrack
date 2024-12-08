@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://dowynmb157yg8"]
+[gd_scene load_steps=6 format=3 uid="uid://dowynmb157yg8"]
 
 [ext_resource type="Script" path="res://scenes/scene_manager/scene_manager.gd" id="1_p4itr"]
 [ext_resource type="PackedScene" uid="uid://co7umjbsxhmjr" path="res://scenes/levels/level_intro/level_intro.tscn" id="2_5dpig"]
 [ext_resource type="PackedScene" uid="uid://clc5dre31iskm" path="res://addons/godot-xr-tools/xr/start_xr.tscn" id="4_htx0x"]
-[ext_resource type="AudioStream" uid="uid://ce680pc78ulce" path="res://assets/sounds/pathfinder.mp3" id="4_xjedd"]
+[ext_resource type="Script" path="res://scenes/music_playlist/playlist_stream_player.gd" id="5_2s0mo"]
+[ext_resource type="Resource" uid="uid://l47ysasydoto" path="res://assets/sounds/music_playlists.tres" id="6_w5s6l"]
 
 [node name="SceneManager" type="Node"]
 script = ExtResource("1_p4itr")
@@ -15,7 +16,8 @@ script = ExtResource("1_p4itr")
 [node name="StartXR" parent="." instance=ExtResource("4_htx0x")]
 physics_rate_multiplier = 1
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("4_xjedd")
+[node name="PlaylistStreamPlayer" type="AudioStreamPlayer" parent="."]
 volume_db = -8.0
-autoplay = true
+bus = &"Music"
+script = ExtResource("5_2s0mo")
+resource_music_playlists = ExtResource("6_w5s6l")

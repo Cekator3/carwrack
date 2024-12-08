@@ -1,10 +1,25 @@
-[gd_scene load_steps=11 format=3 uid="uid://bg513of10kco"]
+[gd_scene load_steps=15 format=3 uid="uid://bg513of10kco"]
 
 [ext_resource type="FontFile" uid="uid://c4ul04dg1npn" path="res://assets/fonts/zeroes/Zeroes Two.otf" id="1_4apam"]
 [ext_resource type="Script" path="res://scenes/xr_scenes/hud/hud_ui.gd" id="1_et3fh"]
+[ext_resource type="Script" path="res://scenes/xr_scenes/hud/playlist_hud.gd" id="3_mtpo3"]
+[ext_resource type="Texture2D" uid="uid://d0lh2a0ue8gg7" path="res://assets/icons/icons_music.png" id="4_5i524"]
 
 [sub_resource type="Theme" id="Theme_qdh8x"]
 default_font = ExtResource("1_4apam")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ryi8w"]
+bg_color = Color(0.6, 0.6, 0.6, 0.388235)
+skew = Vector2(-0.5, 0)
+border_width_right = 350
+border_color = Color(1, 1, 1, 0)
+border_blend = true
+corner_radius_top_left = 20
+corner_detail = 1
+expand_margin_left = 10.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tuslm"]
+content_margin_right = 10.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n2wot"]
 bg_color = Color(0.0924495, 0.273438, 0.0939572, 0.573)
@@ -30,8 +45,11 @@ bg_color = Color(0.691406, 0.604289, 0.546211, 0.74902)
 
 [node name="HudUI" type="Control"]
 layout_mode = 3
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 theme = SubResource("Theme_qdh8x")
 script = ExtResource("1_et3fh")
 
@@ -53,11 +71,24 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="SteeringAngle" type="Label" parent="Debug"]
+visible = false
+layout_mode = 2
+anchor_right = 1.0
+anchor_bottom = 0.011
+offset_top = 55.0
+offset_bottom = 103.872
+theme_override_font_sizes/font_size = 46
+text = "SteeringWheel: %s"
+horizontal_alignment = 1
+
 [node name="MarginContainer" type="MarginContainer" parent="Debug"]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 0.5
+offset_right = -523.0
 offset_bottom = -254.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -75,6 +106,86 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("3_mtpo3")
+
+[node name="MarginContainer" type="MarginContainer" parent="PlaylistHud"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.49
+anchor_top = 0.938
+anchor_right = 0.49
+anchor_bottom = 0.938
+offset_left = -256.48
+offset_top = -505.824
+offset_right = 273.52
+offset_bottom = -414.824
+grow_horizontal = 2
+
+[node name="Panel" type="Panel" parent="PlaylistHud/MarginContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ryi8w")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PlaylistHud/MarginContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MusicPlayNow" type="VBoxContainer" parent="PlaylistHud/MarginContainer/Panel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+
+[node name="Name" type="Label" parent="PlaylistHud/MarginContainer/Panel/HBoxContainer/MusicPlayNow"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = SubResource("StyleBoxEmpty_tuslm")
+text = "Remorse (Carpenter Brut Remix)"
+horizontal_alignment = 2
+vertical_alignment = 1
+clip_text = true
+
+[node name="Author" type="Label" parent="PlaylistHud/MarginContainer/Panel/HBoxContainer/MusicPlayNow"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.757813, 0.757813, 0.757813, 1)
+theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = SubResource("StyleBoxEmpty_tuslm")
+text = "Carpenther brut"
+horizontal_alignment = 2
+vertical_alignment = 1
+clip_text = true
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="PlaylistHud/MarginContainer/Panel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.2
+stretch_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="PlaylistHud/MarginContainer/Panel/HBoxContainer/AspectRatioContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("4_5i524")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TypePlaylist" type="Label" parent="PlaylistHud/MarginContainer/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.012
+anchor_right = -0.012
+offset_left = -44.64
+offset_top = -34.0
+offset_right = 91.36
+offset_bottom = -14.0
+rotation = 1.10868
+theme_override_font_sizes/font_size = 16
+text = "Synthwave"
+horizontal_alignment = 2
 
 [node name="InGameHud" type="Control" parent="."]
 layout_mode = 1
@@ -92,9 +203,9 @@ anchor_left = 0.299
 anchor_top = 0.886
 anchor_right = 0.73
 anchor_bottom = 0.886
-offset_left = 0.551971
+offset_left = -5.44803
 offset_top = -247.128
-offset_right = 0.039978
+offset_right = -5.96002
 offset_bottom = -126.128
 grow_horizontal = 2
 grow_vertical = 0
@@ -166,46 +277,8 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
 theme_override_font_sizes/font_size = 100
-text = "%s"
+text = "R"
 vertical_alignment = 1
-
-[node name="TriggerPress" type="MarginContainer" parent="InGameHud"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="SteeringAngle" type="Label" parent="InGameHud"]
-visible = false
-layout_mode = 1
-offset_left = 155.0
-offset_top = 340.0
-offset_right = 632.0
-offset_bottom = 396.0
-theme_override_font_sizes/font_size = 46
-text = "SteeringWheel: %s"
-
-[node name="Throttle" type="Label" parent="InGameHud"]
-visible = false
-layout_mode = 1
-offset_left = 604.0
-offset_top = 87.0
-offset_right = 907.0
-offset_bottom = 143.0
-theme_override_font_sizes/font_size = 46
-text = "Throttle: %s"
-
-[node name="Brake" type="Label" parent="InGameHud"]
-visible = false
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 442.0
-offset_top = 299.0
-offset_right = -451.0
-offset_bottom = -293.0
-theme_override_font_sizes/font_size = 46
-text = "Brake: %s"
 
 [node name="AttentionHud" type="Control" parent="."]
 layout_mode = 1
@@ -218,13 +291,13 @@ grow_vertical = 2
 [node name="MarginContainer" type="MarginContainer" parent="AttentionHud"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.485
+anchor_left = 0.5
 anchor_top = 0.796
-anchor_right = 0.485
+anchor_right = 0.5
 anchor_bottom = 0.796
-offset_left = -558.72
+offset_left = -576.0
 offset_top = -272.808
-offset_right = 593.28
+offset_right = 576.0
 offset_bottom = -208.808
 grow_horizontal = 2
 grow_vertical = 2
@@ -236,7 +309,7 @@ layout_mode = 2
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 28
-text = "To respawn the machine, press Y"
+text = "Press Y to respawn the car"
 horizontal_alignment = 1
 vertical_alignment = 1
 

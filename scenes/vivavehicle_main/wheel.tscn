@@ -97,15 +97,6 @@ mesh = SubResource("2")
 visible = false
 dirt_type = true
 
-[node name="lvl1" parent="animation/camber/smoke_dirt/static" index="0"]
-color = Color(0.352941, 0.313726, 0.223529, 0.329412)
-
-[node name="lvl2" parent="animation/camber/smoke_dirt/static" index="1"]
-color = Color(0.352941, 0.313726, 0.223529, 0.701961)
-
-[node name="lvl3" parent="animation/camber/smoke_dirt/static" index="2"]
-color = Color(0.352941, 0.313726, 0.223529, 1)
-
 [node name="lvl1" parent="animation/camber/smoke_dirt/revolvel" index="0"]
 color = Color(0.352941, 0.313726, 0.223529, 0.329412)
 
