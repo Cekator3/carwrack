@@ -46,6 +46,13 @@ func _init() -> void:
 
 func _ready() -> void:
 	Setting.world_environment = self.environment
+	self.environment.sky = Setting.sky_variation["default"]
+	
+	environment.fog_aerial_perspective = 0.91
+	
+	environment.ambient_light_source = 0
+	
+	Global.scene_is_hub = false
 
 ##Safer version of just using the singleton variable, even tho the variable is 
 ##what's currently used in the codebase :P

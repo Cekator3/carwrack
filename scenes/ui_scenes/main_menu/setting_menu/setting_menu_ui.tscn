@@ -1,0 +1,71 @@
+[gd_scene load_steps=9 format=3 uid="uid://5m1ayas3gab2"]
+
+[ext_resource type="FontFile" uid="uid://c4ul04dg1npn" path="res://assets/fonts/zeroes/Zeroes Two.otf" id="1_edp3n"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0ff7a"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e3yiu"]
+content_margin_left = 10.0
+content_margin_right = 0.0
+bg_color = Color(0.492188, 0.492188, 0.492188, 0.184314)
+border_width_right = 125
+border_color = Color(0, 0, 0, 0)
+border_blend = true
+corner_radius_bottom_left = 20
+corner_detail = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w0gh4"]
+content_margin_left = 10.0
+content_margin_right = 0.0
+bg_color = Color(0, 0, 0, 0.184314)
+border_width_right = 125
+border_color = Color(0, 0, 0, 0)
+border_blend = true
+corner_radius_bottom_left = 20
+corner_detail = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e7s5y"]
+content_margin_left = 10.0
+content_margin_right = 0.0
+bg_color = Color(1, 1, 1, 0.184314)
+border_width_right = 125
+border_color = Color(0, 0, 0, 0)
+border_blend = true
+corner_radius_bottom_left = 20
+corner_detail = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nk1rr"]
+bg_color = Color(0, 0, 0, 0.101961)
+border_width_right = 395
+border_color = Color(0, 0, 0, 0)
+border_blend = true
+
+[sub_resource type="Theme" id="Theme_lv5lv"]
+default_font = ExtResource("1_edp3n")
+Button/styles/focus = SubResource("StyleBoxEmpty_0ff7a")
+Button/styles/hover = SubResource("StyleBoxFlat_e3yiu")
+Button/styles/normal = SubResource("StyleBoxFlat_w0gh4")
+Button/styles/pressed = SubResource("StyleBoxFlat_e7s5y")
+Panel/styles/panel = SubResource("StyleBoxFlat_nk1rr")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cjxkc"]
+bg_color = Color(0.114, 0.114, 0.12, 1)
+corner_detail = 1
+
+[node name="SettingMenuUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_lv5lv")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_cjxkc")

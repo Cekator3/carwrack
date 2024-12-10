@@ -29,7 +29,7 @@ func _ready():
 	
 	self.finished.connect(next_music_handler)
 	
-	playlist = resource_music_playlists.music_playlist_items.pick_random()
+	playlist = resource_music_playlists.music_playlist_items[2]
 	set_new_music_to_stream(playlist.music_items_in_playlist[0])
 
 

@@ -193,6 +193,8 @@ class ButtonWrapper:
 				
 			
 		else:
+			if Global.in_game_menu_visible:
+				return pressed
 			match name:
 				"gas":
 					pressed = clamp(Input.get_action_strength(name) + Global.gas_trigger, 0, 1) 
@@ -316,7 +318,7 @@ func get_steer_axis(external_analog:float = 0.0) -> float:
 			pass
 		
 		steer_axis_amount = clampf(analog_axis * SteerSensitivity, -1.0, 1.0)
-		steer_axis_amount *= minf(absf(steer_axis_amount) + 0.5, 1.0)
+		#steer_axis_amount *= minf(absf(steer_axis_amount) + 0.5, 1.0)
 		#Global.debug_steer_axis_amount = steer_axis_amount
 		#print(steer_axis_amount)
 	else:
@@ -339,6 +341,9 @@ func get_steer_axis(external_analog:float = 0.0) -> float:
 	steer_axis_amount = clampf(steer_axis_amount, -1.0, 1.0)
 	
 	Global.debug_analog_axis = analog_axis
+	
+	if Global.in_game_menu_visible:
+		steer_axis_amount = 0
 	
 	return steer_axis_amount
 

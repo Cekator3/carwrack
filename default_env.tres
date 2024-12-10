@@ -1,20 +1,10 @@
-[gd_resource type="Environment" load_steps=3 format=3 uid="uid://cgka7swyb3v1d"]
+[gd_resource type="Environment" load_steps=2 format=3 uid="uid://cgka7swyb3v1d"]
 
-[sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_0061w"]
-rayleigh_coefficient = 0.65
-rayleigh_color = Color(0.386938, 0.459222, 0.6, 1)
-mie_eccentricity = 0.95
-mie_color = Color(0.812, 0.727068, 0.664448, 1)
-ground_color = Color(0.0989457, 0.111859, 0.117188, 1)
-energy_multiplier = 2.5
-use_debanding = false
-
-[sub_resource type="Sky" id="Sky_yyntn"]
-sky_material = SubResource("PhysicalSkyMaterial_0061w")
+[ext_resource type="Sky" uid="uid://df56lisangcbc" path="res://assets/sky/default_sky/default_sky.tres" id="1_ww6t7"]
 
 [resource]
 background_mode = 2
-sky = SubResource("Sky_yyntn")
+sky = ExtResource("1_ww6t7")
 tonemap_mode = 3
 ssr_max_steps = 302
 ssr_fade_in = 0.102453
@@ -33,8 +23,8 @@ glow_intensity = 0.5
 glow_blend_mode = 1
 fog_enabled = true
 fog_light_color = Color(0.877715, 0.945858, 1, 1)
-fog_density = 0.004
-fog_aerial_perspective = 0.871
-fog_sky_affect = 0.316
+fog_density = 0.003
+fog_aerial_perspective = 0.91
+fog_sky_affect = 0.276
 volumetric_fog_density = 0.003
 volumetric_fog_ambient_inject = 1.0

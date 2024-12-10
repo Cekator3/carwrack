@@ -2,7 +2,13 @@ extends Node
 
 
 #Level func/variables
+signal player_instantiated
+
 signal player_pressed_centered
+signal car_respawned
+
+signal screen_turned_black
+signal screen_turned_transparent
 
 signal music_changed
 signal gamepad_music_prev
@@ -10,13 +16,22 @@ signal gamepad_music_next
 signal gamepad_playlist_prev
 signal gamepad_playlist_next
 
+signal call_in_game_menu_changed
+
+signal game_exit
+
+var current_car: CarItem
+
 var current_music_in_playlist: MusicItem : 
 	set(value):
 		if current_music_in_playlist != value:
 			current_music_in_playlist = value
 			music_changed.emit()
 
+var scene_is_hub: bool = true
 var current_playlist_name: String = ""
+
+var in_game_menu_visible: bool = false
 
 var map_level_failed: bool = false
 var current_map_can_be_completed: bool = false

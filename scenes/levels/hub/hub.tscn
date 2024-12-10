@@ -1,3 +1,181 @@
-[gd_scene format=3 uid="uid://bewdkdds0vtvx"]
+[gd_scene load_steps=25 format=3 uid="uid://bewdkdds0vtvx"]
+
+[ext_resource type="Script" path="res://scenes/levels/hub/hub.gd" id="1_17d1f"]
+[ext_resource type="Environment" uid="uid://cgka7swyb3v1d" path="res://default_env.tres" id="1_ri737"]
+[ext_resource type="PackedScene" uid="uid://ciqw6vvg4cgsy" path="res://scenes/xr_scenes/hud/hud.tscn" id="2_knbi6"]
+[ext_resource type="PackedScene" uid="uid://ddsj74hpt1kgb" path="res://addons/godot-xr-tools/hands/scenes/highpoly/left_physics_tac_glove.tscn" id="3_hfni6"]
+[ext_resource type="Script" path="res://scenes/xr_scenes/player/hub_player_xr_origin.gd" id="3_snp26"]
+[ext_resource type="PackedScene" uid="uid://cqhw276realc" path="res://addons/godot-xr-tools/functions/function_pointer.tscn" id="5_cw76r"]
+[ext_resource type="PackedScene" uid="uid://b6xesntm4qeo5" path="res://addons/godot-xr-tools/hands/scenes/highpoly/right_physics_tac_glove.tscn" id="6_tfhok"]
+[ext_resource type="PackedScene" uid="uid://clujaf3u776a3" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.tscn" id="8_eqmj5"]
+[ext_resource type="Script" path="res://scenes/xr_scenes/hud/intro.gd" id="8_h1fni"]
+[ext_resource type="PackedScene" uid="uid://c1w15db4aw8u3" path="res://scenes/ui_scenes/main_menu/main_menu/main_menu_ui.tscn" id="9_80sje"]
+[ext_resource type="PackedScene" uid="uid://5m1ayas3gab2" path="res://scenes/ui_scenes/main_menu/setting_menu/setting_menu_ui.tscn" id="10_6kr8i"]
+[ext_resource type="Texture2D" uid="uid://e5h1ba5bjwjk" path="res://assets/icons/letters-light-trans.png" id="12_tu48d"]
+[ext_resource type="FontFile" uid="uid://cnjwim2hsajh8" path="res://assets/fonts/zeroes/Zeroes Three.otf" id="13_vk504"]
+[ext_resource type="Material" uid="uid://dbulit4jm78hf" path="res://assets/textures/concrete031/concrete031.tres" id="14_bb5sm"]
+[ext_resource type="PackedScene" uid="uid://b252m8jtiu2or" path="res://assets/models/traffic_cone/traffic_cone.tscn" id="15_8ci5j"]
+[ext_resource type="Shader" path="res://scenes/levels/hub/cloud.gdshader" id="15_i528y"]
+
+[sub_resource type="Animation" id="Animation_3dfha"]
+resource_name = "intro"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2qf1o"]
+_data = {
+"intro": SubResource("Animation_3dfha")
+}
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_04ggi"]
+transparency = 4
+albedo_texture = ExtResource("12_tu48d")
+
+[sub_resource type="QuadMesh" id="QuadMesh_bocvh"]
+material = SubResource("StandardMaterial3D_04ggi")
+size = Vector2(16, 9)
+
+[sub_resource type="BoxMesh" id="BoxMesh_wyf37"]
+material = ExtResource("14_bb5sm")
+size = Vector3(8, 50, 8)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_dx0o2"]
+data = PackedVector3Array(4, 0, 4, -4, 0, 4, 4, 0, -4, -4, 0, 4, -4, 0, -4, 4, 0, -4)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_osupy"]
+render_priority = 0
+shader = ExtResource("15_i528y")
+shader_parameter/cloud_color = Vector4(1, 1, 1, 1)
+shader_parameter/cloud_opacity = 0.13
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_268pd"]
+size = Vector2(5000, 5000)
 
 [node name="Hub" type="Node3D"]
+script = ExtResource("1_17d1f")
+speed_sky_interpolation = 8
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource("1_ri737")
+
+[node name="HUD" parent="." instance=ExtResource("2_knbi6")]
+process_priority = 4
+process_physics_priority = 4
+physics_interpolation_mode = 1
+visible = false
+speed_interpolate_angle = 25.0
+speed_interpolate_position = 95.0
+
+[node name="XROrigin3D" type="XROrigin3D" parent="."]
+script = ExtResource("3_snp26")
+
+[node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="Left" type="XRController3D" parent="XROrigin3D"]
+tracker = &"left_hand"
+
+[node name="LeftPhysicsHand" parent="XROrigin3D/Left" instance=ExtResource("3_hfni6")]
+
+[node name="Right" type="XRController3D" parent="XROrigin3D"]
+tracker = &"right_hand"
+
+[node name="RightPhysicsHand" parent="XROrigin3D/Right" instance=ExtResource("6_tfhok")]
+
+[node name="FunctionPointer" parent="XROrigin3D" instance=ExtResource("5_cw76r")]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-1, -1.81197e-07, 1.89612e-07, -9.38861e-08, 0.922376, 0.386292, -2.44888e-07, 0.386292, -0.922376, 0, 0, 0)
+light_energy = 1.25
+shadow_enabled = true
+directional_shadow_max_distance = 16.0
+directional_shadow_pancake_size = 0.0
+
+[node name="ReflectionProbe" type="ReflectionProbe" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.68091, -7.14636)
+update_mode = 1
+size = Vector3(40, 40, 40)
+origin_offset = Vector3(0, 0, 9.05078)
+ambient_mode = 2
+ambient_color = Color(0.546875, 0.546875, 0.546875, 1)
+ambient_color_energy = 0.15
+
+[node name="AnimationIntro" type="Node3D" parent="."]
+script = ExtResource("8_h1fni")
+
+[node name="IntroAnimation" type="AnimationPlayer" parent="AnimationIntro"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_2qf1o")
+}
+
+[node name="MainMenuUis" type="Node3D" parent="AnimationIntro"]
+
+[node name="MainMenu" parent="AnimationIntro/MainMenuUis" instance=ExtResource("8_eqmj5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.48559, -4.47658)
+screen_size = Vector2(5, 3)
+viewport_size = Vector2(1152, 648)
+transparent = 0
+unshaded = 1
+roughness = 0.0
+emission = 5.115
+fix_emission = true
+scene = ExtResource("9_80sje")
+
+[node name="SettingMenu" parent="AnimationIntro/MainMenuUis" instance=ExtResource("8_eqmj5")]
+transform = Transform3D(0.714583, 0, -0.699551, 0, 1, 0, 0.699551, 0, 0.714583, 4.27255, 4.486, -2.73369)
+screen_size = Vector2(5, 3)
+viewport_size = Vector2(1152, 648)
+transparent = 0
+unshaded = 1
+roughness = 0.59
+emission = 5.115
+fix_emission = true
+scene = ExtResource("10_6kr8i")
+
+[node name="ScreenIntro" type="MeshInstance3D" parent="AnimationIntro"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, -11)
+mesh = SubResource("QuadMesh_bocvh")
+
+[node name="GameName" type="Label3D" parent="AnimationIntro"]
+transform = Transform3D(1, 0, 0, 0, 0.875228, -0.48371, 0, 0.48371, 0.875228, 0, 6.5, -5.1)
+visible = false
+text = "CARWRACK"
+font = ExtResource("13_vk504")
+font_size = 257
+outline_size = 0
+
+[node name="Floor" type="StaticBody3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, -25.0046, 0)
+cast_shadow = 0
+mesh = SubResource("BoxMesh_wyf37")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
+shape = SubResource("ConcavePolygonShape3D_dx0o2")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 6.15209, 0)
+light_energy = 8.0
+light_volumetric_fog_energy = 5.0
+spot_range = 11.6321
+spot_angle = 34.0322
+spot_angle_attenuation = 0.217638
+
+[node name="Cloud" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -183.909, 0)
+material_override = SubResource("ShaderMaterial_osupy")
+cast_shadow = 0
+mesh = SubResource("PlaneMesh_268pd")
+
+[node name="TrafficCone" parent="." instance=ExtResource("15_8ci5j")]
+transform = Transform3D(0.813, 0, 0, 0, 0.813, 0, 0, 0, 0.813, -3.00328, 0.0316742, -3.00268)
+
+[node name="TrafficCone2" parent="." instance=ExtResource("15_8ci5j")]
+transform = Transform3D(0.813, 0, 0, 0, 0.813, 0, 0, 0, 0.813, 2.99672, 0.0316742, -3.00268)
+
+[node name="TrafficCone3" parent="." instance=ExtResource("15_8ci5j")]
+transform = Transform3D(0.813, 0, 0, 0, 0.813, 0, 0, 0, 0.813, -3.00328, 0.0316742, 2.99732)
+
+[node name="TrafficCone4" parent="." instance=ExtResource("15_8ci5j")]
+transform = Transform3D(0.813, 0, 0, 0, 0.813, 0, 0, 0, 0.813, 2.99672, 0.0316742, 2.99732)

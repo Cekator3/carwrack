@@ -1,19 +1,14 @@
-[gd_scene load_steps=30 format=4 uid="uid://co7umjbsxhmjr"]
+[gd_scene load_steps=22 format=4 uid="uid://co7umjbsxhmjr"]
 
 [ext_resource type="Texture2D" uid="uid://bkvut1o1dk3fu" path="res://addons/kenney_prototype_textures/light/texture_07.png" id="1_6jp2m"]
 [ext_resource type="Environment" uid="uid://cgka7swyb3v1d" path="res://default_env.tres" id="1_t8xtw"]
 [ext_resource type="Script" path="res://scenes/vivavehicle_misc/misc scripts/world_root.gd" id="2_jsrlg"]
 [ext_resource type="Script" path="res://scenes/vivavehicle_main/ground_surface_variables.gd" id="3_ijm6r"]
 [ext_resource type="Script" path="res://scenes/vivavehicle_main/car_stats/surface_vars.gd" id="4_37xyw"]
-[ext_resource type="PackedScene" uid="uid://bbdby6qsjtqmj" path="res://scenes/cars/ferrari_550/ferrari.tscn" id="6_djj4n"]
 [ext_resource type="PackedScene" uid="uid://b252m8jtiu2or" path="res://assets/models/traffic_cone/traffic_cone.tscn" id="6_v5a8l"]
 [ext_resource type="PackedScene" uid="uid://ciqw6vvg4cgsy" path="res://scenes/xr_scenes/hud/hud.tscn" id="8_i8qtt"]
-[ext_resource type="Script" path="res://scenes/xr_scenes/player/player_xr_origin.gd" id="8_lhe7f"]
-[ext_resource type="PackedScene" uid="uid://ddsj74hpt1kgb" path="res://addons/godot-xr-tools/hands/scenes/highpoly/left_physics_tac_glove.tscn" id="9_fym68"]
-[ext_resource type="Script" path="res://scenes/xr_scenes/player/xr_camera_position.gd" id="9_u125f"]
-[ext_resource type="PackedScene" uid="uid://b6xesntm4qeo5" path="res://addons/godot-xr-tools/hands/scenes/highpoly/right_physics_tac_glove.tscn" id="10_3sycx"]
-[ext_resource type="PackedScene" uid="uid://bft3xyxs31ci3" path="res://addons/godot-xr-tools/functions/function_pose_detector.tscn" id="10_1310a"]
-[ext_resource type="PackedScene" uid="uid://b4ysuy43poobf" path="res://addons/godot-xr-tools/functions/function_pickup.tscn" id="11_l8pva"]
+[ext_resource type="PackedScene" uid="uid://bfw82vbjgne6e" path="res://scenes/ui_scenes/ingame_menu/ingame_menu.tscn" id="9_fba4i"]
+[ext_resource type="Script" path="res://scenes/cars/car_spawner.gd" id="9_h5aiy"]
 
 [sub_resource type="Resource" id="Resource_2kvo2"]
 script = ExtResource("4_37xyw")
@@ -91,13 +86,6 @@ data = PackedVector3Array(-20, 1, 7.5, 20, 1, 7.5, -20, -1, 7.5, 20, 1, 7.5, 20,
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_qocml"]
 data = PackedVector3Array(-20, 1, 7.5, 20, 1, 7.5, -20, -1, 7.5, 20, 1, 7.5, 20, -1, 7.5, -20, -1, 7.5, 20, 1, -7.5, -20, 1, -7.5, 20, -1, -7.5, -20, 1, -7.5, -20, -1, -7.5, 20, -1, -7.5, 20, 1, 7.5, 20, 1, -7.5, 20, -1, 7.5, 20, 1, -7.5, 20, -1, -7.5, 20, -1, 7.5, -20, 1, -7.5, -20, 1, 7.5, -20, -1, -7.5, -20, 1, 7.5, -20, -1, 7.5, -20, -1, -7.5, 20, 1, 7.5, -20, 1, 7.5, 20, 1, -7.5, -20, 1, 7.5, -20, 1, -7.5, 20, 1, -7.5, -20, -1, 7.5, 20, -1, 7.5, -20, -1, -7.5, 20, -1, 7.5, 20, -1, -7.5, -20, -1, -7.5)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qc825"]
-albedo_color = Color(0.664063, 0.238363, 0.253229, 1)
-
-[sub_resource type="SphereMesh" id="SphereMesh_r7wgu"]
-
-[sub_resource type="SphereMesh" id="SphereMesh_hfhn6"]
 
 [node name="LevelIntro" type="WorldEnvironment"]
 environment = ExtResource("1_t8xtw")
@@ -4116,64 +4104,20 @@ shadow_enabled = true
 shadow_bias = 0.07
 directional_shadow_max_distance = 400.0
 
-[node name="FerrariCar" parent="." instance=ExtResource("6_djj4n")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -68, 4.95264, -399.642)
-
-[node name="Camera3D" type="Camera3D" parent="FerrariCar"]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1.437, 0.745, -0.945)
-fov = 80.0
-far = 1000.0
-
-[node name="XROrigin3D" type="XROrigin3D" parent="FerrariCar"]
-process_priority = 2
-process_physics_priority = 2
-transform = Transform3D(-1, 0, 1.50996e-07, 0, 1, 0, -1.50996e-07, 0, -1, 0.971, -2.8, -1.62)
-current = true
-script = ExtResource("8_lhe7f")
-
-[node name="XRCamera3D" type="XRCamera3D" parent="FerrariCar/XROrigin3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.16932, 0)
-current = true
-
-[node name="Left" type="XRController3D" parent="FerrariCar/XROrigin3D"]
-tracker = &"left_hand"
-
-[node name="LeftPhysicsHand" parent="FerrariCar/XROrigin3D/Left" instance=ExtResource("9_fym68")]
-
-[node name="FunctionPoseDetector" parent="FerrariCar/XROrigin3D/Left" instance=ExtResource("10_1310a")]
-
-[node name="FunctionPickup" parent="FerrariCar/XROrigin3D/Left" instance=ExtResource("11_l8pva")]
-
-[node name="Right" type="XRController3D" parent="FerrariCar/XROrigin3D"]
-tracker = &"right_hand"
-
-[node name="RightPhysicsHand" parent="FerrariCar/XROrigin3D/Right" instance=ExtResource("10_3sycx")]
-
-[node name="FunctionPoseDetector" parent="FerrariCar/XROrigin3D/Right" instance=ExtResource("10_1310a")]
-
-[node name="FunctionPickup" parent="FerrariCar/XROrigin3D/Right" instance=ExtResource("11_l8pva")]
-
-[node name="Debug" type="MeshInstance3D" parent="FerrariCar/XROrigin3D"]
-visible = false
-material_override = SubResource("StandardMaterial3D_qc825")
-mesh = SubResource("SphereMesh_r7wgu")
-
-[node name="XRCameraPosition" type="Marker3D" parent="FerrariCar" node_paths=PackedStringArray("xr_origin_3d")]
-process_priority = 3
-process_physics_priority = 3
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.41302, -1.36008, -0.93261)
-script = ExtResource("9_u125f")
-xr_origin_3d = NodePath("../XROrigin3D")
-max_position_range = 1.0
-
-[node name="Debug" type="MeshInstance3D" parent="FerrariCar/XRCameraPosition"]
-visible = false
-mesh = SubResource("SphereMesh_hfhn6")
+[node name="CarSpawner" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.39406, -360.416)
+script = ExtResource("9_h5aiy")
 
 [node name="HUD" parent="." instance=ExtResource("8_i8qtt")]
 process_priority = 4
 process_physics_priority = 4
 physics_interpolation_mode = 1
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -370)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -350)
+visible = false
 speed_interpolate_angle = 25.0
 speed_interpolate_position = 95.0
+
+[node name="IngameMenu" parent="." instance=ExtResource("9_fba4i")]
+speed_interpolate_angle = 25.0
+speed_interpolate_position = 95.0
+snap_float = 0.75

@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="MusicPlaylist" load_steps=41 format=3 uid="uid://l47ysasydoto"]
+[gd_resource type="Resource" script_class="MusicPlaylist" load_steps=43 format=3 uid="uid://l47ysasydoto"]
 
 [ext_resource type="Script" path="res://scenes/music_playlist/music_playlist_item.gd" id="1_s12vh"]
 [ext_resource type="Script" path="res://scenes/music_playlist/music_item.gd" id="2_0jevy"]
@@ -16,6 +16,7 @@
 [ext_resource type="AudioStream" uid="uid://ci0u3i7o28l2t" path="res://assets/sounds/music/ryancatt-echoes.mp3" id="10_ruea2"]
 [ext_resource type="AudioStream" uid="uid://6bv164lo6a10" path="res://assets/sounds/music/quantum-reverie.mp3" id="11_d7ew7"]
 [ext_resource type="AudioStream" uid="uid://8yufnhygdf5m" path="res://assets/sounds/music/rumbling-instrumental-h3xagon3st.mp3" id="11_q16ts"]
+[ext_resource type="AudioStream" uid="uid://bwg3xo21r36vk" path="res://assets/sounds/music/a_rain_of_blood-h3xagon3st.mp3" id="12_nve1c"]
 [ext_resource type="AudioStream" uid="uid://d35xoe36alw5l" path="res://assets/sounds/music/this-is-my-theme.mp3" id="15_srmjo"]
 [ext_resource type="AudioStream" uid="uid://dtt2rpnsbbmm8" path="res://assets/sounds/music/unbreakable-willpower.mp3" id="16_3wwta"]
 [ext_resource type="AudioStream" uid="uid://dpnwt1uqqf7jc" path="res://assets/sounds/music/mididuck-glitters.mp3" id="19_ywgmc"]
@@ -89,6 +90,13 @@ music_name = "Unbreakable willpower"
 music_author = "Dieswyx"
 music_volume_boost = 0.0
 
+[sub_resource type="Resource" id="Resource_isghd"]
+script = ExtResource("2_0jevy")
+music_audio_stream = ExtResource("12_nve1c")
+music_name = "A rain of blood"
+music_author = "H3XAGON3ST"
+music_volume_boost = 0.0
+
 [sub_resource type="Resource" id="Resource_082hn"]
 script = ExtResource("2_0jevy")
 music_audio_stream = ExtResource("9_ob57s")
@@ -96,19 +104,19 @@ music_name = "Amplification"
 music_author = "H3XAGON3ST"
 music_volume_boost = 4.0
 
-[sub_resource type="Resource" id="Resource_ufptp"]
-script = ExtResource("2_0jevy")
-music_audio_stream = ExtResource("8_1wh2c")
-music_name = "Explosion"
-music_author = "H3XAGON3ST"
-music_volume_boost = 2.0
-
 [sub_resource type="Resource" id="Resource_ghlud"]
 script = ExtResource("2_0jevy")
 music_audio_stream = ExtResource("15_srmjo")
 music_name = "This is my theme"
 music_author = "Dieswyx"
 music_volume_boost = 0.0
+
+[sub_resource type="Resource" id="Resource_ufptp"]
+script = ExtResource("2_0jevy")
+music_audio_stream = ExtResource("8_1wh2c")
+music_name = "Explosion"
+music_author = "H3XAGON3ST"
+music_volume_boost = 2.0
 
 [sub_resource type="Resource" id="Resource_rmy4c"]
 script = ExtResource("2_0jevy")
@@ -120,7 +128,7 @@ music_volume_boost = 1.0
 [sub_resource type="Resource" id="Resource_crvxl"]
 script = ExtResource("1_s12vh")
 playlist_name = "Electro"
-music_items_in_playlist = Array[ExtResource("2_0jevy")]([SubResource("Resource_p3dep"), SubResource("Resource_082hn"), SubResource("Resource_ufptp"), SubResource("Resource_ghlud"), SubResource("Resource_rmy4c")])
+music_items_in_playlist = Array[ExtResource("2_0jevy")]([SubResource("Resource_p3dep"), SubResource("Resource_isghd"), SubResource("Resource_082hn"), SubResource("Resource_ghlud"), SubResource("Resource_ufptp"), SubResource("Resource_rmy4c")])
 
 [sub_resource type="Resource" id="Resource_myrva"]
 script = ExtResource("2_0jevy")
@@ -129,19 +137,19 @@ music_name = "FADE AWAY"
 music_author = "xxs4gexx"
 music_volume_boost = -1.0
 
-[sub_resource type="Resource" id="Resource_0br6q"]
-script = ExtResource("2_0jevy")
-music_audio_stream = ExtResource("10_lspbg")
-music_name = "Chase - Batta"
-music_author = "H3XAGON3ST"
-music_volume_boost = 1.4
-
 [sub_resource type="Resource" id="Resource_7cqfr"]
 script = ExtResource("2_0jevy")
 music_audio_stream = ExtResource("19_ywgmc")
 music_name = "glitters"
 music_author = "mididuck"
 music_volume_boost = 0.75
+
+[sub_resource type="Resource" id="Resource_0br6q"]
+script = ExtResource("2_0jevy")
+music_audio_stream = ExtResource("10_lspbg")
+music_name = "Chase - Batta"
+music_author = "H3XAGON3ST"
+music_volume_boost = 1.4
 
 [sub_resource type="Resource" id="Resource_y3rtd"]
 script = ExtResource("2_0jevy")
@@ -152,8 +160,8 @@ music_volume_boost = 3.5
 
 [sub_resource type="Resource" id="Resource_5jq46"]
 script = ExtResource("1_s12vh")
-playlist_name = "Rock"
-music_items_in_playlist = Array[ExtResource("2_0jevy")]([SubResource("Resource_myrva"), SubResource("Resource_0br6q"), SubResource("Resource_7cqfr"), SubResource("Resource_y3rtd")])
+playlist_name = "A. Rock"
+music_items_in_playlist = Array[ExtResource("2_0jevy")]([SubResource("Resource_myrva"), SubResource("Resource_7cqfr"), SubResource("Resource_0br6q"), SubResource("Resource_y3rtd")])
 
 [resource]
 script = ExtResource("2_3y0b0")

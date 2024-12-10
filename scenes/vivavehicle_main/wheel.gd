@@ -359,10 +359,14 @@ func _physics_process(_delta:float) -> void:
 		look_at_from_position(position, Vector3(car.steer_to_direction, 0.0, car.AckermannPoint), Vector3.UP)
 		global_position = last_global_position
 		
-		rotate_y(-(deg_to_rad(90) * signf(car.effective_steer)))
+		rotate_y((-deg_to_rad(90) * signf(car.effective_steer)))
+		
+		
 		
 		#Using local rotation for literal_steer_rotation *could* be used for some sort of steer centering assist
-		var literal_steer_rotation:float = global_rotation.y
+		var literal_steer_rotation:float = (-deg_to_rad(90) * car.effective_steer)/2
+		
+		
 		
 		#calculations for steering_angles
 		look_at_from_position(position, Vector3(car.Steer_Radius, 0.0, car.AckermannPoint), Vector3.UP)
@@ -375,6 +379,8 @@ func _physics_process(_delta:float) -> void:
 		rotation = Vector3.ZERO
 		
 		rotation.y = literal_steer_rotation
+		
+		#prints(global_rotation, car.global_rotation)
 		
 		rotation_degrees.y += relative_toe
 	else:

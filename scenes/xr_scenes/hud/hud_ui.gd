@@ -13,10 +13,20 @@ extends Control
 @onready var attention_message = $AttentionHud/MarginContainer/VBoxContainer/AttentionMessage
 var default_attention_message: String
 
+@onready var black_panel = $BlackPanel
+
+@onready var in_game_hud = $InGameHud
+
+
 func _ready():
+	Global.active_ui_layer = self
 	default_attention_message = attention_message.text
+	
+	turn_transparent()
 
 func _process(delta):
+	set_scene_is_hub()
+	
 	if Input.is_action_just_pressed("debug"):
 		$Debug.visible = !$Debug.visible
 	
@@ -47,6 +57,8 @@ func _process(delta):
 	else: 
 		attention_message.text = default_attention_message
 
+func set_scene_is_hub():
+	in_game_hud.visible = !Global.scene_is_hub
 
 func correct_gear(gear: int):
 	var result: String = ""
@@ -60,3 +72,21 @@ func correct_gear(gear: int):
 			result = str(gear)
 	
 	return result
+
+
+func turn_transparent(time: float = 0.75):
+	print("Screen turned transparent")
+	await get_tree().create_timer(0.1).timeout
+	var tween = create_tween()
+	await tween.tween_property(black_panel, "modulate", Color(1, 1, 1, 0), time).from(Color(1, 1, 1)).finished
+	await get_tree().process_frame
+	Global.screen_turned_transparent.emit()
+
+
+func turn_black(time: float = 0.75):
+	print("Screen turned black")
+	var tween = create_tween()
+	await tween.tween_property(black_panel, "modulate", Color(1, 1, 1), time).from(Color(1, 1, 1, 0)).finished
+	await get_tree().create_timer(0.2).timeout
+	await get_tree().process_frame
+	Global.screen_turned_black.emit()

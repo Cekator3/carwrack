@@ -9,8 +9,8 @@ func _ready():
 
 func change_current_scene_with_ui(change_to_scene: PackedScene, ui_layer: Control):
 	#Close visibility for ui layer and wait signal
-	ui_layer.increased_visibility()
-	await Signal(ui_layer, "change_screen_increased")
+	ui_layer.turn_black()
+	await Global.screen_turned_black
 	
 	#When signal was emit, instantiate scene from change_to_scene PackedScene
 	var scene_instance = change_to_scene.instantiate()
@@ -25,3 +25,4 @@ func change_current_scene_with_ui(change_to_scene: PackedScene, ui_layer: Contro
 	
 	#Add new scene_instance as a child of current_scene
 	current_scene.add_child(scene_instance)
+	

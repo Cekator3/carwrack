@@ -5,6 +5,10 @@ extends Node
 
 var world_environment: Environment
 
+const sky_variation: Dictionary = {
+	"default" = preload("res://assets/sky/default_sky/default_sky.tres"),
+	"hub" = preload("res://assets/sky/hub_sky/hub_sky.tres")
+}
 
 var global_language: String = "ru"
 var LANGUAGE_TYPE = {

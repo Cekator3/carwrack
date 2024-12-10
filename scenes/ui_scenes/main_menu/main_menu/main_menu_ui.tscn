@@ -1,0 +1,523 @@
+[gd_scene load_steps=18 format=3 uid="uid://c1w15db4aw8u3"]
+
+[ext_resource type="FontFile" uid="uid://c4ul04dg1npn" path="res://assets/fonts/zeroes/Zeroes Two.otf" id="1_jc2cm"]
+[ext_resource type="Script" path="res://scenes/ui_scenes/main_menu/main_menu/main_menu_ui.gd" id="2_avkxy"]
+[ext_resource type="Script" path="res://scenes/ui_scenes/main_menu/main_menu/object_panel.gd" id="3_hrhnd"]
+[ext_resource type="Shader" path="res://scenes/ui_scenes/main_menu/main_menu/icon_trans.gdshader" id="3_xngrd"]
+[ext_resource type="Texture2D" uid="uid://bkmjuinr6ppcd" path="res://addons/kenney_prototype_textures/dark/texture_01.png" id="4_7ib0a"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0ff7a"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e3yiu"]
+content_margin_left = 10.0
+content_margin_right = 0.0
+content_margin_bottom = 24.0
+bg_color = Color(0.492188, 0.492188, 0.492188, 0.184314)
+border_width_right = 125
+border_color = Color(0, 0, 0, 0)
+border_blend = true
+corner_radius_bottom_left = 20
+corner_detail = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w0gh4"]
+content_margin_left = 10.0
+content_margin_right = 0.0
+content_margin_bottom = 32.0
+bg_color = Color(0, 0, 0, 0.184314)
+border_width_right = 125
+border_color = Color(0, 0, 0, 0)
+border_blend = true
+corner_radius_bottom_left = 20
+corner_detail = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e7s5y"]
+content_margin_left = 10.0
+content_margin_right = 0.0
+content_margin_bottom = 24.0
+bg_color = Color(1, 1, 1, 0.184314)
+border_width_right = 125
+border_color = Color(0, 0, 0, 0)
+border_blend = true
+corner_radius_bottom_left = 20
+corner_detail = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nk1rr"]
+bg_color = Color(0, 0, 0, 0.101961)
+border_width_right = 395
+border_color = Color(0, 0, 0, 0)
+border_blend = true
+
+[sub_resource type="Theme" id="Theme_grfiu"]
+default_font = ExtResource("1_jc2cm")
+Button/styles/focus = SubResource("StyleBoxEmpty_0ff7a")
+Button/styles/hover = SubResource("StyleBoxFlat_e3yiu")
+Button/styles/normal = SubResource("StyleBoxFlat_w0gh4")
+Button/styles/pressed = SubResource("StyleBoxFlat_e7s5y")
+Panel/styles/panel = SubResource("StyleBoxFlat_nk1rr")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4joy7"]
+bg_color = Color(0.114, 0.114, 0.12, 1)
+corner_detail = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mrxl7"]
+bg_color = Color(1, 1, 1, 1)
+corner_detail = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ipqg4"]
+bg_color = Color(1, 1, 1, 1)
+border_width_right = 150
+border_color = Color(0.8, 0.8, 0.8, 0)
+border_blend = true
+corner_detail = 1
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8e3el"]
+shader = ExtResource("3_xngrd")
+shader_parameter/multiplier = 1.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2kqgh"]
+bg_color = Color(0, 0, 0, 0.0980392)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0ruys"]
+bg_color = Color(0.800781, 0.800781, 0.800781, 1)
+
+[node name="MainMenuUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_grfiu")
+script = ExtResource("2_avkxy")
+
+[node name="Background" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_4joy7")
+
+[node name="MainControl" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MainStage" type="HBoxContainer" parent="MainControl"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 32.0
+offset_top = 33.0
+offset_right = -33.0
+offset_bottom = -35.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 25
+
+[node name="ButtonContainer" type="VBoxContainer" parent="MainControl/MainStage"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.9
+theme_override_constants/separation = 20
+
+[node name="Empty" type="Label" parent="MainControl/MainStage/ButtonContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+size_flags_stretch_ratio = 0.0
+theme_override_colors/font_color = Color(1, 1, 1, 0.792157)
+theme_override_font_sizes/font_size = 48
+text = ">>>>>>>>>"
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+text_overrun_behavior = 3
+
+[node name="Panel2" type="Panel" parent="MainControl/MainStage/ButtonContainer"]
+custom_minimum_size = Vector2(0, 3)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_mrxl7")
+
+[node name="SelectLevel" type="Button" parent="MainControl/MainStage/ButtonContainer"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Select level"
+alignment = 0
+
+[node name="SelectCar" type="Button" parent="MainControl/MainStage/ButtonContainer"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Select car"
+alignment = 0
+
+[node name="Exit" type="Button" parent="MainControl/MainStage/ButtonContainer"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Exit"
+alignment = 0
+
+[node name="Panel" type="Panel" parent="MainControl/MainStage/ButtonContainer"]
+visible = false
+custom_minimum_size = Vector2(0, 6)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ipqg4")
+
+[node name="MainContainer" type="VBoxContainer" parent="MainControl/MainStage"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.5
+theme_override_constants/separation = 20
+
+[node name="GreetingsMessage" type="Label" parent="MainControl/MainStage/MainContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+size_flags_stretch_ratio = 0.0
+theme_override_colors/font_color = Color(1, 1, 1, 0.792157)
+theme_override_font_sizes/font_size = 48
+text = "Hi, Player!"
+vertical_alignment = 1
+clip_text = true
+text_overrun_behavior = 3
+
+[node name="Panel" type="Panel" parent="MainControl/MainStage/MainContainer"]
+custom_minimum_size = Vector2(0, 3)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_mrxl7")
+
+[node name="LevelPanel" type="Panel" parent="MainControl/MainStage/MainContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+script = ExtResource("3_hrhnd")
+
+[node name="Name" type="Label" parent="MainControl/MainStage/MainContainer/LevelPanel"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 25.0
+offset_top = 16.0
+offset_bottom = 42.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 21
+text = "Selected level:"
+
+[node name="Icon" type="TextureRect" parent="MainControl/MainStage/MainContainer/LevelPanel"]
+material = SubResource("ShaderMaterial_8e3el")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 342.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_7ib0a")
+expand_mode = 3
+stretch_mode = 6
+
+[node name="Label" type="Label" parent="MainControl/MainStage/MainContainer/LevelPanel"]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = 25.0
+offset_top = 60.0
+offset_right = 312.0
+offset_bottom = -32.0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 21
+text = "Intro"
+
+[node name="CarPanel" type="Panel" parent="MainControl/MainStage/MainContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+script = ExtResource("3_hrhnd")
+
+[node name="Name" type="Label" parent="MainControl/MainStage/MainContainer/CarPanel"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 25.0
+offset_top = 16.0
+offset_bottom = 42.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 21
+text = "Selected car:"
+
+[node name="Icon" type="TextureRect" parent="MainControl/MainStage/MainContainer/CarPanel"]
+material = SubResource("ShaderMaterial_8e3el")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 342.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_7ib0a")
+expand_mode = 3
+stretch_mode = 6
+
+[node name="Label" type="Label" parent="MainControl/MainStage/MainContainer/CarPanel"]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = 25.0
+offset_top = 60.0
+offset_right = 312.0
+offset_bottom = -32.0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 21
+text = "Intro"
+
+[node name="TagPanel" type="Panel" parent="MainControl/MainStage/MainContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.6
+script = ExtResource("3_hrhnd")
+
+[node name="Name" type="Label" parent="MainControl/MainStage/MainContainer/TagPanel"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 25.0
+offset_top = 16.0
+offset_bottom = 42.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 21
+text = "a level tag:"
+
+[node name="Label" type="Label" parent="MainControl/MainStage/MainContainer/TagPanel"]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = 25.0
+offset_top = 60.0
+offset_right = 312.0
+offset_bottom = -32.0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 21
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="MainControl/MainStage"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MarginContainer" type="Control" parent="MainControl/MainStage/VBoxContainer3"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="MainControl/MainStage/VBoxContainer3/MarginContainer"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 80.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="MainControl/MainStage/VBoxContainer3/MarginContainer/MarginContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_2kqgh")
+
+[node name="Label" type="RichTextLabel" parent="MainControl/MainStage/VBoxContainer3/MarginContainer/MarginContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -122.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 24
+
+[node name="Decor" type="Panel" parent="MainControl"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 530.0
+offset_right = 50.0
+offset_bottom = 533.0
+rotation = -1.57079
+theme_override_styles/panel = SubResource("StyleBoxFlat_mrxl7")
+
+[node name="Decor2" type="Panel" parent="MainControl"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 512.0
+offset_right = 50.0
+offset_bottom = 515.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_mrxl7")
+
+[node name="StartLevel" type="Button" parent="MainControl"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 32.0
+offset_top = -136.0
+offset_right = 244.0
+offset_bottom = -35.0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 24
+text = "Start level"
+alignment = 0
+
+[node name="LevelControl" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="LevelControl"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 27.0
+offset_bottom = 98.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 0.792157)
+theme_override_font_sizes/font_size = 56
+text = "Select level"
+horizontal_alignment = 1
+
+[node name="Return" type="Button" parent="LevelControl"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 32.0
+offset_top = -136.0
+offset_right = 244.0
+offset_bottom = -35.0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 24
+text = "Return"
+alignment = 0
+
+[node name="GridContainer" type="GridContainer" parent="LevelControl"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -542.0
+offset_top = -198.0
+offset_right = 66.0
+offset_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/v_separation = 15
+columns = 5
+
+[node name="CarControl" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="CarControl"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 27.0
+offset_bottom = 98.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 0.792157)
+theme_override_font_sizes/font_size = 56
+text = "Select car"
+horizontal_alignment = 1
+
+[node name="Return" type="Button" parent="CarControl"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 32.0
+offset_top = -136.0
+offset_right = 244.0
+offset_bottom = -35.0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 24
+text = "Return"
+alignment = 0
+
+[node name="GridContainer" type="GridContainer" parent="CarControl"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -542.0
+offset_top = -198.0
+offset_right = 542.0
+offset_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/v_separation = 15
+columns = 5
+
+[node name="GreetingsPanel" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 77.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_0ruys")
+
+[node name="LoadingScreenControl" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="LoadingScreenControl"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -485.5
+offset_top = -298.0
+offset_right = 485.5
+offset_bottom = -232.0
+grow_horizontal = 2
+grow_vertical = 0
+max_value = 1.0
+
+[node name="Label" type="Label" parent="LoadingScreenControl"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -67.0
+offset_top = -337.0
+offset_right = 67.0
+offset_bottom = -304.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 26
+text = "Loading..."
+
+[connection signal="pressed" from="MainControl/MainStage/ButtonContainer/SelectLevel" to="." method="_on_select_level_pressed"]
+[connection signal="pressed" from="MainControl/MainStage/ButtonContainer/SelectCar" to="." method="_on_select_car_pressed"]
+[connection signal="pressed" from="MainControl/MainStage/ButtonContainer/Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="MainControl/StartLevel" to="." method="_on_start_level_pressed"]
+[connection signal="pressed" from="LevelControl/Return" to="." method="_on_return_pressed"]
+[connection signal="pressed" from="CarControl/Return" to="." method="_on_return_pressed"]

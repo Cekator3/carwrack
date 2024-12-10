@@ -421,16 +421,24 @@ func bullet_fix() -> void:
 	for i:Node3D in get_children():
 		i.position -= fix_offset
 
+func stop_car():
+	apply_central_impulse(-linear_velocity * mass)
+	rpm = 0
+	#await get_tree().
+	prints("car stopped", linear_velocity)
+
 func _ready() -> void:
 	if Engine.is_editor_hint():
 		return
-	physics_tick = ProjectSettings.get_setting("physics/common/physics_ticks_per_second", 60.0)
+	physics_tick = ProjectSettings.get_setting("physics/common/physics_ticks_per_second", 120)
 	
 	swap_controls()
 	
 	fix_engine_stall()
 	
 	update_wheel_arrays()
+	
+	Global.car_respawned.connect(stop_car)
 	
 	for wheel:ViVeWheel in all_wheels:
 		wheel.register_debug()
@@ -615,13 +623,14 @@ func newer_controls(analog_axis:float = 0.0) -> void:
 	
 	#steering assistance
 	if assistance_factor > 0.0:
-		var max_steer:float = 1.0 / (forward_force * (car_controls.SteerAmountDecay / assistance_factor) + 1.0)
-		var assist_commence:float = minf(linear_velocity.length() / 10.0, 1.0)
-		
-		if car_controls.EnableSteeringAssistance:
-			effective_steer = (steer_from_input * max_steer) - (velocity.normalized().x * assist_commence) * (car_controls.SteeringAssistance * assistance_factor) + r_velocity.y * (car_controls.SteeringAssistanceAngular * assistance_factor)
-		else:
-			effective_steer = (steer_from_input * max_steer)
+		effective_steer = steer_from_input
+		#var max_steer:float = 1.0 / (forward_force * (car_controls.SteerAmountDecay / assistance_factor) + 1.0)
+		#var assist_commence:float = minf(linear_velocity.length() / 10.0, 1.0)
+		#
+		#if car_controls.EnableSteeringAssistance:
+			#effective_steer = (steer_from_input * max_steer) - (velocity.normalized().x * assist_commence) * (car_controls.SteeringAssistance * assistance_factor) + r_velocity.y * (car_controls.SteeringAssistanceAngular * assistance_factor)
+		#else:
+			#effective_steer = (steer_from_input * max_steer)
 	else:
 		effective_steer = steer_from_input
 
@@ -713,7 +722,6 @@ func old_controls() -> void:
 		
 		#Steer based on control options
 		if not car_controls.LooseSteering:
-			
 			if car_controls.UseAnalogSteering:
 				var mouseposx:float = 0.0
 #				if get_viewport().size.x > 0.0:
@@ -763,12 +771,14 @@ func old_controls() -> void:
 			
 			
 			if assistance_factor > 0.0:
-				var maxsteer:float = 1.0 / (going * (car_controls.SteerAmountDecay / assistance_factor) + 1.0)
-				
-				var assist_commence:float = linear_velocity.length() / 10.0
-				assist_commence = minf(assist_commence, 1.0)
-				
-				effective_steer = (steer_from_input * maxsteer) - (velocity.normalized().x * assist_commence) * (car_controls.SteeringAssistance * assistance_factor) + r_velocity.y * (car_controls.SteeringAssistanceAngular * assistance_factor)
+				effective_steer = steer_from_input
+				return
+				#var maxsteer:float = 1.0 / (going * (car_controls.SteerAmountDecay / assistance_factor) + 1.0)
+				#
+				#var assist_commence:float = linear_velocity.length() / 10.0
+				#assist_commence = minf(assist_commence, 1.0)
+				#
+				#effective_steer = (steer_from_input * maxsteer) - (velocity.normalized().x * assist_commence) * (car_controls.SteeringAssistance * assistance_factor) + r_velocity.y * (car_controls.SteeringAssistanceAngular * assistance_factor)
 			else:
 				effective_steer = steer_from_input
 
@@ -874,7 +884,7 @@ func full_manual_transmission() -> void:
 					actual_gear = ViVeTransmission.REVERSE
 			else:
 				shift_assist_delay = 60
-		elif linear_velocity.length() < 5:
+		elif linear_velocity.length() < 15:
 			if not gas_pressed and gear == 1 or not brake_pressed and gear == ViVeTransmission.REVERSE:
 				shift_assist_delay = 60
 				actual_gear = 0

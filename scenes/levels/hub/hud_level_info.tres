@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="LevelInfo" load_steps=3 format=3 uid="uid://ciwyl35g4yxfx"]
+
+[ext_resource type="Texture2D" uid="uid://dnlivqmitf0mh" path="res://addons/kenney_prototype_textures/dark/texture_12.png" id="1_i2ukp"]
+[ext_resource type="Script" path="res://scenes/levels/level_info.gd" id="2_1kggx"]
+
+[resource]
+script = ExtResource("2_1kggx")
+level_name = "HUB"
+level_description = "Hub"
+path_scene = "res://scenes/levels/hub/hub.tscn"
+icon_scene = ExtResource("1_i2ukp")

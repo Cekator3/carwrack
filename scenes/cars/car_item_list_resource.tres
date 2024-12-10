@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="CarItemList" load_steps=7 format=3 uid="uid://ctnkkav13lv2j"]
+
+[ext_resource type="Script" path="res://scenes/cars/car_item.gd" id="1_qwu2c"]
+[ext_resource type="Script" path="res://scenes/cars/car_item_list.gd" id="2_p8a5p"]
+[ext_resource type="Texture2D" uid="uid://cjqyomwxbt1cr" path="res://scenes/cars/ferrari_550/fellari_icon.png" id="2_xxp4d"]
+[ext_resource type="Texture2D" uid="uid://5x4cwcvsj5c1" path="res://scenes/cars/ferrari_550test/fellari_icon.png" id="3_h82e3"]
+
+[sub_resource type="Resource" id="Resource_1jmif"]
+script = ExtResource("1_qwu2c")
+car_name = "Fellari"
+car_description = "text desc"
+path_scene = "res://scenes/cars/ferrari_550/ferrari.tscn"
+icon_scene = ExtResource("2_xxp4d")
+
+[sub_resource type="Resource" id="Resource_et2o1"]
+script = ExtResource("1_qwu2c")
+car_name = "Fellari Red"
+car_description = ""
+path_scene = "res://scenes/cars/ferrari_550test/ferrari.tscn"
+icon_scene = ExtResource("3_h82e3")
+
+[resource]
+script = ExtResource("2_p8a5p")
+car_item_list = Array[ExtResource("1_qwu2c")]([SubResource("Resource_1jmif"), SubResource("Resource_et2o1")])

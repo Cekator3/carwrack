@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scenes/vivavehicle_main/car_stats/controls.gd" id="1_pw0a5"]
 
 [sub_resource type="Curve" id="Curve_grufx"]
-_data = [Vector2(0, 0), 0.0, 26.0, 0, 1, Vector2(0.01, 0.26), 26.0, 0.747475, 1, 1, Vector2(1, 1), 0.747475, 0.0, 1, 0]
+_data = [Vector2(0, 0), 0.0, 0.1, 0, 0, Vector2(0.613636, 0.274725), 0.4477, 1.87718, 1, 1, Vector2(1, 1), 1.87718, 0.0, 1, 0]
 point_count = 3
 
 [resource]

@@ -1,0 +1,13 @@
+[gd_resource type="Sky" load_steps=2 format=3 uid="uid://df56lisangcbc"]
+
+[sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_0061w"]
+rayleigh_coefficient = 0.65
+rayleigh_color = Color(0.386938, 0.459222, 0.6, 1)
+mie_eccentricity = 0.95
+mie_color = Color(0.812, 0.727068, 0.664448, 1)
+ground_color = Color(0.0980392, 0.113725, 0.117647, 1)
+energy_multiplier = 2.5
+use_debanding = false
+
+[resource]
+sky_material = SubResource("PhysicalSkyMaterial_0061w")

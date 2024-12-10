@@ -1,0 +1,100 @@
+[gd_scene load_steps=13 format=3 uid="uid://bfw82vbjgne6e"]
+
+[ext_resource type="PackedScene" uid="uid://clujaf3u776a3" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.tscn" id="1_ljoeb"]
+[ext_resource type="Script" path="res://scenes/ui_scenes/ingame_menu/ingame_menu.gd" id="1_vhuad"]
+[ext_resource type="PackedScene" uid="uid://c1w15db4aw8u3" path="res://scenes/ui_scenes/main_menu/main_menu/main_menu_ui.tscn" id="2_0bige"]
+[ext_resource type="PackedScene" uid="uid://5m1ayas3gab2" path="res://scenes/ui_scenes/main_menu/setting_menu/setting_menu_ui.tscn" id="3_ch3ud"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_p7bno"]
+resource_local_to_scene = true
+size = Vector2(5, 3)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_btwjt"]
+viewport_path = NodePath("Viewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vjbjj"]
+cull_mode = 2
+shading_mode = 0
+albedo_texture = SubResource("ViewportTexture_btwjt")
+texture_filter = 1
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ysih1"]
+resource_local_to_scene = true
+size = Vector3(5, 3, 0.02)
+
+[sub_resource type="QuadMesh" id="QuadMesh_us6ho"]
+resource_local_to_scene = true
+size = Vector2(5, 3)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_oam2l"]
+viewport_path = NodePath("Viewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_peffs"]
+cull_mode = 2
+depth_draw_mode = 2
+shading_mode = 0
+albedo_texture = SubResource("ViewportTexture_oam2l")
+texture_filter = 1
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5jjda"]
+resource_local_to_scene = true
+size = Vector3(5, 3, 0.02)
+
+[node name="IngameMenu" type="Node3D"]
+script = ExtResource("1_vhuad")
+
+[node name="MainMenuUis" type="Node3D" parent="."]
+transform = Transform3D(3.2, 0, 0, 0, 3.2, 0, 0, 0, 3.2, 0, 0, 0)
+
+[node name="MainMenu" parent="MainMenuUis" instance=ExtResource("1_ljoeb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.47658)
+screen_size = Vector2(5, 3)
+viewport_size = Vector2(1152, 648)
+transparent = 0
+roughness = 0.0
+emission = 1.0
+fix_emission = true
+scene = ExtResource("2_0bige")
+
+[node name="Viewport" parent="MainMenuUis/MainMenu" index="0"]
+transparent_bg = false
+size = Vector2i(1152, 648)
+
+[node name="Screen" parent="MainMenuUis/MainMenu" index="1"]
+mesh = SubResource("QuadMesh_p7bno")
+surface_material_override/0 = SubResource("StandardMaterial3D_vjbjj")
+
+[node name="StaticBody3D" parent="MainMenuUis/MainMenu" index="2"]
+screen_size = Vector2(5, 3)
+viewport_size = Vector2(1152, 648)
+
+[node name="CollisionShape3D" parent="MainMenuUis/MainMenu/StaticBody3D" index="0"]
+shape = SubResource("BoxShape3D_ysih1")
+
+[node name="SettingMenu" parent="MainMenuUis" instance=ExtResource("1_ljoeb")]
+transform = Transform3D(0.714583, 0, -0.699551, 0, 1, 0, 0.699551, 0, 0.714583, 4.288, 0, -2.734)
+screen_size = Vector2(5, 3)
+viewport_size = Vector2(1152, 648)
+transparent = 0
+roughness = 0.59
+emission = 1.0
+fix_emission = true
+scene = ExtResource("3_ch3ud")
+
+[node name="Viewport" parent="MainMenuUis/SettingMenu" index="0"]
+transparent_bg = false
+size = Vector2i(1152, 648)
+
+[node name="Screen" parent="MainMenuUis/SettingMenu" index="1"]
+mesh = SubResource("QuadMesh_us6ho")
+surface_material_override/0 = SubResource("StandardMaterial3D_peffs")
+
+[node name="StaticBody3D" parent="MainMenuUis/SettingMenu" index="2"]
+screen_size = Vector2(5, 3)
+viewport_size = Vector2(1152, 648)
+
+[node name="CollisionShape3D" parent="MainMenuUis/SettingMenu/StaticBody3D" index="0"]
+shape = SubResource("BoxShape3D_5jjda")
+
+[editable path="MainMenuUis/MainMenu"]
+[editable path="MainMenuUis/SettingMenu"]

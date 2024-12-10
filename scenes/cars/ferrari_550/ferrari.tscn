@@ -1,4 +1,4 @@
-[gd_scene load_steps=73 format=4 uid="uid://bbdby6qsjtqmj"]
+[gd_scene load_steps=82 format=4 uid="uid://bbdby6qsjtqmj"]
 
 [ext_resource type="Script" path="res://scenes/vivavehicle_main/car.gd" id="1_c35n7"]
 [ext_resource type="Resource" uid="uid://r5c2gxfbk21k" path="res://scenes/vivavehicle_misc/controls config/presets/joypad.tres" id="2_3egfv"]
@@ -12,8 +12,14 @@
 [ext_resource type="Script" path="res://scenes/vivavehicle_main/car_stats/ttcs.gd" id="10_ohxx6"]
 [ext_resource type="Script" path="res://scenes/vivavehicle_main/car_stats/torque.gd" id="11_6v2v7"]
 [ext_resource type="PackedScene" uid="uid://d1vmrvs3aj84o" path="res://scenes/vivavehicle_main/misc/tyre sounds/tyres.tscn" id="12_hehph"]
+[ext_resource type="Script" path="res://scenes/xr_scenes/player/player_xr_origin.gd" id="12_ykv68"]
+[ext_resource type="PackedScene" uid="uid://ddsj74hpt1kgb" path="res://addons/godot-xr-tools/hands/scenes/highpoly/left_physics_tac_glove.tscn" id="13_5q8i5"]
 [ext_resource type="PackedScene" uid="uid://c7m04qiimdydw" path="res://scenes/vivavehicle_main/misc/engine sound/engine.tscn" id="13_yacnr"]
 [ext_resource type="PackedScene" uid="uid://df2i30irlljkl" path="res://scenes/vivavehicle_main/wheel.tscn" id="14_5k3ks"]
+[ext_resource type="PackedScene" uid="uid://bft3xyxs31ci3" path="res://addons/godot-xr-tools/functions/function_pose_detector.tscn" id="14_onxjl"]
+[ext_resource type="PackedScene" uid="uid://b4ysuy43poobf" path="res://addons/godot-xr-tools/functions/function_pickup.tscn" id="15_h2vmo"]
+[ext_resource type="PackedScene" uid="uid://b6xesntm4qeo5" path="res://addons/godot-xr-tools/hands/scenes/highpoly/right_physics_tac_glove.tscn" id="16_ypkc1"]
+[ext_resource type="Script" path="res://scenes/xr_scenes/player/xr_camera_position.gd" id="17_p2xpf"]
 [ext_resource type="Texture2D" uid="uid://bjfc0s00friby" path="res://assets/models/ferrari_550_barchetta_2000_azzurro_hyperion/gltf_updated/untitled_rimbolts1_baseColor.jpg" id="19_posuq"]
 [ext_resource type="Texture2D" uid="uid://8fdpujkophu1" path="res://assets/models/ferrari_550_barchetta_2000_azzurro_hyperion/gltf_updated/untitled_PLdiffuser_baseColor.jpg" id="20_db1lf"]
 [ext_resource type="Texture2D" uid="uid://2se7sqtyjytq" path="res://assets/models/ferrari_550_barchetta_2000_azzurro_hyperion/gltf_updated/untitled_tireprotector_baseColor.jpg" id="21_fuvrq"]
@@ -127,6 +133,13 @@ FloatRate = 0.1
 DeclineRate = 2.0
 DeclineRPM = 5000.0
 DeclineSharpness = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iksi8"]
+albedo_color = Color(0.664063, 0.238363, 0.253229, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_txlrx"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_n3amp"]
 
 [sub_resource type="StandardMaterial3D" id="17"]
 albedo_color = Color(0.01, 0.01, 0.01, 1)
@@ -840,10 +853,10 @@ Centre_Locking = 1.0
 Centre_CoastLocking = 0.0
 EngineDrag = 0.01
 ThrottleResponse = 0.65
-LimiterDelay = 0.0
-IdleRPM = 1500.0
+LimiterDelay = 0.05
+IdleRPM = 1470.0
 ThrottleLimit = 0.8
-ThrottleIdle = 0.12
+ThrottleIdle = 0.16
 VVTRPM = 45000.0
 torque_norm = SubResource("Resource_cc35u")
 torque_vvt = SubResource("Resource_02r10")
@@ -854,6 +867,57 @@ TurboEnabled = true
 SpoolThreshold = 0.2
 BlowoffRate = 0.2
 TurboEfficiency = 0.04
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1.437, 0.745, -0.945)
+fov = 80.0
+far = 1000.0
+
+[node name="XROrigin3D" type="XROrigin3D" parent="."]
+process_priority = 2
+process_physics_priority = 2
+transform = Transform3D(-1, 0, 1.50996e-07, 0, 1, 0, -1.50996e-07, 0, -1, 0.971, -2.8, -1.62)
+current = true
+script = ExtResource("12_ykv68")
+
+[node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.16932, 0)
+current = true
+
+[node name="Left" type="XRController3D" parent="XROrigin3D"]
+tracker = &"left_hand"
+
+[node name="LeftPhysicsHand" parent="XROrigin3D/Left" instance=ExtResource("13_5q8i5")]
+
+[node name="FunctionPoseDetector" parent="XROrigin3D/Left" instance=ExtResource("14_onxjl")]
+
+[node name="FunctionPickup" parent="XROrigin3D/Left" instance=ExtResource("15_h2vmo")]
+
+[node name="Right" type="XRController3D" parent="XROrigin3D"]
+tracker = &"right_hand"
+
+[node name="RightPhysicsHand" parent="XROrigin3D/Right" instance=ExtResource("16_ypkc1")]
+
+[node name="FunctionPoseDetector" parent="XROrigin3D/Right" instance=ExtResource("14_onxjl")]
+
+[node name="FunctionPickup" parent="XROrigin3D/Right" instance=ExtResource("15_h2vmo")]
+
+[node name="Debug" type="MeshInstance3D" parent="XROrigin3D"]
+visible = false
+material_override = SubResource("StandardMaterial3D_iksi8")
+mesh = SubResource("SphereMesh_txlrx")
+
+[node name="XRCameraPosition" type="Marker3D" parent="." node_paths=PackedStringArray("xr_origin_3d")]
+process_priority = 3
+process_physics_priority = 3
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.413, -1.36, -0.933)
+script = ExtResource("17_p2xpf")
+xr_origin_3d = NodePath("../XROrigin3D")
+max_position_range = 1.0
+
+[node name="Debug" type="MeshInstance3D" parent="XRCameraPosition"]
+visible = false
+mesh = SubResource("SphereMesh_n3amp")
 
 [node name="DRAG_CENTRE" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.624618, -1.94503)
@@ -984,6 +1048,7 @@ skeleton = NodePath("")
 
 [node name="rl" parent="." instance=ExtResource("14_5k3ks")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.65, 0.413418, -4.41857)
+target_position = Vector3(0, -2.9, 0)
 Steer = false
 SwayBarConnection = NodePath("rr")
 TyreSettings = ExtResource("24_6ud03")

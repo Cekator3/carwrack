@@ -1,0 +1,325 @@
+[gd_scene load_steps=15 format=3 uid="uid://bg513of10kco"]
+
+[ext_resource type="FontFile" uid="uid://c4ul04dg1npn" path="res://assets/fonts/zeroes/Zeroes Two.otf" id="1_4apam"]
+[ext_resource type="Script" path="res://scenes/xr_scenes/hud/hud_ui.gd" id="1_et3fh"]
+[ext_resource type="Script" path="res://scenes/xr_scenes/hud/playlist_hud.gd" id="3_mtpo3"]
+[ext_resource type="Texture2D" uid="uid://d0lh2a0ue8gg7" path="res://assets/icons/icons_music.png" id="4_5i524"]
+
+[sub_resource type="Theme" id="Theme_qdh8x"]
+default_font = ExtResource("1_4apam")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ryi8w"]
+bg_color = Color(0.6, 0.6, 0.6, 0.388235)
+skew = Vector2(-0.5, 0)
+border_width_right = 350
+border_color = Color(1, 1, 1, 0)
+border_blend = true
+corner_radius_top_left = 20
+corner_detail = 1
+expand_margin_left = 10.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tuslm"]
+content_margin_right = 10.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n2wot"]
+bg_color = Color(0.0924495, 0.273438, 0.0939572, 0.573)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3lk81"]
+bg_color = Color(0.390051, 0.54, 0.363719, 0.784314)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5pxb5"]
+bg_color = Color(0.910156, 0.910156, 0.910156, 1)
+expand_margin_top = 12.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eu85s"]
+bg_color = Color(0.27, 0.0918, 0.09477, 0.572549)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8wj6p"]
+bg_color = Color(0.54, 0.3294, 0.33291, 0.784314)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lmnob"]
+bg_color = Color(0.27, 0.23598, 0.2133, 0.74902)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bh6rl"]
+bg_color = Color(0.691406, 0.604289, 0.546211, 0.74902)
+
+[node name="HudUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_qdh8x")
+script = ExtResource("1_et3fh")
+
+[node name="Debug" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SteeringAngle" type="Label" parent="Debug"]
+visible = false
+layout_mode = 2
+anchor_right = 1.0
+anchor_bottom = 0.011
+offset_top = 55.0
+offset_bottom = 103.872
+theme_override_font_sizes/font_size = 46
+text = "SteeringWheel: %s"
+horizontal_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="Debug"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_right = -523.0
+offset_bottom = -254.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="FPS" type="Label" parent="Debug/MarginContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 46
+text = "FPS: %s"
+horizontal_alignment = 1
+
+[node name="PlaylistHud" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("3_mtpo3")
+
+[node name="MarginContainer" type="MarginContainer" parent="PlaylistHud"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.49
+anchor_top = 0.887
+anchor_right = 0.49
+anchor_bottom = 0.887
+offset_left = -256.48
+offset_top = -472.776
+offset_right = 273.52
+offset_bottom = -381.776
+grow_horizontal = 2
+
+[node name="Panel" type="Panel" parent="PlaylistHud/MarginContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ryi8w")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PlaylistHud/MarginContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MusicPlayNow" type="VBoxContainer" parent="PlaylistHud/MarginContainer/Panel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+
+[node name="Name" type="Label" parent="PlaylistHud/MarginContainer/Panel/HBoxContainer/MusicPlayNow"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = SubResource("StyleBoxEmpty_tuslm")
+text = "Remorse (Carpenter Brut Remix)"
+horizontal_alignment = 2
+vertical_alignment = 1
+clip_text = true
+
+[node name="Author" type="Label" parent="PlaylistHud/MarginContainer/Panel/HBoxContainer/MusicPlayNow"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.757813, 0.757813, 0.757813, 1)
+theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = SubResource("StyleBoxEmpty_tuslm")
+text = "Carpenther brut"
+horizontal_alignment = 2
+vertical_alignment = 1
+clip_text = true
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="PlaylistHud/MarginContainer/Panel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.2
+stretch_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="PlaylistHud/MarginContainer/Panel/HBoxContainer/AspectRatioContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("4_5i524")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TypePlaylist" type="Label" parent="PlaylistHud/MarginContainer/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.012
+anchor_right = -0.012
+offset_left = -44.64
+offset_top = -34.0
+offset_right = 91.36
+offset_bottom = -14.0
+rotation = 1.10868
+theme_override_font_sizes/font_size = 16
+text = "Synthwave"
+horizontal_alignment = 2
+
+[node name="InGameHud" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="InGameHud"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.299
+anchor_top = 0.886
+anchor_right = 0.73
+anchor_bottom = 0.886
+offset_left = -5.44803
+offset_top = -247.128
+offset_right = -5.96002
+offset_bottom = -126.128
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Control" type="HBoxContainer" parent="InGameHud/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="HBoxContainer" type="VBoxContainer" parent="InGameHud/MarginContainer/Control"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="RPM" type="Label" parent="InGameHud/MarginContainer/Control/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 31
+text = "RPM: %s"
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Speed" type="Label" parent="InGameHud/MarginContainer/Control/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 56
+text = "%s"
+horizontal_alignment = 2
+
+[node name="ThrottleMarginContainer" type="MarginContainer" parent="InGameHud/MarginContainer/Control"]
+custom_minimum_size = Vector2(42, 0)
+layout_mode = 2
+
+[node name="ThrottleProgressBar" type="ProgressBar" parent="InGameHud/MarginContainer/Control/ThrottleMarginContainer"]
+custom_minimum_size = Vector2(16, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 1
+theme_override_styles/background = SubResource("StyleBoxFlat_n2wot")
+theme_override_styles/fill = SubResource("StyleBoxFlat_3lk81")
+max_value = 1.0
+value = 0.53
+fill_mode = 3
+show_percentage = false
+
+[node name="Panel" type="Panel" parent="InGameHud/MarginContainer/Control"]
+custom_minimum_size = Vector2(4, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_5pxb5")
+
+[node name="BrakeMarginContainer" type="MarginContainer" parent="InGameHud/MarginContainer/Control"]
+custom_minimum_size = Vector2(42, 0)
+layout_mode = 2
+
+[node name="BrakeProgressBar" type="ProgressBar" parent="InGameHud/MarginContainer/Control/BrakeMarginContainer"]
+custom_minimum_size = Vector2(16, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 1
+theme_override_styles/background = SubResource("StyleBoxFlat_eu85s")
+theme_override_styles/fill = SubResource("StyleBoxFlat_8wj6p")
+max_value = 1.0
+value = 0.48
+fill_mode = 3
+show_percentage = false
+
+[node name="Gear" type="Label" parent="InGameHud/MarginContainer/Control"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 100
+text = "R"
+vertical_alignment = 1
+
+[node name="Panel" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AttentionHud" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="AttentionHud"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.828
+anchor_right = 0.5
+anchor_bottom = 0.828
+offset_left = -576.0
+offset_top = -293.544
+offset_right = 576.0
+offset_bottom = -229.544
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="AttentionHud/MarginContainer"]
+layout_mode = 2
+
+[node name="AttentionMessage" type="Label" parent="AttentionHud/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 28
+text = "Press Y to respawn the car"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AttentionProgressBar" type="ProgressBar" parent="AttentionHud/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.35
+theme_override_styles/background = SubResource("StyleBoxFlat_lmnob")
+theme_override_styles/fill = SubResource("StyleBoxFlat_bh6rl")
+max_value = 3.0
+show_percentage = false
